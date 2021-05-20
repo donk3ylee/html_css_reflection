@@ -2,11 +2,11 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"../sass/style.sass"
+		"../sass/style.scss"
 	],
 	"sourcesContent": [
-		""
+		"\r\n\r\n// @mixin btn($icon,$color:black,$icon-pos:left){\r\n//     $button-link-color: $color;\r\n//     padding: 10px;\r\n// }\r\n\r\nbody{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n.main-wrapper {\r\n    display: grid;\r\n    grid-template-columns: minmax(385px,1200px);\r\n    grid-template-rows: auto 1fr 990px;\r\n    justify-content: start;\r\n}\r\n.top-bar{\r\ndisplay:inline-block;\r\n    form{\r\n        display: inline;\r\n    }\r\n}\r\n\r\n.top-menu{\r\n    display:grid;\r\n    grid-template-columns: repeat(6, 1fr);\r\n    grid-template-rows: auto;\r\n\r\n}\r\n\r\n.btn{\r\n    &-support{\r\n    background-color: #4183d7;\r\n    border-color: #4183d7;\r\n        &:hover{\r\n            background-color: darken($color: #4183d7, $amount: 10);\r\n        }\r\n        &::before{\r\n            font-family: \"FontAwesome\"; \r\n            content: \"\\f8cc\";\r\n        }\r\n    }\r\n    &-contact{\r\n        background-color: #999aa2;\r\n        border-color: #999aa2;\r\n            &:hover{\r\n                background-color: darken($color: #999aa2, $amount: 10);\r\n            }\r\n            &::before{\r\n                font-family: \"FontAwesome\"; \r\n                content: \"\\f1d8\";\r\n            }\r\n        }\r\n}\r\n\r\n\r\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAOA,AAAA,IAAI,CAAA;EACA,OAAO,EAAC,IAAI;EACZ,eAAe,EAAE,MAAM;CAC1B;;;AACD,AAAA,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,qBAAoB;EAC3C,kBAAkB,EAAE,cAAc;EAClC,eAAe,EAAE,KAAK;CACzB;;;AACD,AAAA,QAAQ,CAAA;EACR,OAAO,EAAC,YAAY;CAInB;;;AALD,AAEI,QAFI,CAEJ,IAAI,CAAA;EACA,OAAO,EAAE,MAAM;CAClB;;;AAGL,AAAA,SAAS,CAAA;EACL,OAAO,EAAC,IAAI;EACZ,qBAAqB,EAAE,cAAc;EACrC,kBAAkB,EAAE,IAAI;CAE3B;;;AAGI,AAAD,YAAS,CAAA;EACT,gBAAgB,EAAE,OAAO;EACzB,YAAY,EAAE,OAAO;CAQpB;;;AAVA,AAGG,YAHK,AAGJ,MAAM,CAAA;EACH,gBAAgB,EAAE,OAAoC;CACzD;;;AALJ,AAMG,YANK,AAMJ,QAAQ,CAAA;EACL,WAAW,EAAE,aAAa;EAC1B,OAAO,EAAE,OAAO;CACnB;;;AAEJ,AAAD,YAAS,CAAA;EACL,gBAAgB,EAAE,OAAO;EACzB,YAAY,EAAE,OAAO;CAQpB;;;AAVJ,AAGO,YAHC,AAGA,MAAM,CAAA;EACH,gBAAgB,EAAE,OAAoC;CACzD;;;AALR,AAMO,YANC,AAMA,QAAQ,CAAA;EACL,WAAW,EAAE,aAAa;EAC1B,OAAO,EAAE,OAAO;CACnB"
 }
