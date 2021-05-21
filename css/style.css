@@ -1,66 +1,129 @@
-/* line 8, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+@charset "UTF-8";
+/* line 10, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
 body {
   display: flex;
   justify-content: center;
+  font-family: Poppins,sans-serif;
 }
 
-/* line 12, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+/* line 15, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
 .main-wrapper {
   display: grid;
-  grid-template-columns: minmax(385px, 1200px);
+  grid-template-columns: minmax(500px, 1200px);
   grid-template-rows: auto 1fr 990px;
   justify-content: start;
 }
 
-/* line 18, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+/* line 21, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
 .top-bar {
-  display: inline-block;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
 }
 
-/* line 20, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.top-bar form {
-  display: inline;
-}
-
-/* line 25, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+/* line 29, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
 .top-menu {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
 }
 
-/* line 33, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.btn-support {
-  background-color: #4183d7;
-  border-color: #4183d7;
-}
-
 /* line 36, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.btn-support:hover {
-  background-color: #286abd;
-}
-
-/* line 39, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.btn-support::before {
-  font-family: "FontAwesome";
-  content: "\f8cc";
-}
-
-/* line 44, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.btn-contact {
-  background-color: #999aa2;
-  border-color: #999aa2;
+.btn-phone, .btn-support, .btn-contact, .btn-search {
+  color: white;
+  font-size: 1.125rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 56px;
+  padding: 10px;
 }
 
 /* line 47, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
-.btn-contact:hover {
-  background-color: #7e808a;
+.btn-phone {
+  font-size: 2.125rem;
+  color: #121419;
+  font-size: 1.25rem;
 }
 
-/* line 50, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+/* line 51, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-phone:hover {
+  text-decoration: underline;
+}
+
+/* line 16, ../../Documents/GitHub/html_css_reflection/sass/partials/_mixins.scss */
+.btn-phone::before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+@media (min-width: 767px) {
+  /* line 47, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+  .btn-phone {
+    display: hidden;
+  }
+}
+
+/* line 59, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-support {
+  background-color: #4183d7;
+  border-color: #4183d7;
+  font-size: 1.25rem;
+}
+
+/* line 63, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-support:hover {
+  background-color: #2a6ec6;
+}
+
+/* line 16, ../../Documents/GitHub/html_css_reflection/sass/partials/_mixins.scss */
+.btn-support::before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+/* line 68, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-contact {
+  background-color: #999aa2;
+  border-color: #999aa2;
+  font-size: 1.25rem;
+}
+
+/* line 72, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-contact:hover {
+  background-color: #84858f;
+}
+
+/* line 16, ../../Documents/GitHub/html_css_reflection/sass/partials/_mixins.scss */
 .btn-contact::before {
   font-family: "FontAwesome";
-  content: "\f1d8";
+  content: "";
+}
+
+/* line 77, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-search {
+  background-color: #999aa2;
+  border-color: #999aa2;
+  font-size: 1.25rem;
+}
+
+/* line 81, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+.btn-search:hover {
+  background-color: #84858f;
+}
+
+/* line 16, ../../Documents/GitHub/html_css_reflection/sass/partials/_mixins.scss */
+.btn-search::before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+@media (min-width: 767px) {
+  /* line 85, ../../Documents/GitHub/html_css_reflection/sass/style.scss */
+  .btn-search-field {
+    display: inline-block;
+    background-color: darkorange;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

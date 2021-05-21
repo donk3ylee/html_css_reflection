@@ -1,0 +1,23 @@
+
+$awesome-icon-map:(
+    'plane':'\f1d8',
+    'mouse':'\f8cc',
+    'search':'\f002',
+    'code_tags':'\f121',
+    'monitor':'\f108',
+    'phone':'\f2a0',
+    'software':'\f00a',
+    'barchart':'\f681',
+    'shield':'\f3ed');
+
+@mixin place-awesome-icon($key){
+    @if map-has-key($awesome-icon-map,$key){
+        font-size: $awesome-icon-size;
+        &::before{
+            font-family: "FontAwesome";
+            content: map-get($awesome-icon-map,$key);
+        }
+    }@else{
+        warn:("Your trying to call a font name using place-awesome-icon(font_name) that does not exist in the awesome-icon-map.")
+    }
+}
