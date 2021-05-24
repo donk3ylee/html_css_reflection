@@ -1,16 +1,27 @@
 
-
-
+@mixin MQ($bp, $func){
+    @if map-has-key($MQ_breakpoints_map,$bp){
+        @if not map-has-key($MQ_func_map, $func){
+            @error "Your trying to use a $func that does not exist in the $MQ_func_map map used in the @mixin MQ().";
+        }@else{
+            @media(map-get($MQ_func_map,$func): map-get($MQ_breakpoints_map,$bp)){
+                @content;
+            }
+        }       
+    }@else{
+        @error "Your trying to call a 'break point' that does not exist in the MQ_breakpoints_map map used in the @mixin MQ().";
+    }
+}
 
 @mixin place-awesome-icon($key, $size: $default-awesome-icon-size){
-    @if map-has-key($awesome-icon-map,$key){
+    @if map-has-key($awesome_icon_map,$key){
         font-size: $size;
         &::before{
             font-family: "FontAwesome";
-            content: map-get($awesome-icon-map,$key);
+            content: map-get($awesome_icon_map,$key);
         }
     }@else{
-        warn:("Your trying to call a font name using place-awesome-icon(font_name) that does not exist in the awesome-icon-map.")
+        @error "Your trying to call a 'font name' that does not exist in the awesome_icon_map used in the @mixin place-awesome-icon().";
     }
 }
 

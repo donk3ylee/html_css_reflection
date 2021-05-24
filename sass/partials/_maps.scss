@@ -1,6 +1,6 @@
 
-// awesome-icon-map used with @mixin place-awesome-icon
-$awesome-icon-map:(
+    // Used with the @mixin place-awesome-icon
+$awesome_icon_map:(
     'plane':'\f1d8',
     'mouse':'\f8cc',
     'search':'\f002',
@@ -9,4 +9,16 @@ $awesome-icon-map:(
     'phone':'\f2a0',
     'software':'\f00a',
     'barchart':'\f681',
-    'shield':'\f3ed');
+    'shield':'\f3ed',
+    'hamburger':'\f0c9');
+
+    // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
+$MQ_func_map:(
+    'and-bigger':'min-width',
+    'and-smaller':'max-width');
+
+    // Used with the @mixin MQ
+$MQ_breakpoints_map:(
+    '1':'783px',
+    '2':'1010px',
+    '3':'1277px');
