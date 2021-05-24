@@ -1,4 +1,5 @@
 @import "partials/variables";
+@import "partials/maps";
 @import "partials/mixins";
 
 
@@ -22,7 +23,7 @@ body{
     display:flex;
     width: 100%;
     padding: 20px;
-    // justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -46,46 +47,36 @@ body{
 }
 .btn-phone{
     @extend %btn;
-    font-size: 2.125rem;
-    color: #121419;
+    @include place-awesome-icon('phone',$size: $phone-icon-size);
+    @include rotate-phone-icon;
+    color: black;
+    text-decoration: none;
     &:hover{
+        color: black;
         text-decoration: underline; 
     }
-    @include place-awesome-icon('phone');
     @media(min-width: 767px){
         display: hidden;
     }
 } 
 .btn-support{
     @extend %btn;
-    background-color: $btn-blue;
-    border-color: $btn-blue;
-    &:hover{
-        background-color: $btn-blue-hvr;
-    }
+    @include build-button($bg_color: $btn-blue, $hv_bg_color: $btn-blue-hvr);
     @include place-awesome-icon('mouse');
 }
 .btn-contact{
     @extend %btn;
-    background-color: $btn-grey;
-    border-color: $btn-grey;
-    &:hover{
-        background-color: $btn-grey-hvr;
-    }
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
     @include place-awesome-icon('plane');
 }
 .btn-search{
     @extend %btn;
-    background-color: $btn-grey;
-    border-color: $btn-grey;
-    &:hover{
-        background-color: $btn-grey-hvr;
-    }
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
     @include place-awesome-icon('search');
     &-field{
         // width:auto;
         @media(min-width: 767px){
-            display: inline-block;
+            display: block;
             background-color: darkorange;
         }
     }

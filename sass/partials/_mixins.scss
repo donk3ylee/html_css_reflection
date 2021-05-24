@@ -1,18 +1,10 @@
 
-$awesome-icon-map:(
-    'plane':'\f1d8',
-    'mouse':'\f8cc',
-    'search':'\f002',
-    'code_tags':'\f121',
-    'monitor':'\f108',
-    'phone':'\f2a0',
-    'software':'\f00a',
-    'barchart':'\f681',
-    'shield':'\f3ed');
 
-@mixin place-awesome-icon($key){
+
+
+@mixin place-awesome-icon($key, $size: $default-awesome-icon-size){
     @if map-has-key($awesome-icon-map,$key){
-        font-size: $awesome-icon-size;
+        font-size: $size;
         &::before{
             font-family: "FontAwesome";
             content: map-get($awesome-icon-map,$key);
@@ -20,4 +12,21 @@ $awesome-icon-map:(
     }@else{
         warn:("Your trying to call a font name using place-awesome-icon(font_name) that does not exist in the awesome-icon-map.")
     }
+}
+
+@mixin build-button($bg_color: null, $b_color: $bg_color, $hv_bg_color: null, $hv_color: white){
+    background-color: $bg_color;
+    border-color: $b_color;
+    &:hover{
+        color:$hv_color;
+        background-color: $hv_bg_color;
+    }
+}
+
+@mixin rotate-phone-icon{
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+transform: rotate(-45deg);
 }
