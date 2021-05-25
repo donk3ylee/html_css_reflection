@@ -2,7 +2,8 @@
 body {
   display: flex;
   justify-content: center;
-  font-family: Poppins,sans-serif; }
+  font-family: Poppins,sans-serif;
+  width: 100%; }
 
 .main-wrapper {
   display: grid;
@@ -22,20 +23,29 @@ body {
 .top-menu {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto; }
+  grid-template-rows: auto;
+  background-color: #333645; }
 
-.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search {
+.logo {
+  width: auto;
+  height: 60px;
+  min-width: auto; }
+
+.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search {
+  display: flex;
+  align-self: center;
+  text-align: center;
+  vertical-align: middle;
   color: white;
   font-size: 1.125rem;
   cursor: pointer;
   text-transform: uppercase;
-  align-self: center;
-  height: 56px;
-  padding: 10px; }
+  min-width: 50px;
+  line-height: 36px; }
 
 .btn-phone {
-  display: hide;
-  font-size: 2.125rem;
+  display: none;
+  font-size: 1.5rem;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -49,10 +59,9 @@ body {
   .btn-phone:hover {
     color: black;
     text-decoration: underline; }
-  @media (max-width: 783px) {
+  @media (max-width: 707px) {
     .btn-phone {
-      display: inline-flex;
-      order: 2; } }
+      display: inline-flex; } }
 
 .btn-support {
   display: none;
@@ -65,10 +74,9 @@ body {
   .btn-support::before {
     font-family: "FontAwesome";
     content: ""; }
-  @media (min-width: 1010px) {
+  @media (min-width: 908px) {
     .btn-support {
-      display: inline-flex;
-      order: 4; } }
+      display: inline-flex; } }
 
 .btn-contact {
   display: none;
@@ -81,16 +89,15 @@ body {
   .btn-contact::before {
     font-family: "FontAwesome";
     content: ""; }
-  @media (min-width: 1010px) {
+  @media (min-width: 908px) {
     .btn-contact {
-      display: inline-flex;
-      order: 5; } }
+      display: inline-flex; } }
 
 .btn-hamburger {
   display: inline-flex;
   background-color: black;
   border-color: black;
-  font-size: 2.125rem; }
+  font-size: 1.5rem; }
   .btn-hamburger:hover {
     color: white; }
   .btn-hamburger::before {
@@ -98,7 +105,7 @@ body {
     content: ""; }
 
 .btn-search {
-  display: none;
+  display: inline-flex;
   background-color: #999aa2;
   border-color: #999aa2;
   font-size: 1.25rem; }
@@ -108,15 +115,44 @@ body {
   .btn-search::before {
     font-family: "FontAwesome";
     content: ""; }
-  @media (max-width: 783px) {
-    .btn-search {
+  @media (max-width: 707px) {
+    .btn-search-field {
+      background-color: rgba(0, 0, 0, 0.1); } }
+
+.btn-small-search {
+  display: none;
+  background-color: #999aa2;
+  border-color: #999aa2;
+  font-size: 1.25rem; }
+  .btn-small-search:hover {
+    color: white;
+    background-color: #84858f; }
+  .btn-small-search::before {
+    font-family: "FontAwesome";
+    content: ""; }
+  @media (min-width: 908px) {
+    .btn-small-search {
       display: inline-flex; } }
-  .btn-search-field {
-    width: 100%;
-    display: none; }
-    @media (max-width: 783px) {
-      .btn-search-field {
-        display: inline-flex;
-        background-color: rgba(0, 0, 0, 0.1); } }
+  @media (min-width: 1150px) {
+    .btn-small-search {
+      display: none; } }
+
+.search-wrapper {
+  display: none; }
+  @media (max-width: 707px) {
+    .search-wrapper {
+      display: inline-flex;
+      order: 99; } }
+  @media (min-width: 707px) {
+    .search-wrapper {
+      display: inline-flex;
+      width: 200px; } }
+  @media (min-width: 908px) {
+    .search-wrapper {
+      display: none; } }
+  @media (min-width: 1150px) {
+    .search-wrapper {
+      display: inline-flex;
+      width: 300px; } }
 
 /*# sourceMappingURL=style.css.map */

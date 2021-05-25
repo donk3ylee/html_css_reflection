@@ -3,27 +3,25 @@
 @import "partials/mixins";
 
 
-// @mixin btn($icon,$color:black,$icon-pos:left){
-//     $button-link-color: $color;
-//     padding: 10px;
-// }
-
 body{
     display:flex;
     justify-content: center;
     font-family: Poppins,sans-serif;
+    width:100%;
 }
+
 .main-wrapper {
     display: grid;
     grid-template-columns: minmax(500px,1200px);
     grid-template-rows: auto 1fr 990px;
     justify-content: start;
 }
+
 .top-bar{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -33,21 +31,35 @@ body{
     display:grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
-  
+    background-color: #333645;
+    // width: 100%;
+}
+
+.logo{
+    width:auto;
+    height:60px;
+    min-width: auto;
 }
 
 %btn{
+    display:flex;
+    align-self: center;
+    text-align: center;
+    vertical-align: middle;
+    //padding: 5px, 5px;
     color: white;
     font-size: 1.125rem;
     cursor: pointer;
     text-transform: uppercase;
-    align-self: center;
-    height: 56px;
-    padding:10px;
+    min-width: 50px;
+    // text-decoration: none;
+    line-height: 36px;
+    // margin-left: 20px;
 }
+
 .btn-phone{
     @extend %btn;
-    display:hide;
+    display: none;
     @include place-awesome-icon('phone',$size: $phone-icon-size);
     @include rotate-phone-icon;
     color: black;
@@ -56,11 +68,12 @@ body{
         color: black;
         text-decoration: underline; 
     }
-    @include MQ('1','and-smaller'){
-        display: inline-flex;
-        order:2;
-    }
+     @include MQ('1','and-smaller'){
+         display: inline-flex;
+    //     order:2;
+     }
 } 
+
 .btn-support{
     @extend %btn;
     display: none;
@@ -68,9 +81,10 @@ body{
     @include place-awesome-icon('mouse');
     @include MQ('2','and-bigger'){
         display:inline-flex;
-        order:4;
+    //     order:4;
     }
 }
+
 .btn-contact{
     @extend %btn;
     display: none;
@@ -78,33 +92,60 @@ body{
     @include place-awesome-icon('plane');
     @include MQ('2','and-bigger'){
         display:inline-flex;
-        order:5;
+        // order:5;
     }
 }
+
 .btn-hamburger{
     @extend %btn;
     display: inline-flex;
     @include build-button($bg_color: black);
     @include place-awesome-icon('hamburger',$hamburger-icon-size);
 }
+
 .btn-search{
     @extend %btn;
-    display:none;
+    display:inline-flex;
     @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
     @include place-awesome-icon('search');
-    @include MQ('1','and-smaller'){
-        display:inline-flex;
-    }
-    &-field{
-        width: 100%;
-        display: none;
+      &-field{
         @include MQ('1','and-smaller'){
-            display: inline-flex;
+            //width:100%;
             background-color: rgba($color: #000000, $alpha: 0.1);
         }
     }
 }
 
+.btn-small-search{
+    @extend %btn;
+    display:none;
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
+    @include place-awesome-icon('search');
+    @include MQ('2','and-bigger'){
+        display:inline-flex;
+    }
+    @include MQ('3','and-bigger'){
+        display: none;
+    }
+}
 
-
+.search-wrapper{
+     display:none;
+    //  order:6;
+    @include MQ('1','and-smaller'){ // want large 100% width, block, after, greyed
+        display:inline-flex;
+        order:99;
+    }
+    @include MQ('1','and-bigger'){ //smaller, between phone and hamburger
+        display: inline-flex;
+        width: 200px;
+    }
+    @include MQ('2','and-bigger'){ 
+        display: none;
+    }
+    @include MQ('3','and-bigger'){ 
+        display: inline-flex;
+        width: 300px
+    }
+}
 
