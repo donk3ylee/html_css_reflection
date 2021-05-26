@@ -1,0 +1,117 @@
+
+.logo{
+    width:auto;
+    height:63px;
+    min-width: auto;
+}
+
+%btn{
+    display:inline-flex;
+    // align-self: center;
+    // text-align: center;
+    // vertical-align: middle;
+    color: white;
+    font-size: 1.125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 50px;
+    min-height: 50px;
+    text-decoration: none;
+    line-height: 36px;
+    margin-left: 15px;
+}
+
+.btn-phone{
+    @extend %btn;
+    display: none;
+    @include place-awesome-icon('phone',$size: $phone-icon-size);
+    @include rotate-phone-icon;
+    color: black;
+    text-decoration: none;
+    &:hover{
+        color: black;
+        text-decoration: underline; 
+    }
+     @include MQ('1','and-smaller'){
+         display: inline-flex;
+    //     order:2;
+    }
+} 
+
+.btn-support{
+    @extend %btn;
+    display: none;
+    @include build-button($bg_color: $btn-blue, $hv_bg_color: $btn-blue-hvr);
+    @include place-awesome-icon('mouse');
+    @include MQ('2','and-bigger'){
+        display:inline-flex;
+    //     order:4;
+    }
+}
+
+.btn-contact{
+    @extend %btn;
+    display: none;
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
+    @include place-awesome-icon('plane');
+    @include MQ('2','and-bigger'){
+        display:inline-flex;
+        // order:5;
+    }
+}
+
+.btn-hamburger{
+    @extend %btn;
+    display: inline-flex;
+    @include build-button($bg_color: black);
+    @include place-awesome-icon('hamburger',$hamburger-icon-size);
+}
+
+.btn-search{
+    @extend %btn;
+    display:inline-flex;
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
+    @include place-awesome-icon('search');
+    &-alt{
+        background-color: rgba($color: #000000, $alpha: 0.1);
+    }
+
+}
+
+.btn-small-search{
+    @extend %btn;
+    display:none;
+    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
+    @include place-awesome-icon('search');
+    @include MQ('2','and-bigger'){
+        display:inline-flex;
+    }
+    @include MQ('3','and-bigger'){
+        display: none;
+    }
+}
+
+.search-wrapper{
+     display:none;
+     margin-left:15px;
+    
+    @include MQ('1','and-bigger'){ //smaller, between phone and hamburger
+        display: inline-flex;
+        width: 200px;
+    }
+    @include MQ('2','and-bigger'){ 
+        display: none;
+    }
+    @include MQ('3','and-bigger'){ 
+        display: inline-flex;
+        width: 300px;
+    }
+    &-alt{
+        @include MQ('1','and-smaller'){
+            display: inline-flex;
+        }
+        @include MQ('1','and-bigger'){ 
+            display: none;
+        }
+    }
+}
