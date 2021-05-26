@@ -1,4 +1,16 @@
 
+@mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
+    &::before {
+    content:"";
+    background-color: $color;
+    position: absolute;
+    height: 100%;
+    width: 200vw;
+    left: -100vw;
+    z-index: -1;
+  }
+}
+
 @mixin MQ($bp, $func){
     @if not map-has-key($MQ_breakpoints_map,$bp){
         @error "Your trying to call a 'break point' that does not exist in the MQ_breakpoints_map map used in the @mixin MQ().";

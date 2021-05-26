@@ -21,7 +21,7 @@ body{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -29,10 +29,11 @@ body{
 
 .top-menu{
     display:grid;
+    position:relative;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
-    background-color: #333645;
-    // width: 100%;
+    background-color: $top-menu-bgcolor;
+    @include make-bgcolor-wide($top-menu-bgcolor);
 }
 
 .logo{
