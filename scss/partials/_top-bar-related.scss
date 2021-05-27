@@ -7,9 +7,6 @@
 
 %btn{
     display:inline-flex;
-    // align-self: center;
-    // text-align: center;
-    // vertical-align: middle;
     color: white;
     font-size: 1.125rem;
     cursor: pointer;
@@ -24,7 +21,7 @@
 .btn-phone{
     @extend %btn;
     display: none;
-    @include place-awesome-icon('phone',$size: $phone-icon-size);
+    @include place-awesome-icon('support',$size: $phone-icon-size);
     @include rotate-phone-icon;
     color: black;
     text-decoration: none;

@@ -1,16 +1,24 @@
 
+$menu_map:(
+    'design':'#',
+    'support':'#',
+    'telecom':'#',
+    'software':'#',
+    'marketing':'#',
+    'security':'#');
+
     // Used with the @mixin place-awesome-icon
 $awesome_icon_map:(
     'plane':'\f1d8',
     'mouse':'\f8cc',
     'search':'\f002',
-    'code-tags':'\f121',
-    'monitor':'\f108',
-    'phone':'\f2a0',
+    'hamburger':'\f0c9',
+    'design':'\f121',
+    'support':'\f108',
+    'telecom':'\f2a0',
     'software':'\f00a',
-    'barchart':'\f681',
-    'shield':'\f3ed',
-    'hamburger':'\f0c9');
+    'marketing':'\f681',
+    'security':'\f3ed');
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
 $MQ_func_map:(

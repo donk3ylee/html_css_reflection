@@ -1,4 +1,9 @@
 
+
+// @mixin set-color($color_str){
+//     unquote(color: $color-"$color_str");
+// }
+
 @mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
     &::before {
     content:"";
@@ -27,6 +32,8 @@
     @if map-has-key($awesome_icon_map,$key){
         font-size: $size;
         &::before{
+            display:flex;
+            justify-content: center;
             font-family: "FontAwesome";
             content: map-get($awesome_icon_map,$key);
         }

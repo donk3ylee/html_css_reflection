@@ -31,11 +31,17 @@ body{
 .menu-top{
     display:grid;
     position:relative;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
+    grid-template-columns: repeat(6, 200px);
     background-color: $top-menu-bgcolor;
     text-transform:uppercase;
     @include make-bgcolor-wide($top-menu-bgcolor);
+    @include MQ('3','and-smaller'){
+        justify-content:center;
+        grid-template-columns: repeat(6, 160px);
+    }
+    @include MQ('2','and-smaller'){
+        display: none;
+    }
     .small{
         display:block;
         font-size: 0.7rem;
@@ -52,36 +58,36 @@ body{
             }
         }
     }
-    &-design{
-        &:hover{
-            background-color: $web-design-purple;    
-        }
-    }
-    &-support{
-        &:hover{
-            background-color: $it-support-blue;    
-        }
-    }
-    &-telecom{
-        &:hover{
-            background-color: $telecom-services-red;    
-        }
-    }
-    &-software{
-        &:hover{
-            background-color: $bespoke-software-grey;    
-        }
-    }
-    &-marketing{
-        &:hover{
-            background-color: $digital-marketing-green;    
-        }
-    }
-    &-security{
-        &:hover{
-            background-color: $cyber-security-red;    
-        }
-    }
+    // &-design{
+    //     &:hover{
+    //         background-color: $color-design;    
+    //     }
+    // }
+    // &-support{
+    //     &:hover{
+    //         background-color: $color-support;    
+    //     }
+    // }
+    // &-telecom{
+    //     &:hover{
+    //         background-color: $color-telecom;    
+    //     }
+    // }
+    // &-software{
+    //     &:hover{
+    //         background-color: $color-software;    
+    //     }
+    // }
+    // &-marketing{
+    //     &:hover{
+    //         background-color: $color-marketing;    
+    //     }
+    // }
+    // &-security{
+    //     &:hover{
+    //         background-color: $color-security;    
+    //     }
+    // }
 }
 
 .menu-top-under{
@@ -89,29 +95,36 @@ body{
 }
 
 .icon{
-    &-design{
-        color: $web-design-purple;
-        @include place-awesome-icon('code-tags');
-    }    
-    &-support{
-        color: $it-support-blue;
-        @include place-awesome-icon('monitor');
-    }    
-    &-telecom{
-        color: $telecom-services-red;
-        @include place-awesome-icon('phone');
-        @include rotate-phone-icon;
-    }    
-    &-software{
-        color: $bespoke-software-grey;
-        @include place-awesome-icon('software');
-    }    
-    &-marketing{
-        color: $digital-marketing-green;
-        @include place-awesome-icon('barchart');
-    }    
-    &-security{
-        color: $cyber-security-red;
-        @include place-awesome-icon('shield');
-    }    
+    @each $key, $trash in $menu-map{
+        &-#{$key}{
+            unquote(color: $color-"#{$key}"); //// up to here
+            @include place-awesome-icon(unquote("#{$key}"));
+        }
+     }
+
+    // &-design{
+    //     color: $web-design-purple;
+    //     @include place-awesome-icon('code-tags');
+    // }    
+    // &-support{
+    //     color: $it-support-blue;
+    //     @include place-awesome-icon('monitor');
+    // }    
+    // &-telecom{
+    //     color: $telecom-services-red;
+    //     @include place-awesome-icon('phone');
+    //     @include rotate-phone-icon;
+    // }    
+    // &-software{
+    //     color: $bespoke-software-grey;
+    //     @include place-awesome-icon('software');
+    // }    
+    // &-marketing{
+    //     color: $digital-marketing-green;
+    //     @include place-awesome-icon('barchart');
+    // }    
+    // &-security{
+    //     color: $cyber-security-red;
+    //     @include place-awesome-icon('shield');
+    // }    
 }
