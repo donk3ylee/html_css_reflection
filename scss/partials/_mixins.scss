@@ -1,9 +1,4 @@
 
-
-// @mixin set-color($color_str){
-//     unquote(color: $color-"$color_str");
-// }
-
 @mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
     &::before {
     content:"";

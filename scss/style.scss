@@ -58,6 +58,14 @@ body{
             }
         }
     }
+    // .menu-top-#{$key}:hover{
+    //     background-color: #{$color};
+    // }
+    @each $key, $color in $menu-map{
+        &-#{$key}:hover{
+            background-color: #{$color};
+        }
+    }
     // &-design{
     //     &:hover{
     //         background-color: $color-design;    
@@ -95,12 +103,12 @@ body{
 }
 
 .icon{
-    @each $key, $trash in $menu-map{
+    @each $key, $color in $menu-map{
         &-#{$key}{
-            unquote(color: $color-"#{$key}"); //// up to here
+            color: #{$color};
             @include place-awesome-icon(unquote("#{$key}"));
         }
-     }
+    }
 
     // &-design{
     //     color: $web-design-purple;
