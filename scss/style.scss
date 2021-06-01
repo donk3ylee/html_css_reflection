@@ -1,6 +1,8 @@
 @import "partials/variables";
 @import "partials/maps";
 @import "partials/mixins";
+@import "partials/lists";
+
 @import "partials/top-bar-related";
 
 
@@ -28,111 +30,143 @@ body{
     padding: 20px;
 }
 
+
 .menu-top{
     display:grid;
     position:relative;
     grid-template-columns: repeat(6, 200px);
+    align-content: center;
+    height: 100px;
     background-color: $top-menu-bgcolor;
     text-transform:uppercase;
-    @include make-bgcolor-wide($top-menu-bgcolor);
-    @include MQ('3','and-smaller'){
+    @include make-bgcolor-wide($top-menu-bgcolor);  /// Workaround to get this element to break out of the page wrapper container 100% viewport wide 
+    @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
         justify-content:center;
         grid-template-columns: repeat(6, 160px);
     }
-    @include MQ('2','and-smaller'){
+    @include MQ('2','and-smaller'){  /// Make the menu dissapear at a particular breakpoint
         display: none;
     }
     .small{
         display:block;
         font-size: 0.7rem;
     }
-    & a{
-        height: 100px;
-        text-decoration:none;
+    .submenu{
+        display: none;
+    }
+}
+
+
+@each $name, $color in $menu_color_map{
+    .button-#{$name}{
+        display:flex;
+        flex-direction: column;
         text-align: center;
-        padding-top: 15px;
-        color: white;
+        // align-self: center;
+        height: 100px;
+        width: 200px;
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+        }
         &:hover{
+            color: white;
+            background-color: #{$color};
             .icon{  // make icons white on hover.
                 color:white;
             }
+
+            .submenu-#{$name}{
+                a{
+                    font-size: 1rem;
+                }
+                display:flex;
+                position: absolute;
+                align-content: center;
+                justify-content: space-between;
+                top: 100px;
+                left:0;
+                width: 100%;
+                height: 45px;
+                @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
+            } 
         }
     }
-    // .menu-top-#{$key}:hover{
-    //     background-color: #{$color};
-    // }
-    @each $key, $color in $menu-map{
-        &-#{$key}:hover{
-            background-color: #{$color};
-        }
-    }
-    // &-design{
-    //     &:hover{
-    //         background-color: $color-design;    
-    //     }
-    // }
-    // &-support{
-    //     &:hover{
-    //         background-color: $color-support;    
-    //     }
-    // }
-    // &-telecom{
-    //     &:hover{
-    //         background-color: $color-telecom;    
-    //     }
-    // }
-    // &-software{
-    //     &:hover{
-    //         background-color: $color-software;    
-    //     }
-    // }
-    // &-marketing{
-    //     &:hover{
-    //         background-color: $color-marketing;    
-    //     }
-    // }
-    // &-security{
-    //     &:hover{
-    //         background-color: $color-security;    
-    //     }
-    // }
 }
 
-.menu-top-under{
-    display: none;
-}
+
+// @each $name, $trash in $menu_color_map{ ///  Build classes for each menu item and initially hide them
+//     .submenu-#{$name}{
+//             display: none;
+//     }
+// }
+
+// .menu-top{
+//     display:grid;
+//     position:relative;
+//     grid-template-columns: repeat(6, 200px);
+//     background-color: $top-menu-bgcolor;
+//     text-transform:uppercase;
+//     @include make-bgcolor-wide($top-menu-bgcolor);  /// Workaround to get this element to break out of the page wrapper container 100% viewport wide 
+//     @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
+//         justify-content:center;
+//         grid-template-columns: repeat(6, 160px);
+//     }
+//     @include MQ('2','and-smaller'){  /// Make the menu dissapear at a particular breakpoint
+//         display: none;
+//     }
+//     .small{
+//         display:block;
+//         font-size: 0.7rem;
+//     }
+//     & a{
+//         height: 100px;
+//         text-decoration:none;
+//         text-align: center;
+//         padding-top: 15px;
+//         color: white;
+//         &:hover{
+//             .icon{  // make icons white on hover.
+//                 color:white;
+//             }
+//         }
+//     }
+//     // @each $name, $color in $menu_color_map{  // Build menu classes for each menu item and set the bg colour on hover state.  
+//     //     &-#{$name}:hover{
+//     //         background-color: #{$color};
+//     //     }
+//     // }
+
+//     @each $name, $color in $menu_color_map{
+//         &-#{$name}:hover, .submenu-#{$name}:hover{
+//             // .submenu-#{$name}{
+//                 display: flex;
+//                 // justify-content:space-between;
+//                 // align-items:center;
+//                 position:relative;
+//                 bottom: 0;
+//                 // position:absolute;
+//                 // // margin-top: 21px;
+//                 // width: 100%;
+//                 // height: 50px;
+//                 background-color: #{$color};
+//                 @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
+//                 border: 8px solid red;
+//             // }
+//         }
+//     }
+// }
 
 .icon{
-    @each $key, $color in $menu-map{
-        &-#{$key}{
+    @each $name, $color in $menu_color_map{
+        &-#{$name}{
             color: #{$color};
-            @include place-awesome-icon(unquote("#{$key}"));
+            @include place-awesome-icon(unquote("#{$name}"));
+            @if(unquote("#{$name}")=="telecom"){
+                @include rotate-phone-icon;
+            }
         }
     }
-
-    // &-design{
-    //     color: $web-design-purple;
-    //     @include place-awesome-icon('code-tags');
-    // }    
-    // &-support{
-    //     color: $it-support-blue;
-    //     @include place-awesome-icon('monitor');
-    // }    
-    // &-telecom{
-    //     color: $telecom-services-red;
-    //     @include place-awesome-icon('phone');
-    //     @include rotate-phone-icon;
-    // }    
-    // &-software{
-    //     color: $bespoke-software-grey;
-    //     @include place-awesome-icon('software');
-    // }    
-    // &-marketing{
-    //     color: $digital-marketing-green;
-    //     @include place-awesome-icon('barchart');
-    // }    
-    // &-security{
-    //     color: $cyber-security-red;
-    //     @include place-awesome-icon('shield');
-    // }    
 }
+

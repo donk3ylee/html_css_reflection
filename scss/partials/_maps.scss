@@ -1,11 +1,11 @@
 
-$menu_map:(
-    'design': $color_design,
-    'support':$color_support,
-    'telecom':$color_telecom,
-    'software':$color_software,
-    'marketing':$color_marketing,
-    'security':$color_security);
+$menu_color_map:(
+    'design': $color-design,
+    'support':$color-support,
+    'telecom':$color-telecom,
+    'software':$color-software,
+    'marketing':$color-marketing,
+    'security':$color-security);
 
     // Used with the @mixin place-awesome-icon
 $awesome_icon_map:(
