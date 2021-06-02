@@ -63,4 +63,8 @@ transform: rotate($deg);
 content: "";
 clear: both;
 display: table;
-} 
+}
+
+@mixin fix-normalize-transparency($c){  // fixes the normalize.css transparency for anchor elements background colour.
+    background-color: darken(rgba($color: $c, $alpha: 1.0),$darken-submenu-amt);
+}
