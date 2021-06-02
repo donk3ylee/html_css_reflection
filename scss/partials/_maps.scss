@@ -18,7 +18,9 @@ $awesome_icon_map:(
     'telecom':'\f2a0',
     'software':'\f00a',
     'marketing':'\f681',
-    'security':'\f3ed');
+    'security':'\f3ed',
+    'arrow':'\f061',
+    );
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
 $MQ_func_map:(

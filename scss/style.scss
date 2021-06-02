@@ -4,6 +4,7 @@
 @import "partials/lists";
 
 @import "partials/top-bar-related";
+@import "partials/top-menu-related";
 
 
 body{
@@ -20,153 +21,63 @@ body{
     justify-content: start;
 }
 
-.top-bar{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#hero-slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 20px;
-}
-
-
-.menu-top{
-    display:grid;
-    position:relative;
-    grid-template-columns: repeat(6, 200px);
-    align-content: center;
-    height: 100px;
-    background-color: $top-menu-bgcolor;
-    text-transform:uppercase;
-    @include make-bgcolor-wide($top-menu-bgcolor);  /// Workaround to get this element to break out of the page wrapper container 100% viewport wide 
-    @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
-        justify-content:center;
-        grid-template-columns: repeat(6, 160px);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: min(calc(((100vw - 1200px)*-1)/2),0px);  // this made my brain and my balls ache
+    right: 0;
+    z-index:-2;
+    height: calc(100vh - 220px);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 1)),
+    url("../img/sliding/home-3wAI.jpg");
+    color: white;
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 25px;
     }
-    @include MQ('2','and-smaller'){  /// Make the menu dissapear at a particular breakpoint
-        display: none;
-    }
-    .small{
-        display:block;
-        font-size: 0.7rem;
-    }
-    .submenu{
-        display: none;
-    }
-}
+    p{
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+        margin-bottom: 25px;
 
-
-@each $name, $color in $menu_color_map{
-    .wrapper-#{$name}{
-        display:flex;
-        flex-direction: column;
-        text-align: center;
+    }
+    a{
+        display: flex;
         justify-content: center;
-        height: 100px;
-        width: 200px;
-        .button-#{$name}{
-            color: white;
-            text-decoration: none;
-            font-size: 1.125rem;
-        }
+        align-items: center;
+        background-color: $color-design;
+        min-height: 65px;
+        min-width: 225px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
         &:hover{
-            color: white;
-            background-color: #{$color};
-            .icon{  // make icons white on hover.
-                color:white;
-            }
-            .submenu{
-                a{
-                    color: white;
-                    align-self: center;
-                    text-decoration: none;
-                }
-                font-size: 1rem;
-                display:flex;
-                position: absolute;
-                justify-content: space-between;
-                top: 100px;
-                left:0;
-                width: 100%;
-                height: 45px;
-                @include fix-normalize-transparency($color);
-                @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
-            } 
+            background-color: darken($color-design, 10);   up to here hover not working
         }
+        @include place-awesome-icon('arrow', $orientation: 'after');
     }
-    .icon{
-        &-#{$name}{
-            color: #{$color};
-            @include place-awesome-icon(unquote("#{$name}"));
-            @if(unquote("#{$name}")=="telecom"){
-                @include rotate-phone-icon;
-            }
-        }       
+    .hero-item{
+        @include MQ('2','and-smaller'){
+            align-self: center;
+        }
+        @include MQ('2','and-bigger'){
+            align-self: flex-start;
+            margin-left: 12%;
+        }
+        @include MQ('3','and-bigger'){
+            align-self: flex-start;
+            margin-left: calc((100vw - 1200px)/2);
+        }
     }
 }
-
-
-// @each $name, $trash in $menu_color_map{ ///  Build classes for each menu item and initially hide them
-//     .submenu-#{$name}{
-//             display: none;
-//     }
-// }
-
-// .menu-top{
-//     display:grid;
-//     position:relative;
-//     grid-template-columns: repeat(6, 200px);
-//     background-color: $top-menu-bgcolor;
-//     text-transform:uppercase;
-//     @include make-bgcolor-wide($top-menu-bgcolor);  /// Workaround to get this element to break out of the page wrapper container 100% viewport wide 
-//     @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
-//         justify-content:center;
-//         grid-template-columns: repeat(6, 160px);
-//     }
-//     @include MQ('2','and-smaller'){  /// Make the menu dissapear at a particular breakpoint
-//         display: none;
-//     }
-//     .small{
-//         display:block;
-//         font-size: 0.7rem;
-//     }
-//     & a{
-//         height: 100px;
-//         text-decoration:none;
-//         text-align: center;
-//         padding-top: 15px;
-//         color: white;
-//         &:hover{
-//             .icon{  // make icons white on hover.
-//                 color:white;
-//             }
-//         }
-//     }
-//     // @each $name, $color in $menu_color_map{  // Build menu classes for each menu item and set the bg colour on hover state.  
-//     //     &-#{$name}:hover{
-//     //         background-color: #{$color};
-//     //     }
-//     // }
-
-//     @each $name, $color in $menu_color_map{
-//         &-#{$name}:hover, .submenu-#{$name}:hover{
-//             // .submenu-#{$name}{
-//                 display: flex;
-//                 // justify-content:space-between;
-//                 // align-items:center;
-//                 position:relative;
-//                 bottom: 0;
-//                 // position:absolute;
-//                 // // margin-top: 21px;
-//                 // width: 100%;
-//                 // height: 50px;
-//                 background-color: #{$color};
-//                 @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
-//                 border: 8px solid red;
-//             // }
-//         }
-//     }
-// }
-
-

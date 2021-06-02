@@ -1,488 +1,61 @@
-@charset "UTF-8";
-.logo {
-  width: auto;
-  height: 63px;
-  min-width: auto; }
+/*
+Error: Invalid CSS after "...ver not working": expected "{", was "}"
+        on line 67 of scss/style.scss
 
-.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search {
-  display: inline-flex;
-  color: white;
-  font-size: 1.125rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  min-width: 50px;
-  min-height: 50px;
-  text-decoration: none;
-  line-height: 36px;
-  margin-left: 15px; }
+62:         text-decoration: none;
+63:         text-transform: uppercase;
+64:         color: white;
+65:         &:hover{
+66:             background-color: darken($color-design, 10);   up to here hover not working
+67:         }
+68:         @include place-awesome-icon('arrow', $orientation: 'after');
+69:     }
+70:     .hero-item{
+71:         @include MQ('2','and-smaller'){
+72:             align-self: center;
 
-.btn-phone {
-  display: none;
-  font-size: 2rem;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  color: black;
-  text-decoration: none; }
-  .btn-phone::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-  .btn-phone:hover {
-    color: black;
-    text-decoration: underline; }
-  @media (max-width: 707px) {
-    .btn-phone {
-      display: inline-flex; } }
-
-.btn-support {
-  display: none;
-  background-color: #4183d7;
-  border-color: #4183d7;
-  font-size: 1.25rem; }
-  .btn-support:hover {
-    color: white;
-    background-color: #2a6ec6; }
-  .btn-support::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-  @media (min-width: 908px) {
-    .btn-support {
-      display: inline-flex; } }
-
-.btn-contact {
-  display: none;
-  background-color: #999aa2;
-  border-color: #999aa2;
-  font-size: 1.25rem; }
-  .btn-contact:hover {
-    color: white;
-    background-color: #84858f; }
-  .btn-contact::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-  @media (min-width: 908px) {
-    .btn-contact {
-      display: inline-flex; } }
-
-.btn-hamburger {
-  display: inline-flex;
-  background-color: black;
-  border-color: black;
-  font-size: 1.5rem; }
-  .btn-hamburger:hover {
-    color: white; }
-  .btn-hamburger::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.btn-search {
-  display: inline-flex;
-  background-color: #999aa2;
-  border-color: #999aa2;
-  font-size: 1.25rem; }
-  .btn-search:hover {
-    color: white;
-    background-color: #84858f; }
-  .btn-search::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-  .btn-search-alt {
-    background-color: rgba(0, 0, 0, 0.1); }
-
-.btn-small-search {
-  display: none;
-  background-color: #999aa2;
-  border-color: #999aa2;
-  font-size: 1.25rem; }
-  .btn-small-search:hover {
-    color: white;
-    background-color: #84858f; }
-  .btn-small-search::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-  @media (min-width: 908px) {
-    .btn-small-search {
-      display: inline-flex; } }
-  @media (min-width: 1150px) {
-    .btn-small-search {
-      display: none; } }
-
-.search-wrapper {
-  display: none;
-  margin-left: 15px; }
-  @media (min-width: 707px) {
-    .search-wrapper {
-      display: inline-flex;
-      width: 200px; } }
-  @media (min-width: 908px) {
-    .search-wrapper {
-      display: none; } }
-  @media (min-width: 1150px) {
-    .search-wrapper {
-      display: inline-flex;
-      width: 300px; } }
-  @media (max-width: 707px) {
-    .search-wrapper-alt {
-      display: inline-flex; } }
-  @media (min-width: 707px) {
-    .search-wrapper-alt {
-      display: none; } }
-
-body {
-  display: flex;
-  justify-content: center;
-  font-family: Poppins,sans-serif;
-  width: 100%; }
-
-.main-wrapper {
-  display: grid;
-  grid-template-columns: minmax(500px, 1200px);
-  grid-template-rows: auto 1fr 990px;
-  justify-content: start; }
-
-.top-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px; }
-
-.menu-top {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(6, 200px);
-  align-content: center;
-  height: 100px;
-  background-color: #333645;
-  text-transform: uppercase; }
-  .menu-top::before {
-    content: "";
-    background-color: #333645;
-    position: absolute;
-    height: 100%;
-    width: 200vw;
-    left: -100vw;
-    z-index: -1; }
-  @media (max-width: 1150px) {
-    .menu-top {
-      justify-content: center;
-      grid-template-columns: repeat(6, 160px); } }
-  @media (max-width: 908px) {
-    .menu-top {
-      display: none; } }
-  .menu-top .small {
-    display: block;
-    font-size: 0.7rem; }
-  .menu-top .submenu {
-    display: none; }
-
-.wrapper-design {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-design .button-design {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-design:hover {
-    color: white;
-    background-color: #926FB1; }
-    .wrapper-design:hover .icon {
-      color: white; }
-    .wrapper-design:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #79539a; }
-      .wrapper-design:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-design:hover .submenu::before {
-        content: "";
-        background-color: #79539a;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-design {
-  color: #926FB1;
-  font-size: 1.25rem; }
-  .icon-design::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.wrapper-support {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-support .button-support {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-support:hover {
-    color: white;
-    background-color: #4183D7; }
-    .wrapper-support:hover .icon {
-      color: white; }
-    .wrapper-support:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #286abd; }
-      .wrapper-support:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-support:hover .submenu::before {
-        content: "";
-        background-color: #286abd;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-support {
-  color: #4183D7;
-  font-size: 1.25rem; }
-  .icon-support::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.wrapper-telecom {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-telecom .button-telecom {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-telecom:hover {
-    color: white;
-    background-color: #D64541; }
-    .wrapper-telecom:hover .icon {
-      color: white; }
-    .wrapper-telecom:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #bc2c28; }
-      .wrapper-telecom:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-telecom:hover .submenu::before {
-        content: "";
-        background-color: #bc2c28;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-telecom {
-  color: #D64541;
-  font-size: 1.25rem;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
-  .icon-telecom::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.wrapper-software {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-software .button-software {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-software:hover {
-    color: white;
-    background-color: #67809F; }
-    .wrapper-software:hover .icon {
-      color: white; }
-    .wrapper-software:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #526781; }
-      .wrapper-software:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-software:hover .submenu::before {
-        content: "";
-        background-color: #526781;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-software {
-  color: #67809F;
-  font-size: 1.25rem; }
-  .icon-software::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.wrapper-marketing {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-marketing .button-marketing {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-marketing:hover {
-    color: white;
-    background-color: #2ECC71; }
-    .wrapper-marketing:hover .icon {
-      color: white; }
-    .wrapper-marketing:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #25a25a; }
-      .wrapper-marketing:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-marketing:hover .submenu::before {
-        content: "";
-        background-color: #25a25a;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-marketing {
-  color: #2ECC71;
-  font-size: 1.25rem; }
-  .icon-marketing::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-.wrapper-security {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  height: 100px;
-  width: 200px; }
-  .wrapper-security .button-security {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125rem; }
-  .wrapper-security:hover {
-    color: white;
-    background-color: #F62459; }
-    .wrapper-security:hover .icon {
-      color: white; }
-    .wrapper-security:hover .submenu {
-      font-size: 1rem;
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 45px;
-      background-color: #de093f; }
-      .wrapper-security:hover .submenu a {
-        color: white;
-        align-self: center;
-        text-decoration: none; }
-      .wrapper-security:hover .submenu::before {
-        content: "";
-        background-color: #de093f;
-        position: absolute;
-        height: 100%;
-        width: 200vw;
-        left: -100vw;
-        z-index: -1; }
-
-.icon-security {
-  color: #F62459;
-  font-size: 1.25rem; }
-  .icon-security::before {
-    display: flex;
-    justify-content: center;
-    font-family: "FontAwesome";
-    content: ""; }
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+scss/style.scss:67
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:688:in `block'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ver not working\": expected \"{\", was \"}\"\A         on line 67 of scss/style.scss\A \A 62:         text-decoration: none;\A 63:         text-transform: uppercase;\A 64:         color: white;\A 65:         &:hover{\A 66:             background-color: darken($color-design, 10);   up to here hover not working\A 67:         }\A 68:         @include place-awesome-icon('arrow', $orientation: 'after');\A 69:     }\A 70:     .hero-item{\A 71:         @include MQ('2','and-smaller'){\A 72:             align-self: center;"; }

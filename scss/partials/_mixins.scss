@@ -1,6 +1,4 @@
 
-
-
 @mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
     &::before {
     content:"";
@@ -25,14 +23,14 @@
     }   
 }
 
-@mixin place-awesome-icon($key, $size: $default-awesome-icon-size){
-    @if map-has-key($awesome_icon_map,$key){
+@mixin place-awesome-icon($name, $size: $default-awesome-icon-size, $orientation: 'before'){
+    @if map-has-key($awesome_icon_map,$name){
         font-size: $size;
-        &::before{
+        &::#{$orientation}{
             display:flex;
             justify-content: center;
             font-family: "FontAwesome";
-            content: map-get($awesome_icon_map,$key);
+            content: map-get($awesome_icon_map,$name);
         }
     }@else{
         @error "Your trying to call a 'font name' that does not exist in the awesome_icon_map used in the @mixin place-awesome-icon().";
