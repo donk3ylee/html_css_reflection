@@ -28,7 +28,6 @@
 @each $name, $color in $menu_color_map{
     .wrapper-#{$name}{
         display:flex;
-        //position: relative;
         flex-direction: column;
         text-align: center;
         justify-content: center;
@@ -54,7 +53,6 @@
                     align-self: center;
                     text-decoration: none;
                 }
-                font-size: 1rem;
                 display:flex;
                 flex-direction: row;
                 position: absolute;
@@ -62,6 +60,8 @@
                 top: 100px;
                 left: 0;
                 width: 1200px;
+                z-index: 1;
+                font-size: 1rem;
                 @include MQ('3','and-smaller'){
                     width: calc(6*160px);
                 }
