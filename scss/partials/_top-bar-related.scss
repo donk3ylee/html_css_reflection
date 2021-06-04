@@ -16,6 +16,10 @@
 
 %btn{
     display:inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    
     color: white;
     font-size: 1.125rem;
     cursor: pointer;
@@ -40,7 +44,6 @@
     }
      @include MQ('1','and-smaller'){
          display: inline-flex;
-    //     order:2;
     }
 } 
 
@@ -51,7 +54,6 @@
     @include place-awesome-icon('mouse');
     @include MQ('2','and-bigger'){
         display:inline-flex;
-    //     order:4;
     }
 }
 
@@ -62,7 +64,6 @@
     @include place-awesome-icon('plane');
     @include MQ('2','and-bigger'){
         display:inline-flex;
-        // order:5;
     }
 }
 
@@ -101,7 +102,7 @@
      display:none;
      margin-left:15px;
     
-    @include MQ('1','and-bigger'){ //smaller, between phone and hamburger
+    @include MQ('1','and-bigger'){ 
         display: inline-flex;
         width: 200px;
     }
