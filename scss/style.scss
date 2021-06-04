@@ -5,18 +5,51 @@
 
 @import "partials/top-bar-related";
 @import "partials/top-menu-related";
+@import "partials/slider-related";
+
 
 
 body{
-    display:flex;
-    justify-content: center;
     font-family: Poppins,sans-serif;
-    width:100%;
+    // width:100%;
+
+    pointer-events: none;
 }
 
 .main-wrapper {
     display: grid;
     grid-template-columns: minmax(500px,1200px);
     grid-template-rows: auto 1fr 990px;
-    justify-content: start;
+    justify-content: center;
+}
+
+/* workaround: if you set an element to a negative z-index (like I did to the scroller image so
+that it went under the submenu) you have to set any layer now covering it to pointer-events:none;
+and then set the z-index of the area it is located in below to a z-index deeper than the z-index
+of the element set. */
+header{
+    pointer-events: all;
+}
+main{
+    pointer-events: all;
+    z-index: -99;
+}
+footer{
+    pointer-events: all;
+}
+// END workaround
+
+
+#article-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 310px 310px;
+    grid-template-areas: "article article article .",
+                     "article article article article";
+    gap: 40px;
+    border: blue 5px solid;
+
+    article{
+        grid-area: article;
+    }
 }

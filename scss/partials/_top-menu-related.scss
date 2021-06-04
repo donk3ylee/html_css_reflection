@@ -28,11 +28,15 @@
 @each $name, $color in $menu_color_map{
     .wrapper-#{$name}{
         display:flex;
+        //position: relative;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         height: 100px;
         width: 200px;
+        @include MQ('3','and-smaller'){
+            width: 160px;
+        }
         .button-#{$name}{
             color: white;
             text-decoration: none;
@@ -52,14 +56,18 @@
                 }
                 font-size: 1rem;
                 display:flex;
+                flex-direction: row;
                 position: absolute;
                 justify-content: space-between;
                 top: 100px;
-                left:0;
-                width: 100%;
+                left: 0;
+                width: 1200px;
+                @include MQ('3','and-smaller'){
+                    width: calc(6*160px);
+                }
                 height: 45px;
-                @include fix-normalize-transparency($color);
                 @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
+                @include fix-normalize-transparency($color);
             } 
         }
     }

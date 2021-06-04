@@ -187,6 +187,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-design {
+      width: 160px; } }
   .wrapper-design .button-design {
     color: white;
     text-decoration: none;
@@ -199,17 +202,21 @@
     .wrapper-design:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #79539a; }
       .wrapper-design:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-design:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-design:hover .submenu::before {
         content: "";
         background-color: #79539a;
@@ -235,6 +242,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-support {
+      width: 160px; } }
   .wrapper-support .button-support {
     color: white;
     text-decoration: none;
@@ -247,17 +257,21 @@
     .wrapper-support:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #286abd; }
       .wrapper-support:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-support:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-support:hover .submenu::before {
         content: "";
         background-color: #286abd;
@@ -283,6 +297,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-telecom {
+      width: 160px; } }
   .wrapper-telecom .button-telecom {
     color: white;
     text-decoration: none;
@@ -295,17 +312,21 @@
     .wrapper-telecom:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #bc2c28; }
       .wrapper-telecom:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-telecom:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-telecom:hover .submenu::before {
         content: "";
         background-color: #bc2c28;
@@ -336,6 +357,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-software {
+      width: 160px; } }
   .wrapper-software .button-software {
     color: white;
     text-decoration: none;
@@ -348,17 +372,21 @@
     .wrapper-software:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #526781; }
       .wrapper-software:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-software:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-software:hover .submenu::before {
         content: "";
         background-color: #526781;
@@ -384,6 +412,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-marketing {
+      width: 160px; } }
   .wrapper-marketing .button-marketing {
     color: white;
     text-decoration: none;
@@ -396,17 +427,21 @@
     .wrapper-marketing:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #25a25a; }
       .wrapper-marketing:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-marketing:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-marketing:hover .submenu::before {
         content: "";
         background-color: #25a25a;
@@ -432,6 +467,9 @@
   justify-content: center;
   height: 100px;
   width: 200px; }
+  @media (max-width: 1200px) {
+    .wrapper-security {
+      width: 160px; } }
   .wrapper-security .button-security {
     color: white;
     text-decoration: none;
@@ -444,17 +482,21 @@
     .wrapper-security:hover .submenu {
       font-size: 1rem;
       display: flex;
+      flex-direction: row;
       position: absolute;
       justify-content: space-between;
       top: 100px;
       left: 0;
-      width: 100%;
+      width: 1200px;
       height: 45px;
       background-color: #de093f; }
       .wrapper-security:hover .submenu a {
         color: white;
         align-self: center;
         text-decoration: none; }
+      @media (max-width: 1200px) {
+        .wrapper-security:hover .submenu {
+          width: calc(6*160px); } }
       .wrapper-security:hover .submenu::before {
         content: "";
         background-color: #de093f;
@@ -473,16 +515,98 @@
     font-family: "FontAwesome";
     content: ""; }
 
-body {
+#hero-slider {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: min(calc(((100vw - 1200px)*-1)/2), 0px);
+  right: 0px;
+  z-index: -2;
+  height: calc(100vh - 220px);
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), black), url("../img/sliding/home-3wAI.jpg");
+  color: white; }
+  @media (max-width: 707px) {
+    #hero-slider {
+      top: 25px; } }
+  #hero-slider h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 25px; }
+  #hero-slider p {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 25px; }
+  #hero-slider a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #926FB1;
+    min-height: 65px;
+    min-width: 225px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.25rem; }
+    #hero-slider a:hover {
+      background-color: #79539a; }
+    #hero-slider a::after {
+      display: flex;
+      justify-content: center;
+      font-family: "FontAwesome";
+      content: ""; }
+  @media (max-width: 908px) {
+    #hero-slider .hero-item {
+      align-self: center; } }
+  @media (min-width: 908px) {
+    #hero-slider .hero-item {
+      align-self: flex-start;
+      margin-left: 12%; } }
+  @media (min-width: 1200px) {
+    #hero-slider .hero-item {
+      align-self: flex-start;
+      margin-left: calc((100vw - 1200px)/2); } }
+
+body {
   font-family: Poppins,sans-serif;
-  width: 100%; }
+  pointer-events: none; }
 
 .main-wrapper {
   display: grid;
   grid-template-columns: minmax(500px, 1200px);
   grid-template-rows: auto 1fr 990px;
-  justify-content: start; }
+  justify-content: center; }
+
+/* workaround: if you set an element to a negative z-index (like I did to the scroller image so
+that it went under the submenu) you have to set any layer now covering it to pointer-events:none;
+and then set the z-index of the area it is located in below to a z-index deeper than the z-index
+of the element set. */
+header {
+  pointer-events: all; }
+
+main {
+  pointer-events: all;
+  z-index: -99; }
+
+footer {
+  pointer-events: all; }
+
+#article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 310px 310px;
+  grid-template-areas: "article article article .", "article article article article";
+  gap: 40px;
+  border: blue 5px solid; }
+  #article-grid article {
+    grid-area: article; }
 
 /*# sourceMappingURL=style.css.map */
