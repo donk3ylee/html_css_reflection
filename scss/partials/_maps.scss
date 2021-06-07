@@ -5,7 +5,18 @@ $menu_color_map:(
     'telecom':$color-telecom,
     'software':$color-software,
     'marketing':$color-marketing,
-    'security':$color-security);
+    'security':$color-security,
+    );
+
+$article_color_map:(
+    'de': $color-design,
+    'su':$color-support,
+    'te':$color-telecom,
+    'so':$color-software,
+    'ma':$color-marketing,
+    'se':$color-security,
+    'tr':$color-software,
+    );
 
     // Used with the @mixin place-awesome-icon
 $awesome_icon_map:(

@@ -23,25 +23,66 @@ body{
 #article-grid{
     display: grid;
     width: 100%;
-    height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-    grid-template-rows: repeat(auto-fill, minmax(250px, auto));
-    grid-template-areas:
-        "software support marketing"
-        "telecom design security security"; working on this
+    // height: auto;
     gap: 40px;
+    // grid-template-columns: repeat(auto-fit, 1fr);
+    // grid-template-rows: repeat(auto-fit, auto);
+    // grid-auto-columns: repeat(auto-fit, 1fr);
+    // grid-template-rows: auto;
+    grid-template:
+                "so" 310px
+                "su" 310px
+                "ma" 310px
+                "te" 310px
+                "de" 310px
+                "se" 310px
+                "tr" 310px
+                / minmax(auto, 720px);
+    @include MQ('1','and-bigger'){
+        // grid-template-columns: repeat(auto-fit, 50%); // repeat(auto-fit, minmax(344px, 720px));
+        // grid-template-rows: repeat(auto-fill, auto);
+        grid-template:
+                "so  so" //610px
+                "su  su" //610px
+                "ma  ma" //610px
+                "te  de" //610px
+                "se  tr";// 610px
+                // / repeat(3, minmax(auto, 720px)) repeat(2, 50%);
+                // border: red 5px solid;
+    } bollocks i'm using bootstrap. Netmatters used it on their site!!
+    @include MQ('2','and-bigger'){
+        grid-template-columns: repeat( 6, 1fr);
+        grid-template-rows: repeat(3, calc(100% / 3));
+        grid-template-areas:
+                "so  so  su  su  ma  ma"
+                "te  te  te  de  de  de"
+                "se  se  se  tr  tr  tr";
+    }
+        /*  software
+            support
+            marketing
+            telecom
+            design
+            security
+            training  */
+    
+
     border: blue 5px solid;
-    .article{
-        // @use "map:$menu-colour-map";
-        // map-set($menu-color-map, "training", #926FB1); // map-set not working. want to add "training":#926FB1
-        @each $name, $color in $menu_color_map{
+    & .article{
+        @each $name, $color in $article_color_map{
             &-#{$name}{
                 grid-area: #{$name};
-                display:flex;
                 flex-direction: column;
                 background-color: darkgoldenrod;
+                height:100%;
+                width:100%;
             }
-
         }
+        // @media(min-width: 707px){
+        //     & .article-telecom & .article-design & .article-security & .article-training{
+        //         flex-basis: calc(100% / 2);
+        //         border: red 5px solid;
+        //     }
+        // }
     }
 }
