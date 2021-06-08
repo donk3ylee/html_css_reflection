@@ -1,4 +1,5 @@
 
+
 $menu_color_map:(
     'design': $color-design,
     'support':$color-support,
@@ -9,13 +10,13 @@ $menu_color_map:(
     );
 
 $article_color_map:(
-    'de': $color-design,
-    'su':$color-support,
-    'te':$color-telecom,
-    'so':$color-software,
-    'ma':$color-marketing,
-    'se':$color-security,
-    'tr':$color-software,
+    'design': $color-design,
+    'support':$color-support,
+    'telecom':$color-telecom,
+    'software':$color-software,
+    'marketing':$color-marketing,
+    'security':$color-security,
+    'training':$color-software,
     );
 
     // Used with the @mixin place-awesome-icon
@@ -40,6 +41,25 @@ $MQ_func_map:(
 
     // Used with the @mixin MQ
 $MQ_breakpoints_map:(
-    '1':'707px',
-    '2':'908px',
-    '3':'1200px');
+    '0':'0px',
+    '1':'710px',
+    '2':'910px',
+    '3':'1150px',
+    '4':'1150px');
+
+    // OVERWRITING the bootstrap grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 710px,  // 576px,   These have been overridden to behave like netmatters breakpoints
+    md: 910px,  // 768px,   which must have also been altered at this level because they too
+    lg: 1150px,  // 992px,  are using bootstrap grid for this area.
+
+    xl: 1200px,
+    xxl: 1400px
+  ); breakpoints not being overridden?
+
+  $container-max-widths: (
+    sm: 420px,
+    md: 720px,
+    lg: 960px
+  );
