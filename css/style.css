@@ -640,7 +640,8 @@ body {
   border-radius: 50%;
   margin-bottom: 15px;
   height: 60px;
-  width: 60px; }
+  width: 60px;
+  color: white; }
 
 .article-design {
   font-size: 1.25rem; }
