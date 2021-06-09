@@ -19,14 +19,17 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.125rem;
+    font-size: 1.063rem;
     cursor: pointer;
     text-transform: uppercase;
+    height: auto;
     min-width: 55px;
     min-height: 55px;
     text-decoration: none;
+    border-radius: 3px;
     line-height: 36px;
     margin-left: 15px;
+    white-space: normal;
 }
 
 .btn-phone{

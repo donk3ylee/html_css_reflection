@@ -16,7 +16,7 @@ $article_color_map:(
     'software':$color-software,
     'marketing':$color-marketing,
     'security':$color-security,
-    'training':$color-software,
+    'training':$color-design,
     );
 
     // Used with the @mixin place-awesome-icon
@@ -32,6 +32,7 @@ $awesome_icon_map:(
     'marketing':'\f681',
     'security':'\f3ed',
     'arrow':'\f061',
+    'training':'\f19d',
     );
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
@@ -56,7 +57,7 @@ $grid-breakpoints: (
 
     xl: 1200px,
     xxl: 1400px
-  ); breakpoints not being overridden?
+  );
 
   $container-max-widths: (
     sm: 420px,

@@ -33,19 +33,83 @@ body{
     margin-top:50px;
     align-content: center;
 }
+
+.articles a{
+    text-decoration: none;
+}
+
 %article{
-    border: 1px solid black;
-    // padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
-    min-width: 270px;
-    need to write a stacked meadia query to adjust the sizes of the article boxes to get the same
-    behaviour as netmatters site
+    padding: 30px;
+    box-shadow: 0 3px 35px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    font-size: .8125rem;
+    line-height: 1.375rem;
+    // margin-bottom: 13px;
+    font-weight: 400;
+    color: #333645;
+    h2{
+        font-size: 1.125rem;
+    }
+    hr{
+        width: 25px;
+        border: solid 2.5px black;
+    }
+    p{
+        text-align: center;
+        font-size: .8125rem;
+        line-height: 1.375rem;
+        // margin-bottom: 13px;
+        font-weight: 400;
+    }
+    button{
+        @extend %btn;
+        border: none;
+    }
+}
+
+%common-article-icon{
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    height: 60px;
+    width: 60px;
 }
 
 @each $name, $color in $article_color_map{
     .article-#{$name}{
         @extend %article;
+        button{
+            background-color: #{$color};
+        }
+        @include place-awesome-icon(#{$name}){
+            @extend %common-article-icon;
+            background-color: #{$color};
+            @if $name=="telecom"{
+                @include rotate-phone-icon;
+            }
+        }
+        &:hover{
+            color:white;
+            background-color: #{$color};
+            @include place-awesome-icon(#{$name}){
+                @extend %common-article-icon;
+                color: #{$color};
+                background-color: white;
+            }
+            hr{
+                border: solid 2.5px white;
+            }
+            button{
+                background-color: white;
+                color: #{$color};
+            }
+        }
     }
 }
-
 

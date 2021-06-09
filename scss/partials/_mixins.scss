@@ -31,9 +31,10 @@
             justify-content: center;
             font-family: "FontAwesome";
             content: map-get($awesome_icon_map,$name);
+            @content;
         }
     }@else{
-        @error "Your trying to call a 'font name' that does not exist in the awesome_icon_map used in the @mixin place-awesome-icon().";
+        @error "Your trying to call the font name '#{$name}' that does not exist in the awesome_icon_map used in the @mixin place-awesome-icon().";
     }
 }
 
