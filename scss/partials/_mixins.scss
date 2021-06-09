@@ -8,6 +8,7 @@
     width: 200vw;
     left: -100vw;
     z-index: -1;
+    @content;
   }
 }
 

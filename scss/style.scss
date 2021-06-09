@@ -6,6 +6,7 @@
 @import "partials/top-bar-related";
 @import "partials/top-menu-related";
 @import "partials/slider-related";
+@import "partials/article-section-related";
 
 
 
@@ -20,97 +21,43 @@ body{
     justify-content: center;
 }
 
-    /*  software
-        support
-        marketing
-        telecom
-        design
-        security
-        training  */
 
-
-.articles.container{
-    margin-top:50px;
-    align-content: center;
-}
-
-.articles a{
-    text-decoration: none;
-}
-
-%article{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 30px;
-    box-shadow: 0 3px 35px rgba(0,0,0,0.1);
-    border: 1px solid #ccc;
-    font-size: .8125rem;
-    line-height: 1.375rem;
-    // margin-bottom: 13px;
-    font-weight: 400;
-    color: #333645;
-    h2{
-        font-size: 1.125rem;
+#about{
+    @include make-bgcolor-wide(#333645){
+    background-image: url("../img/branded.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto 73%;
     }
-    hr{
-        width: 25px;
-        border: solid 2.5px black;
+    color: white;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    h1{
+        padding-top: 3rem;
+        font-size: 2.5rem;
+        text-transform: uppercase;
     }
     p{
-        text-align: center;
-        font-size: .8125rem;
-        line-height: 1.375rem;
-        // margin-bottom: 13px;
-        font-weight: 400;
+        font-size:1rem;
+        line-height: 1.875rem;
+        margin-bottom: 25px;
     }
     button{
         @extend %btn;
-        border: none;
-    }
-}
-
-%common-article-icon{
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    height: 60px;
-    width: 60px;
-    color: white;
-}
-
-@each $name, $color in $article_color_map{
-    .article-#{$name}{
-        @extend %article;
-        button{
-            background-color: #{$color};
-        }
-        @include place-awesome-icon(#{$name}){
-            @extend %common-article-icon;
-            background-color: #{$color};
-            @if $name=="telecom"{
-                @include rotate-phone-icon;
-            }
+        margin-left: 0;
+        margin-bottom: 3rem;
+        // font-size: 0.6rem;
+        color: #333645;
+        background-color: white;
+        @include place-awesome-icon('arrow',$orientation:'after'){
+            margin-left: 1rem;
         }
         &:hover{
-            color:white;
-            background-color: #{$color};
-            @include place-awesome-icon(#{$name}){
-                @extend %common-article-icon;
-                color: #{$color};
-                background-color: white;
-            }
-            hr{
-                border: solid 2.5px white;
-            }
-            button{
-                background-color: white;
-                color: #{$color};
-            }
+            background-color: #EBEBEB;
         }
     }
 }
 
+#news{
+    @include make-bgcolor-wide(#FFFFFF);
+}

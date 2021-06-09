@@ -13,12 +13,13 @@
   height: 63px;
   min-width: auto; }
 
-.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search, .article-design button, .article-support button, .article-telecom button, .article-software button, .article-marketing button, .article-security button, .article-training button {
+.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search, .article-design button, .article-support button, .article-telecom button, .article-software button, .article-marketing button, .article-security button, .article-training button, #about button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0 0.8em;
   color: white;
-  font-size: 1.063rem;
+  font-size: 1.063rem !important;
   cursor: pointer;
   text-transform: uppercase;
   height: auto;
@@ -585,22 +586,6 @@
       align-self: flex-start;
       margin-left: calc((100vw - 1200px)/2); } }
 
-body {
-  font-family: Poppins,sans-serif; }
-
-.main-wrapper {
-  display: grid;
-  grid-template-columns: minmax(500px, 1200px);
-  grid-template-rows: auto auto 990px;
-  justify-content: center; }
-
-/*  software
-    support
-    marketing
-    telecom
-    design
-    security
-    training  */
 .articles.container {
   margin-top: 50px;
   align-content: center; }
@@ -836,5 +821,62 @@ body {
     .article-training:hover button {
       background-color: white;
       color: #926FB1; }
+
+body {
+  font-family: Poppins,sans-serif; }
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: minmax(500px, 1200px);
+  grid-template-rows: auto auto 990px;
+  justify-content: center; }
+
+#about {
+  color: white;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem; }
+  #about::before {
+    content: "";
+    background-color: #333645;
+    position: absolute;
+    height: 100%;
+    width: 200vw;
+    left: -100vw;
+    z-index: -1;
+    background-image: url("../img/branded.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto 73%; }
+  #about h1 {
+    padding-top: 3rem;
+    font-size: 2.5rem;
+    text-transform: uppercase; }
+  #about p {
+    font-size: 1rem;
+    line-height: 1.875rem;
+    margin-bottom: 25px; }
+  #about button {
+    margin-left: 0;
+    margin-bottom: 3rem;
+    color: #333645;
+    background-color: white;
+    font-size: 1.25rem; }
+    #about button::after {
+      display: flex;
+      justify-content: center;
+      font-family: "FontAwesome";
+      content: "";
+      margin-left: 1rem; }
+    #about button:hover {
+      background-color: #EBEBEB; }
+
+#news::before {
+  content: "";
+  background-color: #FFFFFF;
+  position: absolute;
+  height: 100%;
+  width: 200vw;
+  left: -100vw;
+  z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */
