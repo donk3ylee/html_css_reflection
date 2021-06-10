@@ -822,15 +822,6 @@
       background-color: white;
       color: #926FB1; }
 
-body {
-  font-family: Poppins,sans-serif; }
-
-.main-wrapper {
-  display: grid;
-  grid-template-columns: minmax(500px, 1200px);
-  grid-template-rows: auto auto 990px;
-  justify-content: center; }
-
 #about {
   color: white;
   padding-left: 3.2rem;
@@ -870,6 +861,39 @@ body {
     #about button:hover {
       background-color: #EBEBEB; }
 
+body {
+  font-family: Poppins,sans-serif; }
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: minmax(500px, 1200px);
+  grid-template-rows: auto auto 990px;
+  justify-content: center; }
+
+.latest {
+  position: relative;
+  height: 110px;
+  border-bottom: 0px; }
+  .latest::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 200vw;
+    left: -100vw;
+    z-index: -1; }
+  .latest div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #333645;
+    border-bottom: #333645 solid 5px;
+    height: 100%;
+    width: fit-content; }
+
 #news::before {
   content: "";
   background-color: #FFFFFF;
@@ -877,6 +901,7 @@ body {
   height: 100%;
   width: 200vw;
   left: -100vw;
-  z-index: -1; }
+  z-index: -1;
+  box-shadow: inset 0 5px 35px rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=style.css.map */
