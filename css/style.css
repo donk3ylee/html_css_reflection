@@ -13,7 +13,7 @@
   height: 63px;
   min-width: auto; }
 
-.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search, .article-design button, .article-support button, .article-telecom button, .article-software button, .article-marketing button, .article-security button, .article-training button, #about button {
+.btn-phone, .btn-support, .btn-contact, .btn-hamburger, .btn-search, .btn-small-search, .article-design button, .article-support button, .article-telecom button, .article-software button, .article-marketing button, .article-security button, .article-training button, #about button, #news .item .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -536,7 +536,6 @@
   top: 0px;
   bottom: 0px;
   left: min(calc(((100vw - 1200px)*-1)/2), 0px);
-  right: 0px;
   height: calc(100vh - 220px);
   width: 100vw;
   background-repeat: no-repeat;
@@ -823,6 +822,7 @@
       color: #926FB1; }
 
 #about {
+  position: relative;
   color: white;
   padding-left: 3.2rem;
   padding-right: 3.2rem; }
@@ -836,8 +836,8 @@
     z-index: -1;
     background-image: url("../img/branded.png");
     background-repeat: no-repeat;
-    background-position: top right;
-    background-size: auto 73%; }
+    background-position: 95vw center;
+    background-size: auto 600px; }
   #about h1 {
     padding-top: 3rem;
     font-size: 2.5rem;
@@ -872,8 +872,7 @@ body {
 
 .latest {
   position: relative;
-  height: 110px;
-  border-bottom: 0px; }
+  height: 110px; }
   .latest::before {
     content: "";
     background-color: white;
@@ -889,19 +888,100 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.25rem;
+    height: 110px;
     color: #333645;
     border-bottom: #333645 solid 5px;
-    height: 100%;
     width: fit-content; }
 
-#news::before {
-  content: "";
-  background-color: #FFFFFF;
-  position: absolute;
-  height: 100%;
-  width: 200vw;
-  left: -100vw;
-  z-index: -1;
-  box-shadow: inset 0 5px 35px rgba(0, 0, 0, 0.1); }
+#news {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 50px 0 50px 0;
+  height: fit-content;
+  width: 100%; }
+  #news .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    min-width: 100%;
+    max-height: 710px;
+    border: solid 1px #ccc;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 710px) {
+      #news .item {
+        max-width: 345px;
+        min-height: 570px; } }
+    @media (min-width: 910px) {
+      #news .item {
+        max-width: 440px;
+        min-height: 630px; } }
+    @media (min-width: 1150px) {
+      #news .item {
+        min-height: 630px; } }
+    #news .item .img-constrainer {
+      overflow: hidden;
+      width: 100%; }
+    #news .item img.item-img {
+      height: auto;
+      width: 100%; }
+      @media (min-width: 710px) {
+        #news .item img.item-img {
+          transform-origin: 50% 50%;
+          transition-duration: .25s; }
+          #news .item img.item-img:hover {
+            transform: scale(1.1);
+            opacity: 0.7; } }
+    #news .item h2 {
+      margin-top: 30px;
+      color: #4183d7;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 600;
+      padding: 0 30px; }
+    #news .item p {
+      margin-top: auto;
+      line-height: 1.375rem;
+      font-size: .8125rem;
+      padding: 0 30px; }
+    #news .item .button {
+      background-color: #4183d7;
+      width: fit-content;
+      margin-top: auto;
+      margin-left: 30px;
+      margin-bottom: 30px; }
+      #news .item .button:hover {
+        background-color: #2a6ec6;
+        color: white; }
+    #news .item hr {
+      width: 85%;
+      align-self: center;
+      margin-top: 0; }
+    #news .item .logo {
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      #news .item .logo img {
+        margin: 0px 15px 0px 30px;
+        float: left;
+        width: 47px;
+        height: 47px; }
+      #news .item .logo .cite-container {
+        margin-left: 20px; }
+      #news .item .logo .date {
+        margin-top: 0; }
+
+#sponsors {
+  position: relative;
+  top: 50px; }
+  #sponsors::before {
+    content: "";
+    background-color: blue;
+    position: absolute;
+    height: 100%;
+    width: 200vw;
+    left: -100vw;
+    z-index: -1;
+    box-shadow: inset 0 5px 35px rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=style.css.map */

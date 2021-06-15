@@ -47,20 +47,3 @@ $MQ_breakpoints_map:(
     '2':'910px',
     '3':'1150px',
     '4':'1150px');
-
-    // OVERWRITING the bootstrap grid breakpoints
-$grid-breakpoints: (
-    xs: 0,
-    sm: 710px,  // 576px,   These have been overridden to behave like netmatters breakpoints
-    md: 910px,  // 768px,   which must have also been altered at this level because they too
-    lg: 1150px,  // 992px,  are using bootstrap grid for this area.
-
-    xl: 1200px,
-    xxl: 1400px
-  );
-
-  $container-max-widths: (
-    sm: 420px,
-    md: 720px,
-    lg: 960px
-  );

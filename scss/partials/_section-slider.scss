@@ -11,8 +11,6 @@
     }
     bottom: 0px;
     left: min(calc(((100vw - 1200px)*-1)/2),0px);  // this made my brain and my balls ache
-    right: 0px;
-    // z-index:-2;
     height: calc(100vh - 220px);
     width: 100vw;
     background-repeat: no-repeat;
