@@ -1,18 +1,10 @@
 
 #about{
-    position:relative;
-    @include make-bgcolor-wide(#333645){
-    background-image: url("../img/branded.png");
-    background-repeat: no-repeat;
-    background-position: 95vw center; //calc((100/200vw)*90);
-    background-size: auto 600px;
-    }
     color: white;
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
     h1{
-        padding-top: 3rem;
-        font-size: 2.5rem;
+        padding-top: 1rem;
+        font-size: 2.25rem;
+        font-weight: 400;
         text-transform: uppercase;
     }
     p{
@@ -24,7 +16,6 @@
         @extend %btn;
         margin-left: 0;
         margin-bottom: 3rem;
-        // font-size: 0.6rem;
         color: #333645;
         background-color: white;
         @include place-awesome-icon('arrow',$orientation:'after'){

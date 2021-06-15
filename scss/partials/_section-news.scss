@@ -1,0 +1,109 @@
+
+.latest{
+    height:110px;
+    & div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.25rem;
+        height: 110px;
+        color: #333645;
+        border-bottom: #333645 solid 5px;
+        width:fit-content;
+    }
+}
+
+#news{
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 50px 0 50px 0;
+    height: fit-content;
+    width: 100%;
+    .item{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        min-width: 100%;
+        max-height: 710px;
+        border: solid 1px #ccc;
+        box-shadow: 0 3px 35px rgba(0,0,0,0.1);
+        @include MQ('1','and-bigger'){
+            max-width: 345px;
+            min-height: 570px;
+        } 
+        @include MQ('2','and-bigger'){
+            max-width: 440px;
+            min-height: 630px;
+        }
+        @include MQ('3','and-bigger'){
+            min-height: 630px;
+        }
+        .img-constrainer{
+            overflow: hidden;
+            width: 100%;
+        }
+        img.item-img{
+            height: auto;
+            width: 100%;
+            @include MQ('1','and-bigger'){
+                transform-origin: 50% 50%;
+                transition-duration: .25s;
+                &:hover{
+                transform: scale(1.1);
+                opacity: 0.7;
+                }
+            }
+        }
+        h2{
+            margin-top: 30px;
+            color: #4183d7;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+            padding: 0 30px;
+        }
+        p{
+            margin-top: auto;
+            line-height: 1.375rem;
+            font-size: .8125rem;
+            padding: 0 30px;
+        }
+        .button{
+            @extend %btn;
+            background-color:#4183d7;
+            width:fit-content;
+            margin-top:auto;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            &:hover{
+                background-color: darken($color: #4183d7, $amount: 8);
+                color: white;
+            }
+        }
+        hr{
+            width: 85%;
+            align-self: center;
+            margin-top: 0;
+        }
+        .logo{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            img{
+                margin: 0px 15px 0px 30px;
+                float: left;
+                width: 47px;
+                height: 47px;
+            }
+            .cite-container{
+                margin-left: 20px; 
+            }
+            .date{
+                margin-top: 0;
+            }
+        }
+    }
+}

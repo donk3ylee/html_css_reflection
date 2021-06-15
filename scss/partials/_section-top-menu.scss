@@ -5,14 +5,12 @@
     grid-template-columns: repeat(6, 200px);
     align-content: center;
     height: 100px;
-    background-color: $top-menu-bgcolor;
     text-transform:uppercase;
-    @include make-bgcolor-wide($top-menu-bgcolor);  /// Workaround to get this element to break out of the page wrapper container 100% viewport wide 
     @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
         justify-content:center;
         grid-template-columns: repeat(6, 160px);
     }
-    @include MQ('2','and-smaller'){  /// Make the menu dissapear at a particular breakpoint
+    @include MQ('2','and-smaller'){  /// Make the menu disappear at a particular breakpoint
         display: none;
     }
     .small{
