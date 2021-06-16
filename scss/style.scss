@@ -3,6 +3,7 @@
 @import "partials/mixins";
 @import "partials/lists";
 
+@import "partials/page-wrapper-builder";
 @import "partials/section-top-bar";
 @import "partials/section-top-menu";
 @import "partials/section-slider";
@@ -11,98 +12,38 @@
 @import "partials/section-news";
 
 
-
-
 body{
     font-family: Poppins,sans-serif;
 }
 
-%wrapper{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: fit-content;
-}
-
-%section-wrapper{
-    width: 1200px; //minmax(500px,1200px);
-    justify-content: center; 
-}
-
-.wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
-    &-top-bar{
-        @extend %wrapper;
-    }
-    &-top-menu{
-        @extend %wrapper;
-        background-color: $top-menu-bgcolor;
-    }
-    &-hero-slider{
-        @extend %wrapper;
-        align-items: center;
-        height: calc(100vh - 220px);
-        width: 100vw;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 1)),
-        url("../img/sliding/home-3wAI.jpg");
-        color: white;
-    }
-    &-articles{
-        @extend %wrapper;
-    }
-    &-about{
-        @extend %wrapper;
-        background-color: #333645;
-        background-image: url("../img/branded.png");
-        background-repeat: no-repeat;
-        background-position: 100%;
-        background-size: auto 100%;
-    }
-    &-latest{
-        @extend %wrapper;
-        background-color: white;
-        box-shadow: 0 5px 35px rgba(0,0,0,0.1);
-    }
-    &-news{
-        @extend %wrapper;
-
-    }
-}
-
-.section-wrapper{   // Wraps the contents of that section. Centers and constrains in the center of the page.
-    &-top-bar{
-        @extend %section-wrapper;
-    }
-    &-top-menu{
-        @extend %section-wrapper;
-        background-color: $top-menu-bgcolor;
-    }
-    &-hero-slider{
-        @extend %section-wrapper;
-    }
-    &-articles{
-        @extend %section-wrapper;
-        background-color: white;
-    }
-    &-about{
-        @extend %section-wrapper;
-        
-    }
-    &-latest{
-        @extend %section-wrapper;
-    }
-    &-news{
-        @extend %section-wrapper;
-
-    }
-}
-
 
 #sponsors{
-    position: relative;
-    top: 50px;
-    @include make-bgcolor-wide(blue){
-        box-shadow: inset 0 5px 35px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 40px 0;
+    text-align: center;
+    // border: 2px solid pink;
+    @include MQ('1','and-wider'){
+        width: 700px;
+    }
+    @include MQ('2','and-wider'){
+        width: 880px;
+    }
+    @include MQ('3','and-wider'){
+        width: 100%;
+    }
+    img{
+        @include MQ('1','and-wider'){
+            width: 75%;
+        }
+        @include MQ('2','and-wider'){
+            width:80%;
+        }
+        @include MQ('3','and-wider'){
+            width: 100%;
+        }
+        height: auto;
+
     }
 }

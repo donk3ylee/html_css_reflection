@@ -37,7 +37,7 @@ $awesome_icon_map:(
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
 $MQ_func_map:(
-    'and-bigger':'min-width',
+    'and-wider':'min-width',
     'and-smaller':'max-width');
 
     // Used with the @mixin MQ

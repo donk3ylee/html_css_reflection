@@ -35,11 +35,11 @@
         @include MQ('2','and-smaller'){
             align-self: center;
         }
-        @include MQ('2','and-bigger'){
+        @include MQ('2','and-wider'){
             align-self: flex-start;
             margin-left: 12%;
         }
-        @include MQ('3','and-bigger'){
+        @include MQ('3','and-wider'){
             align-self: flex-start;
             margin-left: 0;
             // margin-left: calc((100vw - 1200px)/2);

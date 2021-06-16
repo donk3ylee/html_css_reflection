@@ -31,15 +31,15 @@
         max-height: 710px;
         border: solid 1px #ccc;
         box-shadow: 0 3px 35px rgba(0,0,0,0.1);
-        @include MQ('1','and-bigger'){
+        @include MQ('1','and-wider'){
             max-width: 345px;
             min-height: 570px;
         } 
-        @include MQ('2','and-bigger'){
+        @include MQ('2','and-wider'){
             max-width: 440px;
             min-height: 630px;
         }
-        @include MQ('3','and-bigger'){
+        @include MQ('3','and-wider'){
             min-height: 630px;
         }
         .img-constrainer{
@@ -49,7 +49,7 @@
         img.item-img{
             height: auto;
             width: 100%;
-            @include MQ('1','and-bigger'){
+            @include MQ('1','and-wider'){
                 transform-origin: 50% 50%;
                 transition-duration: .25s;
                 &:hover{
@@ -64,10 +64,10 @@
             font-size: 1rem;
             line-height: 1.5rem;
             font-weight: 600;
-            padding: 0 30px;
+            padding: 0 30px 30px 30px;
         }
         p{
-            margin-top: auto;
+            margin-bottom: auto;
             line-height: 1.375rem;
             font-size: .8125rem;
             padding: 0 30px;

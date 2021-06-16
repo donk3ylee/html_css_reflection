@@ -1,14 +1,9 @@
 
-.articles.container{
-    // display: flex;
-    // justify-content: center;
-    // align-content: center;
-    // align-items: center; 
-    margin:50px 0; TODO why is the articles section left justified when 1090px or lower
-}
-
-.articles a{
-    text-decoration: none;
+.articles{
+    padding: 50px 0;
+    a{
+        text-decoration: none;
+    }
 }
 
 %article{

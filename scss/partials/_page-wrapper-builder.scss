@@ -1,0 +1,102 @@
+
+
+.section{   // Nested within the wrapper-NAME. Wraps the contents of that section. Centers and constrains in the center of the page.
+    
+    &-top-bar{
+        @include section-wrapper;
+    
+    }
+    &-top-menu{
+        @include section-wrapper;
+    }
+    &-slider{
+        @include section-wrapper($justify-content:flex-start);
+    }
+    &-articles{
+        @include section-wrapper;
+    }
+    &-about{
+        @include section-wrapper{
+            justify-content: flex-start;
+        }
+    }
+    &-latest{
+        @include section-wrapper{
+            justify-content: flex-start;
+        }
+    }
+    &-news{
+        @include section-wrapper;
+    }
+    &-sponsors{
+        @include section-wrapper;
+    }
+    &-newsletter{
+        @include section-wrapper{
+            justify-content: flex-start;
+        }
+    }
+    &-cards{
+        @include section-wrapper;
+    }
+    &-awards{
+        @include section-wrapper;
+    }
+}
+
+.wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
+    &-top-bar{
+        @include page-wide-section-wrapper;
+    }
+    &-top-menu{
+        @include page-wide-section-wrapper{
+            background-color: $top-menu-bgcolor;
+        }
+    }
+    &-hero-slider{
+        @include page-wide-section-wrapper{
+            align-items: center;
+            height: calc(100vh - 220px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 1)),
+            url("../img/sliding/home-3wAI.jpg");
+            color: white;
+        }
+    }
+    &-articles{
+        @include page-wide-section-wrapper;
+    }
+    &-about{
+        @include page-wide-section-wrapper{
+            background-color: #333645;
+            background-image: url("../img/branded.png");
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: auto 100%;
+        }
+    }
+    &-latest{
+        @include page-wide-section-wrapper{
+            background-color: white;
+            box-shadow: 0 5px 35px rgba(0,0,0,0.1);
+        }
+    }
+    &-news{
+        @include page-wide-section-wrapper;
+    }
+    &-sponsors{
+        @include page-wide-section-wrapper{
+        box-shadow: inset 0 5px 35px rgba(0,0,0,0.1);
+        }
+    }
+    &-newsletter{
+        @include page-wide-section-wrapper;
+    }
+    &-cards{
+        @include page-wide-section-wrapper;
+    }
+    &-awards{
+        @include page-wide-section-wrapper;
+    }
+}
