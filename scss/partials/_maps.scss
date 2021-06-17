@@ -1,49 +1,51 @@
 
 
 $menu_color_map:(
-    'design': $color-design,
-    'support':$color-support,
-    'telecom':$color-telecom,
-    'software':$color-software,
-    'marketing':$color-marketing,
-    'security':$color-security,
-    );
+            'design': $color-design,
+            'support':$color-support,
+            'telecom':$color-telecom,
+            'software':$color-software,
+            'marketing':$color-marketing,
+            'security':$color-security,
+);
 
 $article_color_map:(
-    'design': $color-design,
-    'support':$color-support,
-    'telecom':$color-telecom,
-    'software':$color-software,
-    'marketing':$color-marketing,
-    'security':$color-security,
-    'training':$color-design,
-    );
+            'design': $color-design,
+            'support':$color-support,
+            'telecom':$color-telecom,
+            'software':$color-software,
+            'marketing':$color-marketing,
+            'security':$color-security,
+            'training':$color-design,
+);
 
     // Used with the @mixin place-awesome-icon
 $awesome_icon_map:(
-    'plane':'\f1d8',
-    'mouse':'\f8cc',
-    'search':'\f002',
-    'hamburger':'\f0c9',
-    'design':'\f121',
-    'support':'\f108',
-    'telecom':'\f2a0',
-    'software':'\f00a',
-    'marketing':'\f681',
-    'security':'\f3ed',
-    'arrow':'\f061',
-    'training':'\f19d',
-    );
+            'plane':'\f1d8',
+            'mouse':'\f8cc',
+            'search':'\f002',
+            'hamburger':'\f0c9',
+            'design':'\f121',
+            'support':'\f108',
+            'telecom':'\f2a0',
+            'software':'\f00a',
+            'marketing':'\f681',
+            'security':'\f3ed',
+            'arrow':'\f061',
+            'training':'\f19d',
+);
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
 $MQ_func_map:(
-    'and-wider':'min-width',
-    'and-smaller':'max-width');
+            'and-wider':'min-width',
+            'and-smaller':'max-width',
+);
 
     // Used with the @mixin MQ
 $MQ_breakpoints_map:(
-    '0':'0px',
-    '1':'710px',
-    '2':'910px',
-    '3':'1150px',
-    '4':'1150px');
+            '0':'0px',
+            '1':'710px',
+            '2':'910px',
+            '3':'1150px',
+            '4':'1150px',
+);
