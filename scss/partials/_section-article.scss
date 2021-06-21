@@ -1,5 +1,9 @@
 
-.articles{
+#articles{
+    display:flex;
+    justify-content: center;
+    width: $page-width;
+    align-self: center;
     padding: 50px 0;
     a{
         text-decoration: none;
@@ -22,10 +26,6 @@
     h2{
         font-size: 1.125rem;
     }
-    hr{
-        width: 25px;
-        border: solid 2.5px black;
-    }
     p{
         text-align: center;
         font-size: .8125rem;
@@ -39,7 +39,7 @@
 }
 
 %common-article-icon{
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
     border-radius: 50%;
     margin-bottom: 15px;

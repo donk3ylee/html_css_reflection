@@ -2,46 +2,20 @@
 
 .section{   // Nested within the wrapper-NAME. Wraps the contents of that section. Centers and constrains in the center of the page.
     
-    &-top-bar{
-        @include section-wrapper;
-    
-    }
-    &-top-menu{
-        @include section-wrapper;
-    }
-    &-slider{
-        @include section-wrapper($justify-content:flex-start);
-    }
-    &-articles{
-        @include section-wrapper;
-    }
-    &-about{
-        @include section-wrapper{
-            justify-content: flex-start;
-        }
-    }
-    &-latest{
-        @include section-wrapper{
-            justify-content: flex-start;
-        }
-    }
-    &-news{
-        @include section-wrapper;
-    }
-    &-sponsors{
-        @include section-wrapper;
-    }
-    &-newsletter{
-        @include section-wrapper{
-            justify-content: flex-start;
-        }
-    }
-    &-cards{
-        @include section-wrapper;
-    }
-    &-awards{
-        @include section-wrapper;
-    }
+
+
+  
+    // &-newsletter{
+    //     @include section-wrapper{
+    //         justify-content: flex-start;
+    //     }
+    // }
+    // &-cards{
+    //     @include section-wrapper;
+    // }
+    // &-awards{
+    //     @include section-wrapper;
+    // }
 }
 
 .wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
@@ -92,6 +66,7 @@
     }
     &-newsletter{
         @include page-wide-section-wrapper;
+        background-color: #ddd;
     }
     &-cards{
         @include page-wide-section-wrapper;

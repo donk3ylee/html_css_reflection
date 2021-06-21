@@ -1,11 +1,8 @@
 
-@mixin section-wrapper($display:flex, $width: 1200px, $justify-content: center, $align-items:center){
-    display:$display;
-    width: $width;
-    justify-content: $justify-content;
-    align-items: $align-items; 
-    @content;
-}
+    // display: flex;
+    // width: 1200px;
+    // justify-content: center;
+    // align-items: center;
 
 @mixin page-wide-section-wrapper{
     display: flex;
@@ -31,7 +28,7 @@
 @mixin MQ($bp, $func){
     @if not map-has-key($MQ_breakpoints_map,$bp){
         @error "Your trying to call a 'break point' that does not exist in the MQ_breakpoints_map map used in the @mixin MQ().";
-    }@elseif not map-has-key($MQ_func_map, $func){
+    }@else if not map-has-key($MQ_func_map, $func){
         @error "Your trying to use a $func that does not exist in the $MQ_func_map map used in the @mixin MQ().";
     }@else{
         @media(map-get($MQ_func_map,$func): map-get($MQ_breakpoints_map,$bp)){

@@ -1,5 +1,10 @@
 
 #about{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    text-align: left;
+    justify-content: flex-start;
     color: white;
     margin: 0 5%;
     h1{

@@ -2,6 +2,9 @@
 .menu-top{
     display:grid;
     position:relative;
+    justify-content: center;
+    width: $page-width;
+    align-items: center;
     grid-template-columns: repeat(6, 200px);
     align-content: center;
     height: 100px;

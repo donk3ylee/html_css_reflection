@@ -2,6 +2,7 @@
 @import "partials/maps";
 @import "partials/mixins";
 @import "partials/lists";
+@import "partials/helpers";
 
 @import "partials/page-wrapper-builder";
 @import "partials/section-top-bar";
@@ -10,58 +11,59 @@
 @import "partials/section-article";
 @import "partials/section-about";
 @import "partials/section-news";
+@import "partials/section-sponsors";
 
 
 body{
     font-family: Poppins,sans-serif;
+    color: #333645;
 }
 
-
-#sponsors{
-    display: flex;
-    justify-content: space-around;
+#newsletter{
+    display: block;
+    width: 1200px;
+    // padding: 50px;
+    // justify-content: flex-start;
     // align-items: center;
-    flex-wrap: nowrap;
-    padding: 40px 0;
-    text-align: center;
-    @media(min-width: 710px){  // Set the width of the space-around container at each screen size to emulate layout
-        width: 710px;
+    .signup-container{
+        display: block;
+        width: 100%;
+        padding: 50px;
+        @include MQ('1','and-wider'){
+            width: 655px;
+        }
+        @include MQ('2','and-wider'){
+            width: 880px;
+        }
     }
-    @media(min-width: 910px){
-        width: 955px;
+    h2{
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 0 0 15px;
+        line-height: 1.1rem;
     }
-    @media(min-width: 1150px){
-        width: 1180px;
-    }                               // end
-    @each $name in $sponsors{
-        .#{$name}{
-            justify-content: center;
-            position: relative;
-            display: inline-flex;
-            width: fit-content;
-            height: fit-content;
-            & img{
-                width: auto;
-                @media(min-width: 710px){   // Set the height of the sponsor image at each screen size. if I set the width and then auto the height the images don't line up. 
-                    height: 47px;
-                }
-               @media(min-width: 910px){
-                    height: 64px;
-                }
-                @media(min-width: 1150px){
-                    height: 70px;
-                }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        input{
+            @include MQ('1','and-smaller'){
+                width: 100%;
             }
-            & .over{
-                display: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 99;
+            @include MQ('1','and-wider'){
+                width: 50%;
             }
-            &:hover .over{
-                display: inline-flex;
+            
+            &[id=name]{
+
             }
+            &[id=email]{
+
+            }
+        }
+        label{
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
         }
     }
 }

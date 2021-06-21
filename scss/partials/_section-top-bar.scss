@@ -1,10 +1,9 @@
 .top-bar{
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
+    width: $page-width;
     align-items: center;
-    width: 100%;
+    flex-wrap: wrap;
     height: 110px;
     padding-right: 25px;
 }
