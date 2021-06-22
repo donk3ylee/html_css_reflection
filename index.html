@@ -322,16 +322,33 @@
         </div>
         <div class="wrapper-newsletter">
             <aside id="newsletter">
-                <div class="signup-container">
-                    <h2>Email Newsletter Sign-Up</h2>
+                <div class="container">
                     <form method="get" action="#">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="full_name">
-                        <label for="email">Your Email</label>
-                        <input type="text" id="email" name="email">
-                        <input type="checkbox" id="marketing-consent" name="consent">
-                        <label for="marketing-consent">Please tick this box if you wish to recieve marketing information from us. Please see our <a href="#">Privicy Policy</a> for more informaiton on how we use your data.</label>
-                        <button type="submit">Subscribe</button>
+                        <div class="row gx-4 gy-3">
+                            <div class="col-12">
+                                <h2>Email Newsletter Sign-Up</h2>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="full_name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="email">Your Email</label>
+                                <input type="text" id="email" name="email">
+                            </div>
+                            <div class="col-12">
+                                <label for="marketing-consent" class="make-pretty-checkbox">
+                                    <input type="checkbox" id="marketing-consent" name="consent">
+                                    <span class="checkmark"></span>
+                                    <span class="description">
+                                        Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we use your data.
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </aside>

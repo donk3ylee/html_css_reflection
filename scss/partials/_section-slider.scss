@@ -1,17 +1,15 @@
 
 #hero-slider{
-    
-    width: $page-width;
     display: flex;
     flex-direction: column;
     justify-content: center;  // Mobile first text over image is centered.
+    width: $page-width;
     @include MQ('2','and-wider'){  // Then on larger sizes the text is left justified.
         justify-content: flex-start;
     }
-    // @include MQ('1','and-smaller'){  // Add some top margin at the smallest screen size so that teh slider image doesn't interfere with the top bars search bar.
-    //     margin-top: 300px;
-    // }
-    
+    @include MQ('1','and-smaller'){  // Add some top margin at the smallest screen size so that teh slider image doesn't interfere with the top bars search bar.
+        padding-top: 300px;
+    }
     
     h1{
         font-size: 3rem;

@@ -14,25 +14,6 @@
     min-width: auto;
 }
 
-%btn{
-    display:inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding:0 0.8em;
-    color: white;
-    font-size: 1.063rem!important;
-    cursor: pointer;
-    text-transform: uppercase;
-    height: auto;
-    min-width: 55px;
-    min-height: 55px;
-    text-decoration: none;
-    border-radius: 3px;
-    line-height: 36px;
-    margin-left: 15px;
-    white-space: normal;
-}
-
 .btn-phone{
     @extend %btn;
     display: none;
@@ -100,9 +81,10 @@
 }
 
 .search-wrapper{
-     display:none;
-     margin-left:15px;
-    
+    margin-left:15px;
+    @include MQ('1','and-smaller'){ 
+    display:none;
+    }
     @include MQ('1','and-wider'){ 
         display: inline-flex;
         width: 200px;

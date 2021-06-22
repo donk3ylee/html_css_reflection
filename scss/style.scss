@@ -17,53 +17,63 @@
 body{
     font-family: Poppins,sans-serif;
     color: #333645;
+    font-size: 1rem;
+    letter-spacing: .4px;
 }
 
 #newsletter{
-    display: block;
+    display: flex;
     width: 1200px;
-    // padding: 50px;
-    // justify-content: flex-start;
-    // align-items: center;
-    .signup-container{
-        display: block;
-        width: 100%;
-        padding: 50px;
-        @include MQ('1','and-wider'){
-            width: 655px;
-        }
-        @include MQ('2','and-wider'){
-            width: 880px;
-        }
-    }
+    height: fit-content;
+    justify-content: center;
+    padding: 50px;
     h2{
         font-size: 2rem;
         font-weight: 400;
+        font-family: inherit;
         margin: 0 0 15px;
         line-height: 1.1rem;
     }
     form{
-        display: flex;
-        flex-wrap: wrap;
         input{
-            @include MQ('1','and-smaller'){
+            &[type=text]{
+                height:47px;
                 width: 100%;
-            }
-            @include MQ('1','and-wider'){
-                width: 50%;
-            }
-            
-            &[id=name]{
-
-            }
-            &[id=email]{
-
+                border: 1px solid #e5e5e5;
+                border-radius: 2px;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.080);
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                &:focus{
+                    // border: 1px solid #e5e5e5;
+                    border-color:#5bc0de;
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(91,192,222,.6);
+                }
             }
         }
         label{
+            display: inline-block;
             font-size: 1rem;
             font-weight: 600;
-            line-height: 1.5;
+            line-height: 32px;
+            &[for=name]{
+                @include required-field;
+            }
+            &[for=email]{
+                @include required-field;
+            }
+        }
+        button{
+            @extend %btn;
+            background-color:#333645;
+            width: 120px;
+            height: 50px;
+            margin-left:0;
+            &:hover{
+                background-color: darken($color: #333645, $amount: 8);
+                color: white;
+            }
         }
     }
+    @include make-pretty-checkbox;
 }
+
