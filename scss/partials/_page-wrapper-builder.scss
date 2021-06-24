@@ -1,6 +1,6 @@
 
 
-.section{   // Nested within the wrapper-NAME. Wraps the contents of that section. Centers and constrains in the center of the page.
+// .section{   // Nested within the wrapper-NAME. Wraps the contents of that section. Centers and constrains in the center of the page.
     
 
 
@@ -10,7 +10,7 @@
     // &-awards{
     //     @include section-wrapper;
     // }
-}
+// }
 
 .wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
     &-top-bar{
@@ -55,15 +55,18 @@
     }
     &-sponsors{
         @include page-wide-section-wrapper{
-        box-shadow: inset 0 5px 35px rgba(0,0,0,0.1);
+            box-shadow: inset 0 5px 35px rgba(0,0,0,0.1);
         }
     }
     &-newsletter{
-        @include page-wide-section-wrapper;
-        background-color: #ddd;
+        @include page-wide-section-wrapper{
+            background-color: #ddd;
+        }
     }
-    &-cards{
-        @include page-wide-section-wrapper;
+    &-navi{
+        @include page-wide-section-wrapper{
+            background-color: #333645;
+        }
     }
     &-awards{
         @include page-wide-section-wrapper;

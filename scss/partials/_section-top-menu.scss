@@ -75,7 +75,7 @@
     .icon{
         &-#{$name}{
             color: #{$color};
-            @include place-awesome-icon(unquote("#{$name}"));
+            @include place-awesome-icon(unquote("#{$name}"),$size: 1.7rem);
             @if(unquote("#{$name}")=="telecom"){
                 @include rotate-phone-icon;
             }

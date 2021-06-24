@@ -19,6 +19,13 @@ $article_color_map:(
             'training':$color-design,
 );
 
+$social_media_color_map:(
+            'facebook':$color-facebook,
+            'twitter':$color-twitter,
+            'instagram':$color-instagram,
+            'linkedin':$color-linkedin,
+);
+
     // Used with the @mixin place-awesome-icon
 $awesome_icon_map:(
             'plane':'\f1d8',
@@ -33,6 +40,10 @@ $awesome_icon_map:(
             'security':'\f3ed',
             'arrow':'\f061',
             'training':'\f19d',
+            'facebook':'\f39e',
+            'twitter':'\f099',
+            'instagram':'\f16d',
+            'linkedin':'\f0e1',
 );
 
     // Used with the @mixin MQ. Seems pointless but is to validate the parameter and make debugging typos easier.
