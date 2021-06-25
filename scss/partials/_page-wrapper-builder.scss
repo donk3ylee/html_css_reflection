@@ -1,17 +1,5 @@
 
 
-// .section{   // Nested within the wrapper-NAME. Wraps the contents of that section. Centers and constrains in the center of the page.
-    
-
-
-    // &-cards{
-    //     @include section-wrapper;
-    // }
-    // &-awards{
-    //     @include section-wrapper;
-    // }
-// }
-
 .wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
     &-top-bar{
         @include page-wide-section-wrapper;
@@ -19,6 +7,7 @@
     &-top-menu{
         @include page-wide-section-wrapper{
             background-color: $top-menu-bgcolor;
+            border-bottom: .5px solid #999;
         }
     }
     &-hero-slider{

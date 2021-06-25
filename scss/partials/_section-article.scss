@@ -13,7 +13,7 @@
 %article{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     padding: 30px;
@@ -25,24 +25,43 @@
     color: #333645;
     h2{
         font-size: 1.125rem;
+        margin: 13px 0 0;
+        // font-weight: 400;
+    }
+    hr{ // Most of the sytles for this class are set in the html using a DRY class located in helpers.scss
+        margin: 11px 0 0!important;
     }
     p{
         text-align: center;
         font-size: .8125rem;
         line-height: 1.375rem;
-        font-weight: 400;
+        // font-weight: 400;
+        margin: 11px 0 15px;
     }
     button{
-        @extend %btn;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.063rem;
+        // font-weight:400;
+        // line-height: 35px;
+        height: 45px;
+        width: auto;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 3px;
+        white-space: normal;
+        padding: 0 20px;
         border: none;
+        margin-top: auto;
     }
 }
 
 %common-article-icon{
-    // justify-content: space-between;
     align-items: center;
+    font-size: 1.3rem;
     border-radius: 50%;
-    margin-bottom: 15px;
     height: 60px;
     width: 60px;
     color: white;
@@ -64,7 +83,7 @@
         &:hover{
             color:white;
             background-color: #{$color};
-            @include place-awesome-icon(#{$name}){
+            @include place-awesome-icon(#{$name},$size: 1.3rem){
                 @extend %common-article-icon;
                 color: #{$color};
                 background-color: white;

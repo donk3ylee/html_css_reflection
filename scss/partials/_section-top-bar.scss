@@ -1,107 +1,117 @@
-.top-bar{
+#top-bar{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center; 
     width: $page-width;
-    align-items: center;
+    min-height: 110px;
+    padding: 15px;
     flex-wrap: wrap;
-    height: 110px;
-    padding-right: 25px;
-}
-
-.logo{
-    width:auto;
-    height:63px;
-    min-width: auto;
-}
-
-.btn-phone{
-    @extend %btn;
-    display: none;
-    @include place-awesome-icon('telecom',$size: $phone-icon-size!important);
-    @include rotate-phone-icon;
-    color: black;
-    text-decoration: none;
-    &:hover{
+    @include MQ('1','and-wider'){
+        flex-wrap: nowrap;
+    }
+    .logo{
+        margin: 0 0 15px;
+        width: 400px;
+        height: auto;
+        @include MQ('1','and-wider'){
+            width: 345px;
+            height: auto;
+       }
+    }
+    .btn-phone{
+        display: inline-flex;
         color: black;
-        text-decoration: underline; 
-    }
-     @include MQ('1','and-smaller'){
-         display: inline-flex;
-    }
-} 
-
-.btn-support{
-    @extend %btn;
-    display: none;
-    @include build-button($bg_color: $btn-blue, $hv_bg_color: $btn-blue-hvr);
-    @include place-awesome-icon('mouse');
-    @include MQ('2','and-wider'){
-        display:inline-flex;
-    }
-}
-
-.btn-contact{
-    @extend %btn;
-    display: none;
-    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
-    @include place-awesome-icon('plane');
-    @include MQ('2','and-wider'){
-        display:inline-flex;
-    }
-}
-
-.btn-hamburger{
-    @extend %btn;
-    display: inline-flex;
-    @include build-button($bg_color: black);
-    @include place-awesome-icon('hamburger',$hamburger-icon-size);
-}
-
-.btn-search{
-    @extend %btn;
-    display:inline-flex;
-    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
-    @include place-awesome-icon('search');
-    &-alt{
-        background-color: rgba($color: #000000, $alpha: 0.1);
-    }
-}
-
-.btn-small-search{
-    @extend %btn;
-    display:none;
-    @include build-button($bg_color: $btn-grey, $hv_bg_color: $btn-grey-hvr);
-    @include place-awesome-icon('search');
-    @include MQ('2','and-wider'){
-        display:inline-flex;
-    }
-    @include MQ('3','and-wider'){
-        display: none;
-    }
-}
-
-.search-wrapper{
-    margin-left:15px;
-    @include MQ('1','and-smaller'){ 
-    display:none;
-    }
-    @include MQ('1','and-wider'){ 
-        display: inline-flex;
-        width: 200px;
-    }
-    @include MQ('2','and-wider'){ 
-        display: none;
-    }
-    @include MQ('3','and-wider'){ 
-        display: inline-flex;
-        width: 300px;
-    }
-    &-alt{
-        @include MQ('1','and-smaller'){
-            display: inline-flex;
+        height: 60px;
+        @include place-awesome-icon('telecom',$size: $large-icon-size!important){
+            @include rotate-phone-icon;
         }
-        @include MQ('1','and-wider'){ 
+        &:hover{
+            text-decoration: underline; 
+        }
+         @include MQ('1','and-wider'){
+             display: none;
+        }
+
+    } 
+    .btn-support{
+        display: none;
+        @include place-awesome-icon('mouse');
+        @include build-button($mode: darken, $bg_c:#4183d7);
+        @include MQ('2','and-wider'){
+            display:inline-flex;
+        }
+    }
+    .btn-contact{
+        display: none;
+        @include place-awesome-icon('plane');
+        @include build-button($mode: darken, $bg_c:#999aa2){
+            margin: 0 0 0 15px;
+        }
+        @include MQ('2','and-wider'){
+            display:inline-flex;
+        }
+    }
+    .btn-small-search{
+        display:none;
+        @include place-awesome-icon('search');
+        @include build-button($mode: darken, $bg_c:#999aa2){
+            width: 55px;
+            margin: 0 0 0 15px;
+        }
+        @include MQ('2','and-wider'){
+            display:inline-flex;
+        }
+        @include MQ('3','and-wider'){
             display: none;
         }
     }
+    .btn-search{
+        display:inline-flex;
+        @include place-awesome-icon('search');
+        @include build-button($mode: darken, $bg_c:#999aa2){
+            width: 55px;
+        }
+        &-alt{
+            background-color: rgba($color: #000000, $alpha: 0.1);
+        }
+    }
+    .btn-hamburger{
+        display: inline-flex;
+        @include place-awesome-icon('hamburger',$hamburger-icon-size!important);
+        @include build-button($bg_c: black){
+            margin: 0 0 0 15px;
+        }
+    }
+    .search-wrapper{
+        margin-left:15px;
+        @include MQ('1','and-smaller'){ 
+            display:none;
+        }
+        @include MQ('1','and-wider'){ 
+            display: inline-flex;
+            width: 200px;
+        }
+        @include MQ('2','and-wider'){ 
+            display: none;
+        }
+        @include MQ('3','and-wider'){ 
+            display: inline-flex;
+            width: 300px;
+        }
+        &-alt{
+            @include MQ('1','and-smaller'){
+                display: inline-flex;
+            }
+            @include MQ('1','and-wider'){ 
+                display: none;
+            }
+        }
+    }
 }
+
+
+
+
+
+
+

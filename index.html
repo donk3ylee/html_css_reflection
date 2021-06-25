@@ -14,13 +14,13 @@
 <body>
     <header>
         <div class="wrapper-top-bar">
-            <div class="top-bar">
+            <div id="top-bar">
                 <a href="#"><img class="logo" src="img/f-logo.png" alt="Netmatters logo, trademarked"></a>
                 <div>
-                    <a href="#" class="btn-phone btn"></a>
-                    <a href="#" class="btn-support btn">support</a>
-                    <a href="#" class="btn-contact btn">contact</a>
-                    <a href="#" class="btn-small-search btn"></a>
+                    <a href="#" class="btn-phone"></a>
+                    <a href="#" class="btn-support">support</a>
+                    <a href="#" class="btn-contact">contact</a>
+                    <a href="#" class="btn-small-search"></a>
                     <div class="input-group search-wrapper">
                         <input type="text" class="form-control" placeholder="search..." aria-label="Search Netmatters Website" aria-describedby="search">
                         <span class="input-group-text btn-search" id="search"></span>
@@ -28,16 +28,16 @@
                     <a href="#" class="btn-hamburger btn"></a>
                 </div>
                 <div class="input-group search-wrapper-alt">
-                    <input type="text" class="form-control btn-search-alt"  placeholder="search..."aria-label="Search Netmatters Website" aria-describedby="search">
+                    <input type="text" class="form-control btn-search-alt"  placeholder="search..." aria-label="Search Netmatters Website" aria-describedby="alt-search">
                     <span class="input-group-text btn-search" id="alt-search"></span>
                 </div>
             </div>
         </div>
         <nav>
             <div class="wrapper-top-menu">
-                <div class="menu-top">
+                <div id="menu-top">
                     <div class="wrapper-design">
-                        <a  class="button-design" href="#">
+                        <a class="button-design" href="#">
                             <div class="icon icon-design"></div>
                             <span class="small">Web</span>Design
                         </a>
@@ -196,7 +196,7 @@
         </div>
         <div class="wrapper-about">
             <div id="about">
-                <div  class="col-lg-5">
+                <div  class="col-12 col-xl-6">
                     <h1>Netmatters</h1>
                     <p><strong>Netmatters Ltd is a leading web design, IT support and digital marketing agency based in Wymondham, Norfolk, with offices in Wymondham and Great Yarmouth..</strong></p>
                     <p>Founded in 2008, we work with businesses from a variety of industries to gain new prospects, nurture existing leads and further grow their sales.</p>
@@ -348,7 +348,7 @@
                                 </label>
                             </div>
                             <div class="col-12">
-                                <button type="submit">Subscribe</button>
+                                <button type="submit" class="newsletter-button">Subscribe</button>
                             </div>
                         </div>
                     </form>

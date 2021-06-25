@@ -1,24 +1,31 @@
 
-.menu-top{
+#menu-top{
     display:grid;
     position:relative;
-    justify-content: center;
-    width: $page-width;
-    align-items: center;
     grid-template-columns: repeat(6, 200px);
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: $page-width;
     height: 100px;
+    font-weight: 400;
+    &:hover{
+        border-bottom: none;
+    }
     text-transform:uppercase;
     @include MQ('3','and-smaller'){  /// Make menu buttons smaller to fit at a breakpoint
-        justify-content:center;
         grid-template-columns: repeat(6, 160px);
+        .submenu a{
+            font-size: .8125rem;
+        }
     }
     @include MQ('2','and-smaller'){  /// Make the menu disappear at a particular breakpoint
         display: none;
     }
     .small{
         display:block;
-        font-size: 0.7rem;
+        font-size: .525rem;
+        padding-bottom: 1px;
     }
     .submenu{
         display: none;
@@ -27,20 +34,21 @@
 
 
 @each $name, $color in $menu_color_map{
-    .wrapper-#{$name}{
-        display:flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        height: 100px;
-        width: 200px;
-        @include MQ('3','and-smaller'){
-            width: 160px;
-        }
+    #menu-top .wrapper-#{$name}{
         .button-#{$name}{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 19px 0 18px;
+            height: 100px; 
+            width: 200px;
+            @include MQ('3','and-smaller'){
+                width: 160px;
+            }
             color: white;
             text-decoration: none;
-            font-size: 1.125rem;
+            padding-bottom:10px;
         }
         &:hover{
             color: white;
@@ -55,16 +63,18 @@
                     text-decoration: none;
                 }
                 display:flex;
-                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                align-content: center;
                 position: absolute;
-                justify-content: space-between;
                 top: 100px;
                 left: 0;
-                width: 1200px;
+                width: 100%;
                 z-index: 1;
                 font-size: 1rem;
                 @include MQ('3','and-smaller'){
                     width: calc(6*160px);
+                    left:  calc(50vw - ((6 * 160) / 2)); 
                 }
                 height: 45px;
                 @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
@@ -75,7 +85,8 @@
     .icon{
         &-#{$name}{
             color: #{$color};
-            @include place-awesome-icon(unquote("#{$name}"),$size: 1.7rem);
+            padding-bottom: 8px;
+            @include place-awesome-icon(unquote("#{$name}"),$size: 1.328rem);
             @if(unquote("#{$name}")=="telecom"){
                 @include rotate-phone-icon;
             }

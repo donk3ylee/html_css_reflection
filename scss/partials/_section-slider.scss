@@ -5,38 +5,26 @@
     justify-content: center;  // Mobile first text over image is centered.
     width: $page-width;
     @include MQ('2','and-wider'){  // Then on larger sizes the text is left justified.
-        justify-content: flex-start;
-    }
-    @include MQ('1','and-smaller'){  // Add some top margin at the smallest screen size so that teh slider image doesn't interfere with the top bars search bar.
-        padding-top: 300px;
+        justify-content: left;
     }
     
     h1{
         font-size: 3rem;
-        font-weight: 400;
         text-transform: uppercase;
         margin-bottom: 25px;
+        line-height: 1.1;
     }
     p{
         font-size: 1.25rem;
         line-height: 2.25rem;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
 
     }
     a{
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
-        background-color: $color-design;
-        min-height: 65px;
-        min-width: 225px;
-        border-radius: 3px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: white;
-        &:hover{
-            background-color: darken($color-design, 10);
-        }
+        @include build-button($mode: darken, $bg_c: $color-design, $height: 65px, $font_s: 1.25rem);
         @include place-awesome-icon('arrow', $orientation: 'after');
     }
 

@@ -39,7 +39,7 @@
     }   
 }
 
-@mixin place-awesome-icon($name, $size: $default-awesome-icon-size, $orientation: 'before'){
+@mixin place-awesome-icon($name, $size: null, $orientation: 'before'){
     @if map-has-key($awesome_icon_map,$name){
         font-size: $size;
         line-height: normal;
@@ -55,13 +55,32 @@
     }
 }
 
-@mixin build-button($bg_color: null, $b_color: $bg_color, $hv_bg_color: null, $hv_color: white){
-    background-color: $bg_color;
-    border-color: $b_color;
+@mixin build-button($mode: darken, $bg_c: green, $hv_bg_c: null, $text_c: white, $hv_text_c: white, $height: 55px, $font_s: 1.125rem){
+    // display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg_c;
+    color: $text_c;
+    font-size: $font_s;
+    height: $height;
+    max-height: $height;
+    width: auto;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    white-space: normal;
+    padding: 0 20px;
     &:hover{
-        color:$hv_color;
-        background-color: $hv_bg_color;
+        @if $mode == 'darken'{
+            color:$hv_text_c;
+            background-color: darken($bg_c,$default-darken-amt);
+        } @else{
+            color:$hv_text_c;
+            background-color: $hv_bg_c;
+        }
     }
+    @content;
 }
 
 

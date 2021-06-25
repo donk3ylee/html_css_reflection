@@ -38,7 +38,7 @@
                 @include required-field;
             }
         }
-        button{
+        .newsletter-button{
             @extend %btn;
             background-color:#333645;
             width: 120px;
