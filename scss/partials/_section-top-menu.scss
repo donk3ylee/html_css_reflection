@@ -73,8 +73,8 @@
                 z-index: 1;
                 font-size: 1rem;
                 @include MQ('3','and-smaller'){
-                    width: calc(6*160px);
-                    left:  calc(50vw - ((6 * 160) / 2)); 
+                    width: 90vw;
+                    left: 5vw;
                 }
                 height: 45px;
                 @include make-bgcolor-wide(darken($color, $darken-submenu-amt));

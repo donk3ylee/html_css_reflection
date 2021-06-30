@@ -1,0 +1,41 @@
+#awards{
+    @include constrain_at_breakpoints;
+    height:100%;
+    padding: 50px 0;
+
+    .flex-row{
+        display:flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        width: auto;
+        &:first-of-type{
+         margin: 0 0 20px;   
+        }
+    }
+    a img{
+        text-align: center;
+        height: auto;
+        width: auto;
+    }
+
+    @each $name in $awards{
+        .award-#{$name}{
+            display: inline-flex;
+            justify-content: center;
+            position: relative;
+            & .over{  // Hide the colour image overlaying the visible monochrome image
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            &:hover{
+                .over{  // On hover over the image make the hidden colour image visible. 
+                    display: inline-flex;
+                }
+            }
+        }
+    }
+}

@@ -2,14 +2,16 @@
 #about{
     display: flex;
     flex-direction: column;
-    width: 1200px;
-    text-align: left;
+    // text-align: left;
     justify-content: flex-start;
+    align-self: center;
     color: white;
     padding: 50px 15px;
-    // upot here adjusitng the padding adn font size line height etc this and all secitons below.
+    width: 1200px;
+    @include constrain_at_breakpoints;
     h1{
-        padding-top: 1rem;
+        padding-top: 0;
+        margin-top: 0;
         font-size: 2.25rem;
         font-weight: 400;
         text-transform: uppercase;
@@ -18,18 +20,14 @@
         font-size:1rem;
         line-height: 1.875rem;
         margin-bottom: 25px;
+        letter-spacing: .4px;
     }
     button{
-        @extend %btn;
-        margin-left: 0;
-        margin-bottom: 3rem;
-        color: #333645;
-        background-color: white;
-        @include place-awesome-icon('arrow',$orientation:'after'){
-            margin-left: 1rem;
+        @include build-button($bg_c:white, $text_c: #333645, $hv_text_c: #333645, $height: 50px, $font_s: 1.125rem){
+            display:flex;
         }
-        &:hover{
-            background-color: #EBEBEB;
+        @include place-awesome-icon('arrow',$orientation:'after'){
+            margin: 0 0 0 15px;
         }
     }
 }

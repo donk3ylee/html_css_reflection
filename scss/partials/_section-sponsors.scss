@@ -5,16 +5,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
-    height:fit-content;
-    @media(min-width: 710px){  // Set the width of the space-around container at each screen size to emulate layout
-        width: 710px;
-    }
-    @media(min-width: 910px){
-        width: 955px;
-    }
-    @media(min-width: 1150px){
-        width: 1180px;
-    }                           // end
+    @include constrain_at_breakpoints;
     @each $name in $sponsors{
         .#{$name}{
             display: inline-flex;
@@ -25,13 +16,13 @@
             & img{
                 margin: 40px 0;
                 width: auto;
-                @media(min-width: 710px){   // Set the overall size of the sponsor image at each screen size. if I set the width and then auto the height the images don't line up. 
+                @include MQ('1','and-wider'){   // Set the overall size of the sponsor image at each screen size. if I set the width and then auto the height the images don't line up. 
                     height: 47px;
                 }
-                @media(min-width: 910px){
+                @include MQ('2','and-wider'){
                     height: 64px;
                 }
-                @media(min-width: 1150px){
+                @include MQ('3','and-wider'){
                     height: 70px;
                 }
             }

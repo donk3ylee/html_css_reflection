@@ -24,8 +24,10 @@
         display: flex;
         justify-content: right;
         align-items: center;
-        @include build-button($mode: darken, $bg_c: $color-design, $height: 65px, $font_s: 1.25rem);
-        @include place-awesome-icon('arrow', $orientation: 'after');
+        @include build-button($mode: darken, $bg_c: $color-design, $height: 63px, $font_s: 1.25rem);
+        @include place-awesome-icon('arrow', $orientation: 'after'){
+            margin: 0 0 0 15px;
+        }
     }
 
     .hero-item{
