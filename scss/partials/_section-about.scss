@@ -2,27 +2,28 @@
 #about{
     display: flex;
     flex-direction: column;
-    // text-align: left;
     justify-content: flex-start;
     align-self: center;
     color: white;
     padding: 50px 15px;
-    width: 1200px;
     @include constrain_at_breakpoints;
     h1{
-        padding-top: 0;
-        margin-top: 0;
+        padding: 0 5px;
+        margin: 0;
         font-size: 2.25rem;
         font-weight: 400;
         text-transform: uppercase;
     }
     p{
-        font-size:1rem;
+        padding: 0 5px;
+        font-size: 1rem;
+        font-weight: 520;
         line-height: 1.875rem;
         margin-bottom: 25px;
         letter-spacing: .4px;
     }
     button{
+        margin: 0 5px;
         @include build-button($bg_c:white, $text_c: #333645, $hv_text_c: #333645, $height: 50px, $font_s: 1.125rem){
             display:flex;
         }

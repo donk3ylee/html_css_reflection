@@ -36,7 +36,7 @@
   height: calc(100vh - 220px);
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1), black), url("../img/sliding/home-3wAI.jpg");
+  background-image: linear-gradient(to left, rgba(200, 200, 200, 0.1), black), url("../img/sliding/home-3wAI.jpg");
   color: white;
 }
 .wrapper-articles {
@@ -178,7 +178,6 @@
   font-size: 1.125rem;
   height: 55px;
   max-height: 55px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -213,7 +212,6 @@
   font-size: 1.125rem;
   height: 55px;
   max-height: 55px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -249,7 +247,6 @@
   font-size: 23px;
   height: 55px;
   max-height: 55px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -290,7 +287,6 @@
   font-size: 1.125rem;
   height: 55px;
   max-height: 55px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -359,7 +355,6 @@
   font-size: 1.125rem;
   height: 55px;
   max-height: 55px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -910,6 +905,8 @@
   text-transform: uppercase;
   margin-bottom: 25px;
   line-height: 1.1;
+  letter-spacing: normal;
+  padding: 0 6px;
 }
 #hero-slider p {
   font-size: 1.25rem;
@@ -927,7 +924,6 @@
   font-size: 1.25rem;
   height: 63px;
   max-height: 63px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -1311,7 +1307,6 @@
   color: white;
   padding: 50px 15px;
   width: 1200px;
-  width: 1200px;
 }
 @media (max-width: 767px) {
   #about {
@@ -1334,19 +1329,22 @@
   }
 }
 #about h1 {
-  padding-top: 0;
-  margin-top: 0;
+  padding: 0 5px;
+  margin: 0;
   font-size: 2.25rem;
   font-weight: 400;
   text-transform: uppercase;
 }
 #about p {
+  padding: 0 5px;
   font-size: 1rem;
+  font-weight: 520;
   line-height: 1.875rem;
   margin-bottom: 25px;
   letter-spacing: 0.4px;
 }
 #about button {
+  margin: 0 5px;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -1354,7 +1352,6 @@
   font-size: 1.125rem;
   height: 50px;
   max-height: 50px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -1421,7 +1418,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 50px 0 50px 0;
+  padding: 50px 10px;
   height: fit-content;
   width: 1200px;
 }
@@ -1450,8 +1447,6 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden;
-  min-width: 100%;
-  max-height: 710px;
   border: solid 1px #ccc;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
   height: 100%;
@@ -1479,12 +1474,12 @@
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
-  margin: 30px 0 30px 30px;
+  margin: 30px;
 }
 #news .item p {
   line-height: 1.375rem;
   font-size: 0.8125rem;
-  margin: 0 0 30px 30px;
+  margin: 0 30px 30px;
 }
 #news .item .button {
   align-items: center;
@@ -1494,7 +1489,6 @@
   font-size: 1.063rem;
   height: 48px;
   max-height: 48px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
@@ -1505,9 +1499,8 @@
   display: flex;
   font-weight: 400;
   padding: 5px 15px;
-  width: fit-content;
-  margin-top: auto;
-  margin: auto 0 30px 30px;
+  margin: auto 30px 30px;
+  width: max-content;
 }
 #news .item .button:hover {
   color: white;
@@ -1523,17 +1516,16 @@
   margin-top: 0;
 }
 #news .item .logo {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 #news .item .logo img {
-  margin: 0px 15px 0px 30px;
+  margin-right: 20px;
   float: left;
   width: 47px;
   height: 47px;
 }
 #news .item .logo .cite-container {
-  margin-left: 20px;
+  margin-right: 20px;
 }
 #news .item .logo .date {
   margin-top: 0;
@@ -1902,7 +1894,7 @@
   font-weight: 400;
   font-family: inherit;
   margin: 0 0 15px;
-  line-height: 1.1rem;
+  line-height: 1.1;
 }
 #newsletter .newsletter-form .newsletter-text {
   height: 47px;
@@ -1939,7 +1931,6 @@
   font-size: 1.063rem;
   height: 50px;
   max-height: 50px;
-  width: auto;
   letter-spacing: normal;
   cursor: pointer;
   text-transform: uppercase;
