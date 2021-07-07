@@ -2,7 +2,7 @@
 
 
 #sponsors{
-    display: flex;
+    @include flex;
     justify-content: space-around;
     flex-wrap: nowrap;
     @include constrain_at_breakpoints;
@@ -61,7 +61,8 @@
                 position: absolute;
                 bottom: calc(100% - 30px);
                 width: 0; 
-                height: 0; 
+                height: 0;
+                left: calc(50% - 30px);
                 border-left: 30px solid transparent;
                 border-right: 30px solid transparent;
                 border-top: 30px solid $sponsor-bubble-grey;  // sets the colour and size of the downward triangle.

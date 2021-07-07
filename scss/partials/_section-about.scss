@@ -1,6 +1,6 @@
 
 #about{
-    display: flex;
+    @include flex;
     flex-direction: column;
     justify-content: flex-start;
     align-self: center;
@@ -8,7 +8,7 @@
     padding: 50px 15px;
     @include constrain_at_breakpoints;
     h1{
-        padding: 0 5px;
+        padding: 0 0 30px;
         margin: 0;
         font-size: 2.25rem;
         font-weight: 400;
@@ -25,7 +25,7 @@
     button{
         margin: 0 5px;
         @include build-button($bg_c:white, $text_c: #333645, $hv_text_c: #333645, $height: 50px, $font_s: 1.125rem){
-            display:flex;
+            @include flex;
         }
         @include place-awesome-icon('arrow',$orientation:'after'){
             margin: 0 0 0 15px;

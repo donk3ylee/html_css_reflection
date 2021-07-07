@@ -4,7 +4,7 @@
     padding: 50px 0;
 
     .flex-row{
-        display:flex;
+        @include flex;
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;

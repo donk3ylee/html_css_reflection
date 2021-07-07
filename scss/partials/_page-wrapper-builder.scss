@@ -6,6 +6,7 @@
     }
     &-top-menu{
         @include page-wide-section-wrapper{
+            // @include flex;
             background-color: $top-menu-bgcolor;
             border-bottom: .5px solid #999;
         }

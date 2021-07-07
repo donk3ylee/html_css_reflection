@@ -22,18 +22,7 @@
     font-weight: 600;
 }
 
-@media screen\0 {  // targets IE 8 9 & 10
-    .body {
-        // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
-        @font-face {
-            font-family: Poppins;
-            src: url('fonts/Poppins-Regular.eot') format('eot');
-        }
-    }
-}
-
-_:-ms-fullscreen, :root .body {  // Targets IE 11+
-    // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
+@include targetIEonly{
     @font-face {
         font-family: Poppins;
         src: url('fonts/Poppins-Regular.eot') format('eot');

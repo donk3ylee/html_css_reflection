@@ -1,3 +1,4 @@
 /.sass-cache
 .gitignore
 notes.txt
+package*.json

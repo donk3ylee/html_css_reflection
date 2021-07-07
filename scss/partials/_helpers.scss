@@ -1,4 +1,30 @@
 
+@mixin required-field{
+    &::after{
+        color: red;
+        content: " *";
+    }
+}
+
+.bottomize{  // stick a flex item to the bottom.
+    margin-top: auto;
+}
+
+// prefix helpers
+@mixin grid{
+    display:     grid; /* None yet */
+    display: -ms-grid; /* IE 10 */
+}
+
+@mixin flex{
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+}
+
+// prefix helpers END
+
 .hr-white{
     width: 25px;
     height: 2px;
@@ -13,23 +39,37 @@
     align-self: center;
 }
 
-%btn{
-    // display:inline-flex;
-    // align-items: center;
-    // justify-content: center;
-    // padding:0 0.8em;
-    // color: white;
-
-    // font-size: 1.125rem;
-    // // font-size: 1.063rem!important;
-    // cursor: pointer;
-    // text-transform: uppercase;
-    // height: 60px;
-    // width: auto;
-    // // min-width: 55px;
-    // text-decoration: none;
-    // border-radius: 3px;
-    // // line-height: 36px;
-    // margin-left: 15px;
-    // white-space: normal;
+// Make a five column layout because bootstrap doesn't have an easy implementation. 
+.col-xs-five,
+.col-sm-five,
+.col-md-five,
+.col-lg-five{
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
+ 
+.col-xs-five{
+    float: left;
+    width: 20%;
+}
+@media (min-width: 768px) {
+    .col-sm-five{
+        float: left;
+        width: 20%;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-five{
+        float: left;
+        width: 20%;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-five{
+        float: left;
+        width: 20%;
+    }
+}
+// End five col

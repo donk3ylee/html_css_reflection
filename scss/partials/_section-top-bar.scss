@@ -1,12 +1,12 @@
 #top-bar{
-    display:flex;
+    @include flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; 
     @include constrain_at_breakpoints;
     padding: 15px;
     .button-area-wrapper{
-        display: flex;
+        @include flex;
         justify-content: space-between;
         align-items: center; 
         flex-wrap: nowrap;
@@ -104,7 +104,7 @@
         width: 47px;
         margin:  15px 0 0;
         @include place-awesome-icon('search','after'){
-        display:flex;
+        @include flex;
         justify-self: center;
         align-self: center;
         color: #333645;
@@ -144,7 +144,7 @@
         }
     }
     .right-group{
-        display: flex;
+        @include flex;
         justify-content: center; //
         align-items: center ;
     }

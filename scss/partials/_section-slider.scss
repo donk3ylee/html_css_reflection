@@ -1,6 +1,6 @@
 
 #hero-slider{
-    display: flex;
+    @include flex;
     flex-direction: column;
     justify-content: center;  // Mobile first text over image is centered.
     width: $page-width;
@@ -23,7 +23,7 @@
 
     }
     a{
-        display: flex;
+        @include flex;
         justify-content: right;
         align-items: center;
         @include build-button($mode: darken, $bg_c: $color-design, $height: 63px, $font_s: 1.25rem);

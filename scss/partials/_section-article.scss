@@ -1,31 +1,40 @@
 
 #articles{
-    display:flex;
+    @include flex;
     justify-content: center;
     width: $page-width;
     @include constrain_at_breakpoints;
     align-self: center;
-    padding: 50px 0;
+    padding: 50px 0 50px;
     a{
         text-decoration: none;
+    }
+    @include targetIEonly{
+        .col-lg-3, .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-9, .col-lg-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-9, .col-md-10, .col-md-12, .col-sm-3, .col-sm-4, .col-sm-6, .col-sm-8, .col-sm-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-6, .col-xs-8, .col-xs-12 {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 30px;
+        }
     }
 }
 
 %article{
-    display: flex;
+    @include flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 100%;
     padding: 30px;
+    // margin: 15px; //
     box-shadow: 0 3px 35px rgba(0,0,0,0.1);
     border: 1px solid #ccc;
     font-size: .8125rem;
     line-height: 1.375rem;
     font-weight: 400;
     color: #333645;
-
     h2{
         font-size: 1.125rem;
         margin: 13px 0 0;
@@ -36,6 +45,7 @@
     }
     p{
         text-align: center;
+        width: 100%;
         font-size: .8125rem;
         line-height: 1.375rem;
         // font-weight: 400;
@@ -79,7 +89,7 @@
         @include place-awesome-icon(#{$name}){
             @extend %common-article-icon;
             background-color: #{$color};
-            @if $name=="telecom"{
+            @if $name=="telecom"{ 
                 @include rotate-phone-icon;
             }
         }

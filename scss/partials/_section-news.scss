@@ -1,11 +1,11 @@
 
 #latest{
-    display: flex;
+    @include flex;
     justify-content: left;
     @include constrain_at_breakpoints;
     height:110px;
     & div{
-        display: flex;
+        @include flex;
         flex-direction: column;
         justify-content: center;
         text-transform: uppercase;
@@ -20,33 +20,43 @@
 }
 
 #news{
-    display:flex;
+    @include flex;
     justify-content: center;
     flex-wrap: nowrap;
     padding: 50px 10px;
     height: fit-content;
     @include constrain_at_breakpoints;
     .item{
-        display:flex;
+        @include flex;
         flex-direction: column;
         justify-content: flex-start;
         overflow: hidden;
         border: solid 1px #ccc;
         box-shadow: 0 3px 35px rgba(0,0,0,0.1);
         height: 100%;
+        // Target IE to add margin as bootstrap grid gutters are not added
+        @include targetIEonly{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
         .img-constrainer{
             overflow: hidden;
             width: 100%;
+            height: auto;
         }
         img.item-img{
-            height: auto;
+            height: auto; //
             width: 100%;
             @include MQ('2','and-wider'){
                 transform-origin: 50% 50%;
                 transition-duration: .25s;
+                -ms-transform-origin: 50% 50%;
+                -ms-transition-duration: .25s;
                 &:hover{
                 transform: scale(1.1);
                 opacity: 0.7;
+                -ms-transform: scale(1.1);
+                -ms-opacity: 0.7;
                 }
             }
         }
@@ -64,12 +74,13 @@
         }
         .button{
             @include build-button($bg_c:#4183d7, $text_c: white, $hv_text_c: white, $height: 48px, $font_s: 1.063rem){
-                display:flex;
+                @include flex;
                 font-weight: 400;
                 padding: 5px 15px;
             }
-            margin: auto 30px 30px;
-            width:max-content;
+            margin: auto auto 30px 30px;
+            width: fit-content;
+            max-width: 150px;
             &:hover{
                 background-color: darken($color: #4183d7, $amount: 8);
                 color: white;

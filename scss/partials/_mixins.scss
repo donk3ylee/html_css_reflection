@@ -1,3 +1,16 @@
+
+@mixin targetIEonly{
+    @media screen\0 {  // targets IE 8 9 & 10
+        // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
+    @content;
+    }
+    
+    _:-ms-fullscreen, :root {  // Targets IE 11+
+        // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
+    @content;
+    }
+}
+
 @mixin constrain_at_breakpoints{
     width: $page-width;
     @include MQ('1','and-smaller'){
@@ -14,15 +27,22 @@
     }
 }
 
-@mixin required-field{
-    &::after{
-        color: red;
-        content: " *";
-    }
+@mixin vprefix($property:null, $value:null){
+    // -webkit-: a prefix to make sure that properties work on Chrome, Safari, nearly all iOS browsers, and newer versions of Opera.
+    // -moz-: a prefix for Firefox.
+    // -o-: a prefix for older versions of Opera.
+    // -ms-: a prefix for Internet Explorer and Microsoft Edge.
+    
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    #{$property}: #{$value};
 }
 
 @mixin page-wide-section-wrapper{
-    display: flex;
+    @include flex;
+    // @include flex;
     justify-content: center;
     width: 100vw;
     height: auto;
@@ -37,6 +57,7 @@
     height: 100%;
     width: 200vw;
     left: -100vw;
+    top: 0;
     z-index: -1;
     @content;
   }
@@ -54,15 +75,16 @@
     }   
 }
 
-@mixin place-awesome-icon($name, $size: null, $orientation: 'before'){
-    @if map-has-key($awesome_icon_map,$name){
+@mixin place-awesome-icon($glyph, $size: null, $orientation: 'before'){
+    @if map-has-key($awesome_icon_map,$glyph){
         font-size: $size;
         line-height: normal;
+        overflow: visible;
         &::#{$orientation}{
-            display:flex;
+            @include flex;
             justify-content: center;
-            font-family: "FontAwesome";
-            content: map-get($awesome_icon_map,$name);
+            font-family: FontAwesome!important;
+            content: map-get($awesome_icon_map,$glyph);
             @content;
         }
     }@else{

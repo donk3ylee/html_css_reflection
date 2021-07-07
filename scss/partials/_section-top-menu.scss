@@ -1,11 +1,9 @@
 
 #menu-top{
-    display:grid;
-    position:relative;
-    grid-template-columns: repeat(6, 200px);
+    @include flex;
+    flex-wrap: nowrap;
+    position: relative;
     justify-content: center;
-    align-items: center;
-    justify-items: center;
     width: $page-width;
     height: 100px;
     font-weight: 400;
@@ -36,7 +34,7 @@
 @each $name, $color in $menu_color_map{
     #menu-top .wrapper-#{$name}{
         .button-#{$name}{
-            display:flex;
+            @include flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -62,7 +60,7 @@
                     align-self: center;
                     text-decoration: none;
                 }
-                display:flex;
+                @include flex;
                 justify-content: space-around;
                 align-items: center;
                 align-content: center;
