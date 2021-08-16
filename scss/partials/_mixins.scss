@@ -1,4 +1,34 @@
 
+@mixin build_catagory($name){
+    // eventually there will be a test for name and a colour map to automatically colour the background etc.
+    display: flex;
+    justify-self: center;
+    justify-items: center;
+    align-self: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: 30px;
+    width: max-content;
+    color: white;
+    background-color: #4183d7;
+    font-size: 0.75rem;
+    font-weight: 600;
+    // line-height: 1.438rem;
+    letter-spacing: 0.4px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    z-index: 1;
+    &::after{
+        content: "#{$name}";
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+
 @mixin targetIEonly{
     @media screen\0 {  // targets IE 8 9 & 10
         // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
@@ -42,9 +72,8 @@
 
 @mixin page-wide-section-wrapper{
     @include flex;
-    // @include flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: auto;
     @content;
 }
@@ -104,6 +133,7 @@
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
+    border: solid 1px #{$bg_c};
     border-radius: 3px;
     white-space: normal;
     padding: 0 20px;
@@ -111,9 +141,11 @@
         @if $mode == 'darken'{
             color:$hv_text_c;
             background-color: darken($bg_c,$default-darken-amt);
+            border: solid 1px darken($bg_c,$default-darken-amt);
         } @else{
             color:$hv_text_c;
             background-color: $hv_bg_c;
+            border: solid 1px $hv_bg_c;
         }
     }
     @content;

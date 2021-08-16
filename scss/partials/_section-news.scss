@@ -34,12 +34,17 @@
         border: solid 1px #ccc;
         box-shadow: 0 3px 35px rgba(0,0,0,0.1);
         height: 100%;
+        cursor: pointer;
         // Target IE to add margin as bootstrap grid gutters are not added
         @include targetIEonly{
             margin-left: 15px;
             margin-right: 15px;
         }
+        .catagory{
+            @include build_catagory('news');
+        }
         .img-constrainer{
+            position: relative; // relative because a child .catagory has to be absolute.
             overflow: hidden;
             width: 100%;
             height: auto;
@@ -64,8 +69,11 @@
             color: #4183d7;
             font-size: 1rem;
             line-height: 1.5rem;
-            font-weight: 600;
+            font-weight: 800;
             margin: 30px;
+            &:hover{
+                text-decoration: underline;
+            }
         }
         p{
             line-height: 1.375rem;
@@ -89,21 +97,22 @@
         hr{
             width: 85%;
             align-self: center;
-            margin-top: 0;
+            margin: 0;
         }
         .logo{
-            margin: 20px;
+            margin: 30px;
             img{
                 margin-right: 20px;
                 float: left;
                 width: 47px;
                 height: 47px;
+                border-radius: 50%;
             }
             .cite-container{
                 margin-right: 20px;    
             }
             .date{
-                margin-top: 0;
+                margin: 0;
             }
         }
     }

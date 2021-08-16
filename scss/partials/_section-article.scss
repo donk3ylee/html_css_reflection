@@ -28,7 +28,6 @@
     height: 100%;
     width: 100%;
     padding: 30px;
-    // margin: 15px; //
     box-shadow: 0 3px 35px rgba(0,0,0,0.1);
     border: 1px solid #ccc;
     font-size: .8125rem;
@@ -37,27 +36,20 @@
     color: #333645;
     h2{
         font-size: 1.125rem;
-        margin: 13px 0 0;
-        // font-weight: 400;
-    }
-    hr{ // Most of the sytles for this class are set in the html using a DRY class located in helpers.scss
-        margin: 11px 0 0!important;
+        margin: 13px 0;
     }
     p{
         text-align: center;
         width: 100%;
         font-size: .8125rem;
         line-height: 1.375rem;
-        // font-weight: 400;
-        margin: 11px 0 15px;
+        margin: 15px 0;
     }
-    button{
+    .button{
+        display: flex;
         align-items: center;
-        justify-content: center;
         color: white;
         font-size: 1.063rem;
-        // font-weight:400;
-        // line-height: 35px;
         height: 45px;
         width: auto;
         cursor: pointer;
@@ -83,7 +75,7 @@
 @each $name, $color in $article_color_map{
     .article-#{$name}{
         @extend %article;
-        button{
+        .button{
             background-color: #{$color};
         }
         @include place-awesome-icon(#{$name}){
@@ -101,10 +93,10 @@
                 color: #{$color};
                 background-color: white;
             }
-            hr{
-                border: solid 2.5px white;
+            .hr-dark{
+                background-color:white;
             }
-            button{
+            .button{
                 background-color: white;
                 color: #{$color};
             }

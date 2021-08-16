@@ -14,7 +14,7 @@
     &-hero-slider{
         @include page-wide-section-wrapper{
             align-items: center;
-            height: calc(100vh - 220px);
+            height: calc(100vh - 210px);
             background-repeat: no-repeat;
             background-size: cover;
             background-image: linear-gradient(to left, rgba(200, 200, 200, .1), rgba(0, 0, 0, 1)),
@@ -28,10 +28,12 @@
     &-about{
         @include page-wide-section-wrapper{
             background-color: #333645;
-            background-image: url("../img/branded.png");
-            background-repeat: no-repeat;
-            background-position: 100%;
-            background-size: auto 100%;
+            @include MQ('2','and-wider'){
+                background-image: url("../img/branded.png");
+                background-repeat: no-repeat;
+                background-position: 100%;
+                background-size: auto 100%;
+            }
         }
     }
     &-latest{
@@ -41,7 +43,11 @@
         }
     }
     &-news{
-        @include page-wide-section-wrapper;
+        @include page-wide-section-wrapper{
+            @include targetIEonly{
+                justify-content:flex-start;
+            }
+        }
     }
     &-sponsors{
         @include page-wide-section-wrapper{

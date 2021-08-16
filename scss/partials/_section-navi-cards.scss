@@ -2,6 +2,7 @@
 #navi{
     @include flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     @include constrain_at_breakpoints;
     color: white;
@@ -38,15 +39,12 @@
             @include flex;
             flex-direction:column;
         }
-        .links-container{
+        .links-container,
+        .address-container{
             @include flex;
             flex-direction: column;
             align-self: center;
-            width: 200px;
-            @include MQ('1','and-smaller'){
-                width:100%;
-                align-self:left;
-            }
+            width: 220px;
         }
     }
     .copyright-sitemap{
