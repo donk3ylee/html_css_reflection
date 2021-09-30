@@ -684,6 +684,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
@@ -776,6 +778,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
@@ -868,6 +872,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
@@ -965,6 +971,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
@@ -1057,6 +1065,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
@@ -1149,6 +1159,8 @@
   justify-content: center;
   align-items: center;
   padding: 19px 0 18px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   height: 100px;
   width: 200px;
   color: white;
