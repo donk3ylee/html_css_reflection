@@ -1,49 +1,97 @@
 
 #hero-slider{
-    @include flex;
-    flex-direction: column;
-    justify-content: center;  // Mobile first text over image is centered.
-    width: $page-width;
-    @include MQ('2','and-wider'){  // Then on larger sizes the text is left justified.
-        justify-content: left;
+    height: 100vh;
+    width: 100%;
+    %slider{
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+        // position:relative;
+        // left: 0;
+        // top: 0;
+        width: 100%;
+        height: calc(100vh - 210px);
+        z-index: 0;
+        color: white;
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            letter-spacing: normal;
+            padding: 0 6px;
+        }
+        p{
+            font-size: 1.25rem;
+            line-height: 2.25rem;
+            margin-bottom: 35px;
+        }
+        a{
+            @include flex;
+            justify-content: right;
+            align-items: center;
+            @include build-button($mode: darken, $bg_c: $color-design, $height: 63px, $font_s: 1.25rem);
+            @include place-awesome-icon('arrow', $orientation: 'after'){
+                margin: 0 0 0 15px;
+            }
+        }
+        .hero-item{
+        align-self: center;
+        text-align: center;
+            @include MQ('2','and-wider'){
+                align-self: flex-start;
+                margin-left: 100px;
+                text-align: left;
+            }
+            @include MQ('4','and-wider'){
+                align-self: flex-start;
+                margin-left: 18vw;
+                text-align: left;
+            }
+        }
     }
     
-    h1{
-        font-size: 3rem;
-        text-transform: uppercase;
-        margin-bottom: 25px;
-        line-height: 1.1;
-        letter-spacing: normal;
-        padding: 0 6px;
-    }
-    p{
-        font-size: 1.25rem;
-        line-height: 2.25rem;
-        margin-bottom: 35px;
-
-    }
-    a{
-        @include flex;
-        justify-content: right;
-        align-items: center;
-        @include build-button($mode: darken, $bg_c: $color-design, $height: 63px, $font_s: 1.25rem);
-        @include place-awesome-icon('arrow', $orientation: 'after'){
-            margin: 0 0 0 15px;
+    .owl-dots{
+        position: relative;
+        width: 300px;
+        left: calc(50vw - 150px);
+        bottom: 85px;
+        @media screen and(max-width: 412px){
+            bottom: 40px;
+        }
+        .owl-dot{
+            span{
+                background-color: rgba(214, 214, 214, .5);
+                width: 11px;
+                height: 11px;
+                margin: 0 10px;
+                &:hover{ background-color: #869791; }
+            }
+        }
+        .owl-dot.active{
+            border: solid 2px White;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            margin: 0 10px;
+            span{
+                background-color: #fff;
+                position: relative;
+                top:0px;
+                left:-6px;
+            }
         }
     }
 
-    .hero-item{
-        @include MQ('2','and-smaller'){
-            align-self: center;
-            text-align: center;
+
+    @each $name, $url in $slider_URL_map{
+        .slider-#{$name}{
+            @extend %slider;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: linear-gradient(to left, rgba(200, 200, 200, .1), rgba(0, 0, 0, 1)),
+            url("../img/sliding/#{$url}");
         }
-        @include MQ('2','and-wider'){
-            align-self: flex-start;
-            margin-left: 10%;
-        }
-        @include MQ('3','and-wider'){
-            align-self: flex-start;
-            margin-left: 0;
-        }
-    }
+    } 
 }

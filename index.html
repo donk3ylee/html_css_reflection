@@ -3,14 +3,20 @@
 <head>
     <title>Netmatters|Full Service Digital Agency|Norwich Norfolk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin> 
-    <link rel="preload" href="fonts/Poppins-Regular.eot" as="font" type="font/eot" crossorigin> 
+    <!-- <link rel="preload" href="fonts/Poppins-Regular.eot" as="font" type="font/eot" crossorigin>  -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha512-Meww2sXqNHxI1+5Dyh/9KAtvI9RZSA4c1K2k5iL02oiPO/RH3Q30L3M1albtqMg50u4gRTYdV4EXOQqXEI336A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -160,11 +166,42 @@
     <main>
         <div class="wrapper-hero-slider">
             <div id="hero-slider">
-                <h1 class="hero-item">Web Design</h1>
-                <p class="hero-item">For businesses looking to make a strong<br>and effective first impression</p>
-                <a class="hero-item">Find Out More&nbsp;</a>
+                <div class="owl-carousel owl-theme">
+                    <div class="slider-design">
+                        <h1 class="hero-item">Web Design</h1>
+                        <p class="hero-item">For businesses looking to make a strong<br>and effective first impression.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                    <div class="slider-support">
+                        <h1 class="hero-item">IT Support</h1>
+                        <p class="hero-item">Fast and cost-effective IT support<br>services for your business.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                    <div class="slider-telecom">
+                        <h1 class="hero-item">Telecoms Services</h1>
+                        <p class="hero-item">A new approach to connectivity, see how<br>we can help your business.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                    <div class="slider-software">
+                        <h1 class="hero-item">Bespoke Software</h1>
+                        <p class="hero-item">Bring your business together<br>with solutions that grow with you.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                    <div class="slider-marketing">
+                        <h1 class="hero-item">Digital Marketing</h1>
+                        <p class="hero-item">Generating you new business through<br>results-driven marketing activities.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                    <div class="slider-security">
+                        <h1 class="hero-item">Cyber Security</h1>
+                        <p class="hero-item">Keeping businesses and their customers<br>sensitive information protected.</p>
+                        <a class="hero-item">Find Out More&nbsp;</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="wrapper-articles container">  
             <div id="articles" class="row g-4">
                 <div class="col-12 col-lg-4">
@@ -547,6 +584,18 @@
             </div>
         </div>
     </footer>
+    <div id="cover"></div>
+    <div id="cookies-policy">
+        <h1>Cookies Policy</h1>
+        <hr>
+        <p>We use cookies to obtain aggregate data regarding site traffic and interaction, in order to identify user trends and obtain insights in order to continually improve our site. These cookies enable us to improve your customer experience as you use our site and help provide you with relevant online marketing.</p>
+        <p>You can see a list of the other companies who use cookies on this website, by visiting cookie settings at the bottom of each page. For full details of how we use your personal information, and your rights in relation to it, view our privacy policy.</p>
+        <hr>
+        <div class="buttons">
+            <button class="settings-button" type="button">Change Settings</button>
+            <button class="accept-button" type="button">Accept Cookies</button>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

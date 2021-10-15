@@ -36,3 +36,55 @@ body{
     letter-spacing: .4px;
     line-height: 1.42857143;
 }
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.65;
+    background: #000;
+    z-index: 10;
+    display: none;
+ }
+
+ #cookies-policy{
+    position: absolute;
+    height: 500px;
+    width: 600px;
+    top: calc(50% - (500px / 2));
+    left: calc(50% - (600px / 2));
+    background: white;
+    z-index: 11;
+    overflow-y:auto;
+    padding: 15px;
+    border-radius: 5px;
+    display:none;
+    @include MQ('1','and-smaller'){
+        height: 90vh;
+        width: 95vw;
+        top: 0;
+        left: calc(50% - (95vw / 2));
+    }
+    h1{
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    p{
+        line-height: 1.875rem;
+        margin-bottom: 25px;
+    }
+    .buttons{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .settings-button{
+        @include build-button($mode: darken, $bg_c: $btn-grey, $height: 55px, $font_s: 1.125rem);
+    }
+    .accept-button{
+        @include build-button($mode: darken, $bg_c: $color-design, $height: 55px, $font_s: 1.125rem);
+    }
+ }
