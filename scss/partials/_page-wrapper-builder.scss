@@ -2,7 +2,9 @@
 
 .wrapper{   // Wraps the entire contents of each section. Spans the entire viewport. Carries any background image, background colour or box-shadowing. 
     &-top-bar{
-        @include page-wide-section-wrapper;
+        @include page-wide-section-wrapper{
+            background-color: #fff;
+        }
     }
     &-top-menu{
         @include page-wide-section-wrapper{

@@ -2,13 +2,11 @@
 #hero-slider{
     height: 100vh;
     width: 100%;
+    // margin: 0;
     %slider{
         @include flex;
         flex-direction: column;
         justify-content: center;
-        // position:relative;
-        // left: 0;
-        // top: 0;
         width: 100%;
         height: calc(100vh - 210px);
         z-index: 0;

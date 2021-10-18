@@ -1,0 +1,26 @@
+
+// used to create classes to relocate and animate the section for a slide down effect triggered by JS
+//position the section above the viewport
+.prepare{
+    position: relative;
+    top: -221px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+@keyframes menuSlideDown{
+    0%{ top: -221px;}
+    50%{top: -221px;}
+    100%{top: 0;}
+}
+
+.execute{
+    position :fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    animation-name: menuSlideDown;
+    animation-duration: 600ms;
+}

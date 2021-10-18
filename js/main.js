@@ -43,3 +43,32 @@ $('.accept-button').click(function(){
 
 
 
+// START sticky header behaviour
+const menuSection = document.querySelector('#wrapper-top');
+const triggerDistance = menuSection.offsetHeight * 2;
+const heroSlider = document.querySelector('#hero-slider');
+
+window.addEventListener('scroll', distanceMet);
+
+function distanceMet(){
+    if (this.scrollY >= triggerDistance){         // if you scroll down 2x the height of the menu-top and menu-header then
+        if(this.oldScroll > this.scrollY){          // then the scroll direction is UP
+            heroSlider.style.marginTop = triggerDistance / 2 + 'px';    // compensate element below to retain position
+            menuSection.classList.remove('prepare');// clean old style
+            menuSection.classList.add('execute');   // slide down the top menu section 
+        }else{                                      // scroll direction is down so..... 
+            heroSlider.style.marginTop = '0px';     // compensate element below to retain position
+            menuSection.classList.remove('execute');// clean old style
+            menuSection.classList.add('prepare');   // slide the top menu up
+        }
+        this.oldScroll = this.scrollY;
+    }
+    if(this.scrollY === 0){                         // if were at the top of the screen
+        heroSlider.style.marginTop = '0px';         // compensate element below
+        menuSection.classList.remove('prepare');    // remove unneeded classes
+        menuSection.classList.remove('execute');
+    }
+}
+// END sticky header
+
+

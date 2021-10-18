@@ -61,6 +61,7 @@
   justify-content: center;
   width: 100%;
   height: auto;
+  background-color: #fff;
 }
 .wrapper-top-menu {
   display: -webkit-box;
@@ -205,6 +206,35 @@
   justify-content: center;
   width: 100%;
   height: auto;
+}
+
+.prepare {
+  position: relative;
+  top: -221px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+@keyframes menuSlideDown {
+  0% {
+    top: -221px;
+  }
+  50% {
+    top: -221px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.execute {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  animation-name: menuSlideDown;
+  animation-duration: 600ms;
 }
 
 #top-bar {

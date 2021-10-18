@@ -5,6 +5,7 @@
 @import "partials/helpers";
 
 @import "partials/page-wrapper-builder";
+@import "partials/section-top";
 @import "partials/section-top-bar";
 @import "partials/section-top-menu";
 @import "partials/section-slider";
@@ -37,6 +38,7 @@ body{
     line-height: 1.42857143;
 }
 
+// cover overlay to darken and prevent interaction with the underlying page. Used while displaying the cookies policy.
 #cover {
     position: absolute;
     top: 0;
