@@ -16,6 +16,7 @@
 @import "partials/section-newsletter";
 @import "partials/section-navi-cards";
 @import "partials/section-awards";
+@import "partials/slide-menu";
 
 @font-face {
     font-family: Poppins;
@@ -38,7 +39,8 @@ body{
     line-height: 1.42857143;
 }
 
-// cover overlay to darken and prevent interaction with the underlying page. Used while displaying the cookies policy.
+// cover overlay to darken and prevent interaction with the underlying page.
+// Used while displaying the cookies policy and the side menu.
 #cover {
     position: absolute;
     top: 0;
@@ -47,6 +49,7 @@ body{
     bottom: 0;
     opacity: 0.65;
     background: #000;
+    cursor: pointer;
     z-index: 10;
     display: none;
  }
@@ -90,3 +93,32 @@ body{
         @include build-button($mode: darken, $bg_c: $color-design, $height: 55px, $font_s: 1.125rem);
     }
  }
+
+.body-slide-left{
+    animation: body-slide-left 400ms linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes body-slide-left {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-300px);
+    }
+}
+
+.body-slide-right{
+    animation: body-slide-right 400ms linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes body-slide-right {
+    from{
+        transform: translateX(-300px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+

@@ -1,0 +1,35 @@
+
+
+#slide-menu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 300px;
+    top: 0;
+    right: 0;
+    // left: -300px; 
+    bottom: 0;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    z-index: -99;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .sections{
+        background-color: #3D404E;
+        padding: 20px 20px 20px 40px;
+        width: 300px;
+        height: 60px;
+        list-style: none;
+        
+    }
+    .links{
+        background-color: #262834 ;
+        padding: 10px 10px 10px 60px;
+        width: 300px;
+        height: 60px;
+        list-style: none;
+    }
+}
