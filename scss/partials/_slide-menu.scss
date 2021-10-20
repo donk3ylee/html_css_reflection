@@ -3,12 +3,14 @@
 #slide-menu{
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     width: 300px;
     top: 0;
     right: 0;
     // left: -300px; 
-    bottom: 0;
+    // bottom: 0;
+    overflow: auto;
+    height: 100%;
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;

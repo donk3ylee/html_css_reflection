@@ -1439,6 +1439,7 @@
   width: 1200px;
   align-self: center;
   padding: 50px 0 50px;
+  margin: -200px 0 1px;
 }
 @media (max-width: 767px) {
   #articles {
@@ -3214,11 +3215,12 @@
 #slide-menu {
   display: none;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   width: 300px;
   top: 0;
   right: 0;
-  bottom: 0;
+  overflow: auto;
+  height: 100%;
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
@@ -3387,6 +3389,10 @@ body {
   to {
     transform: translateX(0px);
   }
+}
+#wrapper-page {
+  position: relative;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

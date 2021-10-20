@@ -71,46 +71,34 @@ function distanceMet(){
 }
 // END sticky header
 
+
+// START slider menu
 const hamburger = document.getElementById('hamburger');
 const cover = document.getElementById('cover');
 const body = document.getElementsByTagName('body');
 const menu = document.getElementById('slide-menu');
-const wrapper = document.getElementById('wrapper-all');
-
-menu.style.display = "none";
+const wrapper = document.getElementById('wrapper-page');
 
 hamburger.addEventListener('click', function(){
     cover.style.display = "block";
     menu.style.display = "flex";
-    wrapper.style.height = "100vh";
-    menu.style.height = "100%";
-    wrapper.style.overflow = "hidden";
-    menu.style.overflow = "auto";
+    // wrapper.style.height = "100vh";
+    // wrapper.style.overflow = "hidden";
+
+    // menu.style.top = window.scrollY;
+    // menu.style.height = "100%";
+    // menu.style.overflow = "auto";
+
     wrapper.classList.remove('body-slide-right');
     wrapper.classList.add('body-slide-left');
     cover.addEventListener('click', function(){
         wrapper.classList.remove('body-slide-left');
         wrapper.classList.add('body-slide-right');
         cover.style.display = "none";
-        wrapper.style.overflow = "auto";
+        // wrapper.style.overflow = "auto";
         setTimeout(function(){
             menu.style.display = "none";
         }, 400);
     });
 });
-
-
-// $(document).ready(function(){
-//     $("#hamburger").click(function(){
-//         console.log('hamburger clicked');
-//         $("body").toggle(200, function(){
-//             console.log('toggled');
-//             // $("#wrapper-all").show();
-//             $("#cover").show();
-//             $('body').not('#hamburger').css({           
-//                 overflow: 'hidden',
-//                 height: '100%'
-//             });
-//         });
-//     });
-// });
+// END slider menu
