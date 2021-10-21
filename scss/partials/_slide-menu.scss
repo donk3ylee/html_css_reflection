@@ -4,34 +4,47 @@
     display: none;
     flex-direction: column;
     position: fixed;
-    width: 300px;
+    width: 350px;
     top: 0;
     right: 0;
-    // left: -300px; 
-    // bottom: 0;
     overflow: auto;
+    overflow-x: hidden;
     height: 100%;
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    z-index: -99;
+    z-index: -1;
     a{
         color: #fff;
         text-decoration: none;
     }
+    %menu-item{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 350px;
+        height: auto;
+    }
     .sections{
-        background-color: #3D404E;
-        padding: 20px 20px 20px 40px;
-        width: 300px;
-        height: 60px;
-        list-style: none;
-        
+        @extend %menu-item;
+        font-size: 1rem;
+        padding: 20px 20px 20px 20px;
+        background-color:#333645;
+        &:hover{
+            background-color: #3D404E;
+        }
     }
     .links{
-        background-color: #262834 ;
-        padding: 10px 10px 10px 60px;
-        width: 300px;
-        height: 60px;
-        list-style: none;
+        @extend %menu-item;
+        font-size: 0.875rem;
+        padding: 15px 20px 15px 20px;
+        @include place-awesome-icon('arrows', $size: 0.875rem, $orientation: 'before'){
+            padding-right:10px;
+        }
+        background-color: #262834;
+        border-top: 1px solid hsla(0,0%,100%,.05);
+        &:hover{
+            .sections{background-color: #3D404E;}
+        }
     }
 }

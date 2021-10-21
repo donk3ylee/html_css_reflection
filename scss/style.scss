@@ -37,16 +37,19 @@ body{
     font-size: 1rem;
     letter-spacing: .4px;
     line-height: 1.42857143;
+    z-index: 0;
 }
 
 // cover overlay to darken and prevent interaction with the underlying page.
 // Used while displaying the cookies policy and the side menu.
-#cover {
+#cover{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow:hidden;
+    overflow:-moz-hidden-unscrollable;
     opacity: 0.65;
     background: #000;
     cursor: pointer;
@@ -120,9 +123,4 @@ body{
     to{
         transform: translateX(0px);
     }
-}
-
-#wrapper-page{
-    position: relative;
-    height: 100%;
 }

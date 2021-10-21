@@ -72,30 +72,58 @@ function distanceMet(){
 // END sticky header
 
 
+
 // START slider menu
 const hamburger = document.getElementById('hamburger');
 const cover = document.getElementById('cover');
 const body = document.getElementsByTagName('body');
 const menu = document.getElementById('slide-menu');
-const wrapper = document.getElementById('wrapper-page');
+const page = document.getElementById('wrapper-all');
+
+// get the hamburger bars for the animations
+const hamburgerTopBar = document.getElementById('bar-top');
+const hamburgerMiddleBar = document.getElementById('bar-middle');
+const hamburgerBottomBar = document.getElementById('bar-bottom');
+
+function animateHamburgerX(){
+    hamburgerTopBar.classList.remove('hamburger-animation-to-default-top');
+    hamburgerMiddleBar.classList.remove('hamburger-animation-to-default-middle');
+    hamburgerBottomBar.classList.remove('hamburger-animation-to-default-bottom');
+
+    hamburgerTopBar.classList.add('hamburger-animation-to-X-top');
+    hamburgerMiddleBar.classList.add('hamburger-animation-to-X-middle');
+    hamburgerBottomBar.classList.add('hamburger-animation-to-X-bottom');
+}
+
+function animateHamburgerDefault(){
+    hamburgerTopBar.classList.remove('hamburger-animation-to-X-top');
+    hamburgerMiddleBar.classList.remove('hamburger-animation-to-X-middle');
+    hamburgerBottomBar.classList.remove('hamburger-animation-to-X-bottom');
+
+    hamburgerTopBar.classList.add('hamburger-animation-to-default-top');
+    hamburgerMiddleBar.classList.add('hamburger-animation-to-default-middle');
+    hamburgerBottomBar.classList.add('hamburger-animation-to-default-bottom');
+}
 
 hamburger.addEventListener('click', function(){
+    animateHamburgerX();
     cover.style.display = "block";
+    body[0].style.overflow = "hidden";
+    // menu.style.top = window.scrollY +'px';
     menu.style.display = "flex";
-    // wrapper.style.height = "100vh";
-    // wrapper.style.overflow = "hidden";
-
-    // menu.style.top = window.scrollY;
-    // menu.style.height = "100%";
-    // menu.style.overflow = "auto";
-
-    wrapper.classList.remove('body-slide-right');
-    wrapper.classList.add('body-slide-left');
+    page.classList.remove('body-slide-right');
+    page.classList.add('body-slide-left');
+    setTimeout(function(){
+        menu.style.zIndex = "1";
+    }, 400);
+    
     cover.addEventListener('click', function(){
-        wrapper.classList.remove('body-slide-left');
-        wrapper.classList.add('body-slide-right');
+        animateHamburgerDefault();
         cover.style.display = "none";
-        // wrapper.style.overflow = "auto";
+        menu.style.zIndex = "-1";
+        body[0].style.overflow = "auto";
+        page.classList.remove('body-slide-left');
+        page.classList.add('body-slide-right');
         setTimeout(function(){
             menu.style.display = "none";
         }, 400);

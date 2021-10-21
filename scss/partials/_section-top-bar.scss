@@ -126,14 +126,125 @@
     .btn-hamburger{
         display: inline-flex;
         flex-direction: column;
-        @include place-awesome-icon('hamburger',$hamburger-icon-size!important);
         @include build-button($bg_c: #333645){
             margin: 0 0 0 15px;
             max-width: 55px;
         }
+        // .bars{
+        //     // 33px wide, 3px tall
+        //     // position: relative;
+        //     // top: 50%;
+        //     // left: calc(50% - 16px);
+        //     width: 33px;
+        //     height: 3px;
+        //     background-color: white;
+        //     border-radius: 0;
+        //     &::before{
+        //         content:"";
+        //         position: relative;
+        //         top: 0px;
+        //         left: 0; //calc(50% - 16px);
+        //         width: 33px;
+        //         height: 3px;
+        //         background-color: white;
+        //         border-radius: 0;
+        //         transform:translateY(-8px);
+        //     }
+        //     ::after{
+        //         content:"";
+        //         width: 33px;
+        //         height: 3px;
+        //         background-color: white;
+        //         border-radius: 0;
+        //         transform:translateY(8px);
+        //     }
+        // }
+        %bar{
+            position: relative;
+            left: 0;
+            width: 33px;
+            height: 3px;
+            background-color: white;
+            border-radius: 0;
+            padding: 0;
+            margin: 0;
+        }
+        #bar-top{
+            @extend %bar;
+            top: -6px;
+            // top: 3px; for center
+            // transform: rotate(-45deg);
+        }
+        #bar-middle{
+            @extend %bar;
+            top: 0;
+        }
+        #bar-bottom{
+            @extend %bar;
+            top: 6px;
+            // top: -3px; for center
+        }
+        @keyframes hamburger-animation-to-X-top{
+            0%{}
+            33%{ top: 3px; }
+            100%{ top: 3px; transform: rotate(45deg);}
+        }
+        @keyframes hamburger-animation-to-X-middle{
+            0%{}
+            33%{ opacity: 0; }
+            100%{ opacity: 0; }
+        }
+        @keyframes hamburger-animation-to-X-bottom{
+            0%{}
+            33%{ top: -3px; }
+            100%{ top: -3px; transform: rotate(135deg); }
+        }
+        .hamburger-animation-to-X-top{
+            animation: hamburger-animation-to-X-top 400ms linear;
+            animation-fill-mode: forwards;
+        }
+        .hamburger-animation-to-X-middle{
+            animation: hamburger-animation-to-X-middle 400ms linear;
+            animation-fill-mode: forwards;
+        }
+        .hamburger-animation-to-X-bottom{
+            animation: hamburger-animation-to-X-bottom 400ms linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hamburger-animation-to-default-top{
+            0%{ top: 3px; transform: rotate(45deg); }
+            33%{ top: 3px; }
+            100%{ top: -6px; }
+        }
+        @keyframes hamburger-animation-to-default-middle{
+            0%{ opacity: 0; }
+            33%{ opacity: 0; }
+            100%{ opacity: 1; }
+        }
+        @keyframes hamburger-animation-to-default-bottom{
+            0%{ top: -3px; transform: rotate(135deg); }
+            33%{ top: -3px; }
+            100%{ top: 6px; }
+        }
+        .hamburger-animation-to-default-top{
+            animation: hamburger-animation-to-default-top 400ms linear;
+            animation-fill-mode: forwards;
+        }
+        .hamburger-animation-to-default-middle{
+            animation: hamburger-animation-to-default-middle 400ms linear;
+            animation-fill-mode: forwards;
+        }
+        .hamburger-animation-to-default-bottom{
+            animation: hamburger-animation-to-default-bottom 400ms linear;
+            animation-fill-mode: forwards;
+        }
         .title{
+            position: relative;
             line-height: 1;
-            font-size: .75rem;
+            font-size: 12px;
+            bottom: -12px;
+            left: 0;
         }
     }
     .search-wrapper{
