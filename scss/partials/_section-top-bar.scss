@@ -172,8 +172,6 @@
         #bar-top{
             @extend %bar;
             top: -6px;
-            // top: 3px; for center
-            // transform: rotate(-45deg);
         }
         #bar-middle{
             @extend %bar;
@@ -182,7 +180,6 @@
         #bar-bottom{
             @extend %bar;
             top: 6px;
-            // top: -3px; for center
         }
         @keyframes hamburger-animation-to-X-top{
             0%{}
