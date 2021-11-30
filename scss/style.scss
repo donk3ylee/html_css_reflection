@@ -95,18 +95,18 @@ body{
             justify-content: center;
         }
     }
-    %button{
+    %responsive{
         @include MQ('1','and-smaller'){
             width: 100%;
             margin: 10px auto;
         }
     }
     .settings-button{
-        @extend %button;
+        @extend %responsive;
         @include build-button($mode: darken, $bg_c: $btn-grey, $height: 55px, $font_s: 1.125rem);
     }
     .accept-button{
-        @extend %button;
+        @extend %responsive;
         @include build-button($mode: darken, $bg_c: $color-design, $height: 55px, $font_s: 1.125rem);
     }
  }
