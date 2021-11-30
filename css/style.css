@@ -1477,15 +1477,15 @@
 #hero-slider .owl-dots .owl-dot.active {
   border: solid 2px White;
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  margin: 0 10px;
+  width: 23px;
+  height: 23px;
+  margin: 0 11.5px;
 }
 #hero-slider .owl-dots .owl-dot.active span {
   background-color: #fff;
   position: relative;
   top: 0px;
-  left: -6px;
+  left: -5.5px;
 }
 #hero-slider .slider-design {
   background-repeat: no-repeat;
@@ -3421,10 +3421,11 @@ body {
 }
 @media (max-width: 767px) {
   #cookies-policy {
-    height: 90vh;
-    width: 95vw;
-    top: 0;
-    left: calc(50% - (95vw / 2));
+    height: auto;
+    max-height: 90vh;
+    width: 90vw;
+    top: 5vh;
+    left: calc(50% - (90vw / 2));
   }
 }
 #cookies-policy h1 {
@@ -3440,6 +3441,18 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media (max-width: 767px) {
+  #cookies-policy .buttons {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  #cookies-policy .accept-button, #cookies-policy .settings-button {
+    width: 100%;
+    margin: 10px auto;
+  }
 }
 #cookies-policy .settings-button {
   align-items: center;
