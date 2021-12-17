@@ -1,18 +1,25 @@
 
+
+
+@keyframes menuSlideDown{
+    0%{ top: -221px;}
+    50%{top: -221px;}
+    100%{top: 0;}
+}
+@keyframes menuSlideUp{
+    0%{ top: 0;}
+    50%{top: 0;}
+    100%{top: -221px;}
+}
+
 // used to create classes to relocate and animate the section for a slide down effect triggered by JS
-//position the section above the viewport
+// position the section above the viewport
 .prepare{
     position: relative;
     top: -221px;
     left: 0;
     right: 0;
     z-index: 50;
-}
-
-@keyframes menuSlideDown{
-    0%{ top: -221px;}
-    50%{top: -221px;}
-    100%{top: 0;}
 }
 
 .execute{
@@ -22,5 +29,15 @@
     right: 0;
     z-index: 50;
     animation-name: menuSlideDown;
+    animation-duration: 600ms;
+}
+
+.up{
+    position :fixed;
+    top: -221px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    animation-name: menuSlideUp;
     animation-duration: 600ms;
 }

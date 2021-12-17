@@ -60,7 +60,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: #fff;
 }
 .wrapper-top-menu {
@@ -73,7 +72,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: #333645;
   border-bottom: 0.5px solid #999;
 }
@@ -87,7 +85,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
 }
 .wrapper-articles {
   display: -webkit-box;
@@ -99,7 +96,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
 }
 .wrapper-about {
   display: -webkit-box;
@@ -111,7 +107,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: #333645;
 }
 @media (min-width: 992px) {
@@ -132,7 +127,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: white;
   box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
 }
@@ -146,7 +140,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
 }
 @media screen\0  {
   .wrapper-news {
@@ -166,7 +159,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   box-shadow: inset 0 5px 35px rgba(0, 0, 0, 0.1);
 }
 .wrapper-newsletter {
@@ -179,7 +171,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: #ddd;
 }
 .wrapper-navi {
@@ -192,7 +183,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
   background-color: #333645;
 }
 .wrapper-awards {
@@ -205,15 +195,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
-}
-
-.prepare {
-  position: relative;
-  top: -221px;
-  left: 0;
-  right: 0;
-  z-index: 50;
 }
 
 @keyframes menuSlideDown {
@@ -227,6 +208,25 @@
     top: 0;
   }
 }
+@keyframes menuSlideUp {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: -221px;
+  }
+}
+.prepare {
+  position: relative;
+  top: -221px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
 .execute {
   position: fixed;
   top: 0;
@@ -234,6 +234,16 @@
   right: 0;
   z-index: 50;
   animation-name: menuSlideDown;
+  animation-duration: 600ms;
+}
+
+.up {
+  position: fixed;
+  top: -221px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  animation-name: menuSlideUp;
   animation-duration: 600ms;
 }
 
@@ -3364,48 +3374,6 @@
   background-color: #3D404E;
 }
 
-@font-face {
-  font-family: Poppins;
-  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
-  font-weight: 600;
-}
-@media screen\0  {
-  @font-face {
-    font-family: Poppins;
-    src: url("fonts/Poppins-Regular.eot") format("eot");
-  }
-}
-@font-face {
-  _:-ms-fullscreen, :root {
-    font-family: Poppins;
-    src: url("fonts/Poppins-Regular.eot") format("eot");
-  }
-}
-
-body {
-  font-family: Poppins, sans-serif;
-  color: #666;
-  font-size: 1rem;
-  letter-spacing: 0.4px;
-  line-height: 1.42857143;
-  z-index: 0;
-}
-
-#cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  overflow: -moz-hidden-unscrollable;
-  opacity: 0.65;
-  background: #000;
-  cursor: pointer;
-  z-index: 10;
-  display: none;
-}
-
 #cookies-policy {
   position: absolute;
   height: 500px;
@@ -3499,6 +3467,51 @@ body {
   border: solid 1px #7e57a0;
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 600;
+}
+@media screen\0  {
+  @font-face {
+    font-family: Poppins;
+    src: url("fonts/Poppins-Regular.eot") format("eot");
+  }
+}
+@font-face {
+  _:-ms-fullscreen, :root {
+    font-family: Poppins;
+    src: url("fonts/Poppins-Regular.eot") format("eot");
+  }
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: #666;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  line-height: 1.42857143;
+  z-index: 0;
+}
+
+#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.65;
+  background: #000;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+#wrapper-all {
+  display: block;
+  height: 100%;
+}
+
 .body-slide-left {
   animation: body-slide-left 400ms linear;
   animation-fill-mode: forwards;
@@ -3509,7 +3522,7 @@ body {
     transform: translateX(0px);
   }
   to {
-    transform: translateX(-300px);
+    transform: translateX(-350px);
   }
 }
 .body-slide-right {
@@ -3519,7 +3532,7 @@ body {
 
 @keyframes body-slide-right {
   from {
-    transform: translateX(-300px);
+    transform: translateX(-350px);
   }
   to {
     transform: translateX(0px);
