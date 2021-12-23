@@ -8,16 +8,20 @@
     }
     &-top-menu{
         @include page-wide-section-wrapper{
-            // @include flex;
             background-color: $top-menu-bgcolor;
             border-bottom: .5px solid #999;
         }
     }
     &-hero-slider{
-        @include page-wide-section-wrapper;
+        @include page-wide-section-wrapper{
+            background-color: #fff;
+        }
     }
     &-articles{
-        @include page-wide-section-wrapper;
+        @include page-wide-section-wrapper{
+            background-color: #fff;
+            width: calc(100vw - var(--scrollbar-width));
+        }
     }
     &-about{
         @include page-wide-section-wrapper{
@@ -32,12 +36,15 @@
     }
     &-latest{
         @include page-wide-section-wrapper{
-            background-color: white;
+            background-color: #fff;
             box-shadow: 0 5px 35px rgba(0,0,0,0.1);
+            width: calc(100vw - var(--scrollbar-width));
         }
     }
     &-news{
         @include page-wide-section-wrapper{
+            background-color: #fff;
+            // width: calc(100vw - var(--scrollbar-width));
             @include targetIEonly{
                 justify-content:flex-start;
             }
@@ -46,6 +53,7 @@
     &-sponsors{
         @include page-wide-section-wrapper{
             box-shadow: inset 0 5px 35px rgba(0,0,0,0.1);
+            background-color: #fff;
         }
     }
     &-newsletter{
@@ -60,5 +68,6 @@
     }
     &-awards{
         @include page-wide-section-wrapper;
+        background-color: #fff;
     }
 }

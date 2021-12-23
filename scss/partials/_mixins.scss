@@ -73,24 +73,23 @@
 @mixin page-wide-section-wrapper{
     @include flex;
     justify-content: center;
-    width: 100%;
-    // height: auto;
+    width: 100vw;
     @content;
 }
 
-@mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
-    &::before {
-    content:"";
-    background-color: $color;
-    position: absolute;
-    height: 100%;
-    width: 200vw;
-    left: -100vw;
-    top: 0;
-    z-index: -1;
-    @content;
-  }
-}
+// @mixin make-bgcolor-wide($color: white){ /// workaround to extend the background-color past a div wrapper
+//     &::before {
+//     content: "";
+//     background-color: $color;
+//     position: absolute;
+//     height: 100%;
+//     width: 200vw;
+//     left: -100vw;
+//     top: 0;
+//     z-index: -1;
+//     @content;
+//   }
+// }
 
 @mixin MQ($bp, $func){
     @if not map-has-key($MQ_breakpoints_map,$bp){

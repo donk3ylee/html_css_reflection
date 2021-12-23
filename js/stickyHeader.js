@@ -7,8 +7,6 @@ let oldScroll;
 let deployed = false;
 
 window.addEventListener('scroll', (e) => {
-    console.log(deployed);
-    console.log(scrollY);
     if (this.scrollY >= triggerDistance){         // if you scroll down 2x the height of the menu-top and menu-header then
         // console.log(`deployed status: ${deployed}`)
         // console.log("oldScroll status: " . oldScroll)

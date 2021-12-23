@@ -30,6 +30,7 @@
     }
 }
 
+
 @each $name, $color in $menu_color_map{
     #menu-top .wrapper-#{$name}{
         .button-#{$name}{
@@ -52,7 +53,7 @@
         &:hover{
             color: white;
             background-color: #{$color};
-            .icon{  // make icons white on hover.
+            .icon{
                 color:white;
             }
             .submenu{
@@ -61,23 +62,38 @@
                     align-self: center;
                     text-decoration: none;
                 }
+
                 @include flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
                 align-content: center;
                 position: absolute;
                 top: 100px;
-                left: 0;
-                width: 100%;
+                left: calc(((100vw - 100%)/2)*-1); 
+                width: calc(100vw - var(--scrollbar-width));
+                height: 45px;
                 z-index: 2;
                 font-size: 1rem;
-                @include MQ('3','and-smaller'){
-                    width: 90vw;
-                    left: 5vw;
-                }
-                height: 45px;
-                @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
                 @include fix-normalize-transparency($color);
+            }
+            .submenu-container{
+                @include flex;
+                width: $page-width;
+                justify-content: flex-start;
+                align-items: center;
+                align-content: center;
+                span{
+                    margin: 0 30px;
+                }
+                @include MQ('3','and-smaller'){
+                    width: 100%;
+                    position: absolute;
+                    left: calc((100vw - 85%)/2); 
+                    font-size: .8125rem;
+                    span{
+                        margin: 0 15px;
+                    }
+                }
             } 
         }
     }

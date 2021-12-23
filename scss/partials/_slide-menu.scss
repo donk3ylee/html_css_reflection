@@ -1,5 +1,68 @@
 
 
+#substitute-menu{
+    // new menu is 216px wide with 21px margin both sides
+    display: none;
+    @include MQ('2','and-smaller'){
+        display: flex;
+    }    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333645;
+    padding-bottom: 20px;
+    outline: 1px solid rgba(0,0,0,.25);
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    
+    %category{
+        text-align: center;
+        font-size: 1.125rem;
+        padding: 19px 0 18px;
+        width: 216px;
+        margin: 21px;
+        cursor: pointer;
+        border-radius: 3px;
+        outline: 1px solid rgba(0,0,0,.25);
+        border: 1px solid hsla(0,0%,100%,.1);
+        &:hover{
+            background-color: #3D404E;
+        }
+    }
+    .category-contact{
+        @extend %category;
+        
+    }
+    @each $name, $color in $menu_color_map{
+        .section-#{$name}{
+        &:hover .category{
+            background-color: #3D404E;
+        }
+            .category{
+                @extend %category;
+                @include place-awesome-icon(#{$name}){
+                    color: $color;
+                    padding-bottom: 10px;
+                }
+                .small{
+                    display: block;
+                    font-size: x-small;
+                    padding-bottom: 5px;
+                }
+            }
+            .sub{
+                text-align: center;
+                background-color: rgba(0,0,0,.25);
+                padding: 10px;
+                cursor: pointer;
+                border-bottom: solid 0.5px #333645;
+            }
+        }
+    }
+}
+
+
+
+
 #slide-menu{
     display: none;
     flex-direction: column;
@@ -12,8 +75,7 @@
     height: 100%;
     text-transform: uppercase;
     color: #fff;
-    cursor: pointer;
-    z-index: -1;
+    z-index: -11; 
     a{
         color: #fff;
         text-decoration: none;
@@ -24,6 +86,7 @@
         align-items: center;
         width: 350px;
         height: auto;
+        cursor: pointer;
     }
     .sections{
         @extend %menu-item;

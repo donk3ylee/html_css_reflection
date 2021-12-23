@@ -1,8 +1,6 @@
 
 #hero-slider{
-    height: 100vh;
     width: 100%;
-    // margin: 0;
     %slider{
         @include flex;
         flex-direction: column;
@@ -29,7 +27,6 @@
             @include flex;
             justify-content: right;
             align-items: center;
-            @include build-button($mode: darken, $bg_c: $color-design, $height: 63px, $font_s: 1.25rem);
             @include place-awesome-icon('arrow', $orientation: 'after'){
                 margin: 0 0 0 15px;
             }
@@ -37,9 +34,10 @@
         .hero-item{
         align-self: center;
         text-align: center;
+        margin: 0 20px;
             @include MQ('2','and-wider'){
                 align-self: flex-start;
-                margin-left: 100px;
+                margin-left: 80px;
                 text-align: left;
             }
             @include MQ('4','and-wider'){
@@ -49,7 +47,7 @@
             }
         }
     }
-    
+
     .owl-dots{
         position: relative;
         width: 300px;
@@ -82,7 +80,6 @@
         }
     }
 
-
     @each $name, $url in $slider_URL_map{
         .slider-#{$name}{
             @extend %slider;
@@ -91,5 +88,16 @@
             background-image: linear-gradient(to left, rgba(200, 200, 200, .1), rgba(0, 0, 0, 1)),
             url("../img/sliding/#{$url}");
         }
+    }
+    @each $name, $color in $menu_color_map{
+        .slider-#{$name}{
+            a.hero-item{
+            @include build-button($mode: darken, $bg_c: $color, $height: 63px, $font_s: 1.25rem);
+            }
+        }
     } 
 }
+
+
+
+

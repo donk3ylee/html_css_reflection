@@ -1,4 +1,11 @@
-// Owl Slider Setup
+// START - Calculate vertical scrollbar width and pass it off to CSS for use there  
+document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
+// now the scrollbar width is available in CSS via var(--scrollbar-width) :)
+// END - Calculate vertical scrollbar
+
+
+
+// START - Owl Slider Config
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
         items: 1,
@@ -8,7 +15,7 @@ $(document).ready(function(){
         dotsEach: true,
     });
 });
-// Owl Slider END
+// END - Owl Slider
 
 
 
@@ -43,7 +50,7 @@ $('.accept-button').click(function(){
 
 
 
-
+// START - hamburger animations
 // get the hamburger bars for the animations
 const hamburgerTopBar = document.getElementById('bar-top');
 const hamburgerMiddleBar = document.getElementById('bar-middle');
@@ -68,9 +75,11 @@ function animateHamburgerDefault(){
     hamburgerMiddleBar.classList.add('hamburger-animation-to-default-middle');
     hamburgerBottomBar.classList.add('hamburger-animation-to-default-bottom');
 }
+// END hamburger animations
 
 
-// START hamburger sliding menu
+
+// START sliding menu
 const hamburger = document.getElementById('hamburger');
 const cover = document.getElementById('cover');
 const body = document.getElementsByTagName('body');
@@ -81,25 +90,25 @@ hamburger.addEventListener('click', function(){
     animateHamburgerX();
     cover.style.display = "block";
     body[0].style.overflow = "hidden";
-    // menu.style.top = window.scrollY +'px';
+    menu.style.zIndex = "-11";
     menu.style.display = "flex";
-    page.classList.remove('body-slide-right');
     page.classList.add('body-slide-left');
     setTimeout(function(){
-        menu.style.zIndex = "1";
+        menu.style.zIndex = "51";
     }, 400);
     
     cover.addEventListener('click', function(){
         animateHamburgerDefault();
         cover.style.display = "none";
-        menu.style.zIndex = "-1";
-        body[0].style.overflow = ""; //"auto";
+        menu.style.zIndex = "-11";
         page.classList.remove('body-slide-left');
         page.classList.add('body-slide-right');
         setTimeout(function(){
+            body[0].style.overflow = "";
             menu.style.display = "none";
             page.classList.remove('body-slide-right');
+            menu.style.zIndex = "";
         }, 400);
     });
 });
-// END slider menu
+// END sliding menu

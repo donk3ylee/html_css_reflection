@@ -5,7 +5,7 @@
     align-items: center; 
     min-height: 110px;
     @include constrain_at_breakpoints;
-    padding: 15px 0;
+    padding: 15px calc(15px + var(--scrollbar-width)) 0 15px;
     .button-area-wrapper{
         @include flex;
         justify-content: space-between;
@@ -98,7 +98,7 @@
         outline: 1px solid hsla(0,0%,100%,.2);
         border: 2px solid rgba(0,0,0,.1);
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        width: 100vw;
+        width: calc(100vw - var(--scrollbar-width));;
         height: 47px;
         font-size: 14px;
         line-height: 1.42857143;
