@@ -1501,7 +1501,8 @@
 #hero-slider .slider-security .hero-item, #hero-slider .slider-marketing .hero-item, #hero-slider .slider-software .hero-item, #hero-slider .slider-telecom .hero-item, #hero-slider .slider-support .hero-item, #hero-slider .slider-design .hero-item {
   align-self: center;
   text-align: center;
-  margin: 0 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 @media (min-width: 992px) {
   #hero-slider .slider-security .hero-item, #hero-slider .slider-marketing .hero-item, #hero-slider .slider-software .hero-item, #hero-slider .slider-telecom .hero-item, #hero-slider .slider-support .hero-item, #hero-slider .slider-design .hero-item {

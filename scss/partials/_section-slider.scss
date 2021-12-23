@@ -34,7 +34,8 @@
         .hero-item{
         align-self: center;
         text-align: center;
-        margin: 0 20px;
+        margin-left: 20px;
+        margin-right: 20px;
             @include MQ('2','and-wider'){
                 align-self: flex-start;
                 margin-left: 80px;
