@@ -30,7 +30,6 @@
     }
 }
 
-
 @each $name, $color in $menu_color_map{
     #menu-top .wrapper-#{$name}{
         .button-#{$name}{
@@ -107,4 +106,12 @@
             }
         }       
     }
+}
+
+.wrapper-design{
+    border-left: 1px solid hsla(0,0%,100%,.1);
+}
+
+.wrapper-security{
+    border-right: 1px solid rgba(0,0,0,.25);
 }

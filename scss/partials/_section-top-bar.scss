@@ -5,7 +5,7 @@
     align-items: center; 
     min-height: 110px;
     @include constrain_at_breakpoints;
-    padding: 15px calc(15px + var(--scrollbar-width)) 0 15px;
+    padding: 20px calc(15px + var(--scrollbar-width)) 0 15px;
     .button-area-wrapper{
         @include flex;
         justify-content: space-between;
@@ -91,6 +91,9 @@
             box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(91 192 222 / 60%);
         }   
     }
+    .search-wrapper-alt{
+        width: 100vw;
+    }
     .search-alt{ 
         position: relative;
         background-color: rgba($color: #000000, $alpha: 0.1);
@@ -98,18 +101,19 @@
         outline: 1px solid hsla(0,0%,100%,.2);
         border: 2px solid rgba(0,0,0,.1);
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        width: calc(100vw - var(--scrollbar-width));;
+        width: 100%;
         height: 47px;
         font-size: 14px;
         line-height: 1.42857143;
-        margin:  15px 0 0;
+        margin:  15px 0;
         padding: 0 15px 0 15px;
     }
     .btn-search-alt{
         display: inline-flex;
         position: absolute;
-        right:0;
-        background-color:transparent;
+        right: 5px;
+        background-color: transparent;
+        border: solid 1px pink;
         outline: none;
         border: none;
         height: 47px;
@@ -128,7 +132,7 @@
         flex-direction: column;
         @include build-button($bg_c: #333645){
             margin: 0 0 0 15px;
-            max-width: 55px;
+            width: 66px;
         }
         %bar{
             position: relative;
@@ -242,7 +246,7 @@
     }
     .right-group{
         @include flex;
-        justify-content: center; //
+        justify-content: center; 
         align-items: center ;
     }
 }
