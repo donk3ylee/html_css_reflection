@@ -1,5 +1,5 @@
 
-@mixin build_catagory($name){
+@mixin build_category($name){
     // eventually there will be a test for name and a colour map to automatically colour the background etc.
     display: flex;
     justify-self: center;
@@ -235,4 +235,5 @@ display: table;
         display: block;
         margin-left: 45px;
     }
+    @content;
 }

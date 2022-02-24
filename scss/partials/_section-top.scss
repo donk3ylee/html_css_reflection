@@ -27,7 +27,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: 1900; // high value necessary because of the leaflet.js map control overlays so the sticky menu appears above.
     animation-name: menuSlideDown;
     animation-duration: 600ms;
 }
@@ -37,7 +37,7 @@
     top: -221px;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: 1900; // high value necessary because of the leaflet.js map control overlays so the sticky menu appears above. 
     animation-name: menuSlideUp;
     animation-duration: 600ms;
 }

@@ -1,0 +1,205 @@
+
+.contact-page-wrapper{
+    display:flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #fff;
+    .page{
+        width: $page-width;
+        padding: 15px;
+        .main-title{
+            font-size: 2.25rem;
+            margin: 100px 0 0 15px;
+            padding: 0px;
+        }
+        .office-card-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-self: center;
+            width: 100%;
+            @include MQ('2','and-wider'){
+                flex-direction: row;
+                justify-content: center;
+            }
+            .card{
+                display: flex;
+                width: 100%;
+                margin-bottom: 30px; 
+                @include MQ('2','and-wider'){
+                    width: 300px;
+                    margin: 15px;
+                }
+                @include MQ('3','and-wider'){
+                    width: 368px;
+                    margin: 15px;
+                }
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                box-shadow: 0 3px 35px rgba(0,0,0,.1);
+                .image{
+                    width:100%;
+                    cursor: pointer;
+                }
+                .content{
+                    padding: 30px;
+                    .title{
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 1.1;
+                        margin-bottom: 25px;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    .address{
+                        font-family: inherit;
+                        font-size: .8125rem;
+                        font-weight: 400;
+                        letter-spacing: 0.4px;
+                        line-height: 1.375rem;
+                    }
+                    .telephone{
+                        font-weight: 700;
+                        font-size: 1.625rem;
+                        line-height: 1.1;
+                        color:#926fb1!important;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    .submit{
+                        @include build_button($bg_c: #926fb1, $height: 45px, $font_s: 0.9rem){
+                            padding: 0 30;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+                 #cambridge-map, #wymondham-map,#yarmouth-map{
+                    height: 300px;
+                    width: 100%;
+                    border-top: 1px solid #ccc;
+                }
+            }
+        }
+        .form-container{
+            display: flex;
+            justify-content: center;
+            @include MQ('3','and-wider'){
+                justify-content: left;
+            }
+        }
+        .form{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 1rem;
+            letter-spacing: .4px;
+            font-weight: 600;
+            color: #333645;
+            width: calc(100% - 30px);
+            background-color: #E6E7E9;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 30px;
+            max-width: 992px; // 100% wide then constrained at MQ breakpoint 2...
+            @include MQ('3','and-wider'){
+                width: 750px;
+            }
+            .errors{
+                display: block;
+                background-color: bisque;
+                border: 3px solid red;
+                color: red;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                font-size: 1rem;
+                @include MQ('1','and-smaller'){
+                    font-size: 0.8rem;
+                }
+            }
+            .success{
+                display: block;
+                background-color: bisque;
+                border: 3px solid green;
+                color: green;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                font-size: 1rem;
+                @include MQ('1','and-smaller'){
+                    font-size: 0.8rem;
+                }
+            }
+            label{
+                width:100%;
+                margin: 5px 0 5px;
+            }
+            .dynamic-width{
+                // display: inline-block;
+                width: 100%;
+                @include MQ('2','and-wider'){
+                    width: calc(50% - 10px);
+                }
+            }
+            span.required{
+                color: red;
+                font-size: 1.2rem;
+                margin-left: 5px;
+            }
+            %input{
+                // flex-basis: 100%;
+                height: 47px;
+                padding: 5px 15px;
+                width: 100%;
+                // height: 34px;
+                // padding: 6px 12px;
+                background-color: #fff;
+                // background-image: none;
+                border: 1px solid #e5e5e5;
+                border-color: #ccc;
+                border-radius: 2px;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                &:focus{
+                    border-color: #5bc0de;
+                    outline: 0;
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(91,192,222,.6);
+                    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                }
+            }
+            #form-name, #form-companyName, #form-email, #form-telephone, #form-subject{
+                @extend %input;
+            }
+            #form-message{
+                @extend %input;
+                height: 7rem;
+            }
+            @include make-pretty-checkbox{
+                font-size: 1rem;
+                letter-spacing: .4px;
+                line-height: 32px;
+                a{
+                    color:#333645;
+                }
+            }
+            #form-submit{
+                @include build_button($bg_c:#926fb1){
+                    color: #fff;
+                    // background-color: #926fb1;
+                    // border-color: #926fb1;
+                    height: auto;
+                    line-height: 35px;
+                    padding: 5px 15px;
+                    text-transform: uppercase;
+                    font-size: 1.063rem;
+                    border-radius: 3px;
+                    white-space: normal;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

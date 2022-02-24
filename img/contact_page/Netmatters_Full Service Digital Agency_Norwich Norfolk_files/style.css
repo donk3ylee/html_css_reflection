@@ -4051,21 +4051,6 @@
     font-size: 0.8rem;
   }
 }
-.contact-page-wrapper .page .form .success {
-  display: block;
-  background-color: bisque;
-  border: 3px solid green;
-  color: green;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 1rem;
-}
-@media (max-width: 767px) {
-  .contact-page-wrapper .page .form .success {
-    font-size: 0.8rem;
-  }
-}
 .contact-page-wrapper .page .form label {
   width: 100%;
   margin: 5px 0 5px;

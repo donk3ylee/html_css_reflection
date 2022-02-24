@@ -1,4 +1,6 @@
-<?php include_once( __DIR__ .'./header.php'); ?>
+<?php 
+include_once( __DIR__ .'./header.php'); 
+?>
 <main>
     <div class="wrapper-hero-slider">
         <div id="hero-slider">
@@ -129,63 +131,7 @@
     <div class="wrapper-news">
         <div id="news" class="container-fluid">
             <div class="row g-4">
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="item">
-                        <div class="img-constrainer">
-                            <div class="catagory"></div>
-                            <img class="item-img" src="img/congratulations-to-lloyd-D2cu.jpg" alt="Another Scion Graduates">
-                        </div>
-                        <h2>Congratulations to Lloyd Cox for Graduating t...</h2>
-                        <p>We are pleased to announce that after a year spent on our Netmatters Scion Coalition Scheme...</p>
-                        <div class="button">Read More</div>
-                        <hr>
-                        <div class="logo">
-                            <img src="img/netmatters-ltd-VXAv.png" alt="Netmatters Logo">
-                            <div class="cite-container">
-                                <strong class="cite">Posted by Netmatters Ltd</strong>
-                                <p class="date">10th May 2021</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="item">
-                        <div class="img-constrainer">
-                            <div class="catagory"></div>
-                            <img class="item-img" src="img/april-2021-notables-CIV3.jpg" alt="Another Scion Graduates">
-                        </div>
-                        <h2>April 2021 Notables</h2>
-                        <p>Every month we celebrate the most notable of employees here at Netmatters. Each department he...</p>
-                        <div class="button">Read More</div>
-                        <hr>
-                        <div class="logo">
-                            <img src="img/netmatters-ltd-VXAv.png" alt="Netmatters Logo">
-                            <div class="cite-container">
-                                <strong class="cite">Posted by Netmatters Ltd</strong>
-                                <p class="date">6th May 2021</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-4 d-block d-md-none d-xl-block">
-                    <div class="item">
-                        <div class="img-constrainer">
-                            <div class="catagory"></div>
-                            <img class="item-img" src="img/web-developer-r6Y3.jpg" alt="Another Scion Graduates">
-                        </div>
-                        <h2>Web Developer</h2>
-                        <p>Salary Ra...</p>
-                        <div class="button">Read More</div>
-                        <hr>
-                        <div class="logo">
-                            <img src="img/netmatters-ltd-VXAv.png" alt="Netmatters Logo">
-                            <div class="cite-container">
-                                <strong class="cite">Posted by Simon Wright</strong>
-                                <p class="date">1st May 2021</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include_once('./src/getCards.php') ?>
             </div>
         </div>
     </div>
@@ -241,40 +187,6 @@
             </div>
         </aside>
     </div>
-    <div class="wrapper-newsletter">
-        <aside>
-            <div id="newsletter">
-                <div class="container">
-                    <form class="newsletter-form" method="get" action="#">
-                        <div class="row gx-4 gy-3">
-                            <div class="col-12">
-                                <h2>Email Newsletter Sign-Up</h2>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" class="newsletter-text first" id="name" name="full_name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label for="email">Your Email</label>
-                                <input type="text" class="newsletter-text" id="email" name="email">
-                            </div>
-                            <div class="col-12">
-                                <label for="marketing-consent" class="make-pretty-checkbox">
-                                    <input type="checkbox" id="marketing-consent" name="consent">
-                                    <span class="checkmark"></span>
-                                    <span class="description">
-                                        Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we use your data.
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col-12">
-                                <a href="#"><div class="newsletter-button">Subscribe</div></a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </aside>
-    </div>
+<?php include_once( __DIR__ .'./newsletterSignup.php') ?>
 </main>
 <?php include_once( __DIR__ .'./footer.php') ?>
