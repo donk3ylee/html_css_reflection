@@ -22,7 +22,7 @@ foreach($_POST as $name => $value){
 }
 if (count($errors) != 0){
     $_SESSION['errors'] = $errors;
-    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php');
+    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php#error_target');
     exit;
 }
 // END check for empty status for each required field
@@ -46,7 +46,7 @@ foreach($results as $name => $value){
 
 if (count($validation_errors) != 0){
     $_SESSION['errors'] = $validation_errors;
-    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php');
+    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php#error_target');
     exit;
 }
 // END validate the email and telephone inputs
@@ -82,11 +82,11 @@ try{
     if($result->execute()){
         $_SESSION['success'] = "Thank you for leaving a message. I will get back to you at my earliest convenience";
         unset($_SESSION['form_data']);
-        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php');
+        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php#success_target');
         exit;
     } else {
         $_SESSION['error'] = "Something went wrong. I'm sorry but you did not leave a message this time please try again.";
-        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php');
+        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../contact.php#error_target');
         exit;
     }
 
