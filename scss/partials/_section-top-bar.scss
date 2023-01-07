@@ -88,7 +88,7 @@
         &:focus{
             border-color: #5bc0de;
             outline: 0;
-            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(91 192 222 / 60%);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.8), 0 0 8px rgba(91, 192, 222, 0.6);
         }   
     }
     .search-wrapper-alt{
