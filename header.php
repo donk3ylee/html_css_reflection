@@ -8,21 +8,21 @@
     <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin> 
     <link rel="preload" href="fonts/Poppins-Regular.eot" as="font" type="font/eot" crossorigin> 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha512-Meww2sXqNHxI1+5Dyh/9KAtvI9RZSA4c1K2k5iL02oiPO/RH3Q30L3M1albtqMg50u4gRTYdV4EXOQqXEI336A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js" defer></script>
     <script src="js/owl.carousel.min.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="" defer></script>
-    <script src="js/leafletMaps.js" defer></script>
-    <script src="js/stickyHeader.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="/js/leafletMaps.js" defer></script>
+    <script src="/js/stickyHeader.js" defer></script>
+    <script src="/js/main.js" defer></script>
 </head>
 <body>
     <div id="wrapper-all">
