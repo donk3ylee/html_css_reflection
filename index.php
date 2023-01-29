@@ -1,5 +1,5 @@
 <?php 
-include_once( __DIR__ .'./header.php'); 
+include_once( __DIR__ .'/header.php'); 
 ?>
 <main>
     <div class="wrapper-hero-slider">
