@@ -27,12 +27,12 @@
     font-weight: 600;
 }
 
-@include targetIEonly{
-    @font-face {
-        font-family: Poppins;
-        src: url('fonts/Poppins-Regular.eot') format('eot');
-    }
-}
+// @include targetIEonly{
+//     @font-face {
+//         font-family: Poppins;
+//         src: url('fonts/Poppins-Regular.eot') format('eot');
+//     }
+// }
 
 body{
     font-family: Poppins,sans-serif;

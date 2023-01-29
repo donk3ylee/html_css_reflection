@@ -3521,14 +3521,6 @@
   font-family: Poppins;
   src: url("/fonts/Poppins-Regular.woff2") format("woff2");
   font-weight: 600; }
-@media screen\0 {
-  @font-face {
-    font-family: Poppins;
-    src: url("fonts/Poppins-Regular.eot") format("eot"); } }
-@font-face {
-  _:-ms-fullscreen, :root {
-    font-family: Poppins;
-    src: url("fonts/Poppins-Regular.eot") format("eot"); } }
 body {
   font-family: Poppins,sans-serif;
   color: #666;
