@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
-    <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin> 
-    <link rel="preload" href="fonts/Poppins-Regular.eot" as="font" type="font/eot" crossorigin> 
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin> 
+    <link rel="preload" href="/fonts/Poppins-Regular.eot" as="font" type="font/eot" crossorigin> 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
