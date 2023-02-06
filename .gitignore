@@ -3,5 +3,5 @@
 notes.txt
 package*.json
 .env
-/vendor
+vendor
 todo.php
