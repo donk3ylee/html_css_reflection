@@ -5,6 +5,6 @@
 
 // error_reporting(E_ALL);
 
-include_once(realpath($_SERVER['DOCUMENT_ROOT']) .'/dotenv.php');
-include_once(realpath($_SERVER['DOCUMENT_ROOT']) .'/DB.php');
-include_once(realpath($_SERVER['DOCUMENT_ROOT']) .'/getCards.php');
+include_once($_SERVER['DOCUMENT_ROOT'] .'/dotenv.php');
+include_once($_SERVER['DOCUMENT_ROOT'] .'/DB.php');
+include_once($_SERVER['DOCUMENT_ROOT'] .'/getCards.php');
