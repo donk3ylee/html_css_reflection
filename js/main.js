@@ -1,3 +1,4 @@
+alert('JS is being loaded');
 // START - Calculate vertical scrollbar width and pass it off to CSS for use there  
 document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
 // now the scrollbar width is available in CSS via var(--scrollbar-width) :)
