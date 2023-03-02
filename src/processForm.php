@@ -1,7 +1,7 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] ."/DB.php");
-include_once($_SERVER['DOCUMENT_ROOT'] ."/dotenv.php");
-include_once($_SERVER['DOCUMENT_ROOT'] .'/processForm.functions.php');
+include_once($_SERVER['DOCUMENT_ROOT'] ."/src/DB.php");
+include_once($_SERVER['DOCUMENT_ROOT'] ."/src/dotenv.php");
+include_once($_SERVER['DOCUMENT_ROOT'] .'/src/processForm.functions.php');
 session_start();
 
 // START send form data back to repopulate the contact form
