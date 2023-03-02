@@ -3,7 +3,7 @@
 // ini_set("log_errors", TRUE);
 // ini_set('error_log', $log_file);
 
-// error_reporting(3);
+error_reporting(E_ALL);
 
 include_once(__DIR__ .'./dotenv.php');
 include_once(__DIR__ .'./DB.php');
