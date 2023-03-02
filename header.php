@@ -25,8 +25,8 @@
     <script src="/js/main.js" defer></script>
 </head>
 <body>
-<div id="cover"></div>
     <div id="wrapper-all">
+    <div id="cover"></div>
         <header>
             <div id="wrapper-top">
                 <div class="wrapper-top-bar">
