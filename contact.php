@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once( __DIR__ .'/header.php');
+include_once($_SERVER['DOCUMENT_ROOT'] .'/header.php');
 
 
 function display_errors(){
@@ -130,6 +130,6 @@ NR31 7RA
             </div>
         </div>
     </div>
-    <?php include_once( __DIR__ .'./newsletterSignup.php') ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] .'/newsletterSignup.php') ?>
 </main>
-<?php include_once( __DIR__ .'./footer.php') ?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'] .'/footer.php') ?>
