@@ -26,7 +26,6 @@
 </head>
 <body>
     <div id="wrapper-all">
-    <div id="cover"></div>
         <header>
             <div id="wrapper-top">
                 <div class="wrapper-top-bar">

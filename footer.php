@@ -139,6 +139,7 @@
                 </div>
             </div>
         </footer>
+        <div id="cover"></div>
         <div id="cookies-policy">
             <h1>Cookies Policy</h1>
             <hr>
